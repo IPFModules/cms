@@ -1,7 +1,9 @@
-RC4 from 13.Feb.2012
+1.0 Final from 16th Feb. 2012
 
 Changelog:
 
+- Is more than one comment available, the login and register info will be display on bottom too
+- Comment anker for request URL added
 - Image resize for archived contents solved
 - Module help integrated
 - Problem with the theme changer fixed
