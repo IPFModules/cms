@@ -1,0 +1,55 @@
+<{if $cms_is_admin}>
+	<div class="cms_clear">
+		<div class="cms_adminlinks"><{$cms_adminpage}></div>
+	</div>
+<{/if}>
+
+<{if $cms_post_comment}>
+<{if !$icms_isuser}>
+<table class="outer" cellspacing="0" width="100%">
+	<tbody>
+		<tr>
+			<td class="even" align="center">
+				<div style="float:<{$smarty.const._GLOBAL_RIGHT}>;" id="comments_container"><a href="<{xoAppUrl /user.php?xoops_redirect=}><{$smarty.server.REQUEST_URI}>"><{$smarty.const._CO_CMS_GUEST_LOGIN}></a> <{$smarty.const._CO_CMS_OR}> <a href="<{xoAppUrl /register.php?xoops_redirect=}><{$smarty.server.REQUEST_URI}>"><{$smarty.const._CO_CMS_GUEST_REGISTER}></a> <{$smarty.const._CO_CMS_TO_POST_COMMENTS}></div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<table id="comments_container" border="0" width="100%" cellspacing="0" cellpadding="0" align="center" >
+	<tr>
+		<td colspan="3" align ="<{$smarty.const._GLOBAL_LEFT}>">
+			<div>
+				<!-- start comments loop -->
+				<{if $comment_mode == "flat"}>
+				<{include file="db:system_comments_flat.html"}>
+				<{elseif $comment_mode == "thread"}>
+				<{include file="db:system_comments_thread.html"}>
+				<{elseif $comment_mode == "nest"}>
+				<{include file="db:system_comments_nest.html"}>
+				<{/if}>
+				<!-- end comments loop -->
+			</div>
+		</td>
+	</tr>
+</table>
+<{else}>
+<table id="comments_container" border="0" width="100%" cellspacing="0" cellpadding="0" align="center" >
+	<tr>
+		<td colspan="3" align ="<{$smarty.const._GLOBAL_LEFT}>">
+			<div style="text-align: center;"> <{$commentsnav}></div>
+			<div>
+				<!-- start comments loop -->
+				<{if $comment_mode == "flat"}>
+				<{include file="db:system_comments_flat.html"}>
+				<{elseif $comment_mode == "thread"}>
+				<{include file="db:system_comments_thread.html"}>
+				<{elseif $comment_mode == "nest"}>
+				<{include file="db:system_comments_nest.html"}>
+				<{/if}>
+				<!-- end comments loop -->
+			</div>
+		</td>
+	</tr>
+</table>
+<{/if}>
+<{/if}>
