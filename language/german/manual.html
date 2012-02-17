@@ -6,6 +6,11 @@
         <title>CMS - a content module - Manual</title>
     </head>
     <body>
+    <p><a href="#1">-1- First Start</a></p>
+    <p><a href="#2">-2- Create a new content</a></p>
+    <p><a href="#3">-3- Blocks</a></p>
+    <p><a href="#4">-4- Date in templates</a></p>
+    <p><a href="#5">-5- Conclusion</a></p>
         <h1>CMS - a content module - Manual</h1>
         	<p>CMS is a small, light-weight contents handling module.</p>
         <h2>Keyfeatures</h2>
@@ -20,6 +25,7 @@
 				<li>Set contents as archived, online and offline.</li>
 				<li>Use a free TextArea for your content history or for a new preview of content. ()It's visible for the admin only.)</li>
 			</ul>
+		<hr><a name="1">-1-</a>
         <h2>First Start</h2>
 			<p>There are one thing you should do <b>before</b> you try the new module. Please, follow the instructions.</p>
 			
@@ -43,7 +49,8 @@
 					<li>Comments: This module has some special effects to comment a content. First is, the bubble within the content incl comment counter. If you click as guest, you can not comment a content, but you can find two links. One is for login and one for thr registration. Both links using a redirect, back to the content. This is a new way in ImpressCMS.</li>
 				</ul>
 				<p>Done! Next step.</p>
-			<h3>Create a new entry</h3>
+			<hr><a name="2">-2-</a>
+			<h3>Create a new content</h3>
 				<p>Go to the Tab "Content" and click it. Enter a short but descriptive title on top for your new content.</p>
 			<h3>Upload images or photos</h3>
 				<p>Finally you can start uploading a image or photo for your content. Clicke the upload-button and select your file from your Computer or Digicam. Alternative you can choose a URL.</p>
@@ -52,6 +59,7 @@
 				<p>There is one more field for your History, ideas or reviews. You can put any content and this will not publish in the user page.</p>
 			<h3>Others</h3>
 				<p>The following fields, you don't need to fill out or to change: Enable HTML tags, Enable linebreak, Enable images, Enable smiley icons, Meta Keywords, Meta Description, Short URL.</p>
+		<hr><a name="3">-3-</a>
 		<h2>Blocks</h2>
 			<p>Currently you have 4 blocks for the 'CMS' module:</p>
 			<ul>
@@ -77,8 +85,35 @@
 				</li>
 			</ul>
 			<p>And sure, you can clone all blocks, if needed and set your preferences by yourself.</p>
- 
+			
+		<hr><a name="4">-4-</a>
+ 		<h2>Date in templates</h2>
+			<p>Since CMS module version 2, the regular date was deleted, because you don't need within a content. But if you like, you can add the date in your templates with the following SMARTY codes.</p>
+			<ul>
+				<li><{$cms_start.date|date_format}>
+					<ul>
+						<li>Output "Feb 12, 2012"</li>
+					</ul>
+				</li>
+				<li><{$cms_start.date|date_format:"%Y/%m/%d"}>
+					<ul>
+						<li>Output "2012/02/12"</li>
+					</ul>
+				</li>
+				<li><{$cms_start.date}>
+					<ul>
+						<li>Output: "12.02.2012 09:40:00"</li>
+					</ul>
+				</li>
+				<li><{$cms_start.date|date_format:"%d.%m.%Y"}>
+					<ul>
+						<li>Output "12.02.2012"</li>
+					</ul>
+				</li>
+			</ul>
+			<p>More informatione here <a href="http://www.smarty.net/docs/en/language.modifier.date.format.tpl">www.smarty.net - date format</a></p>
 		<div class="cms_footer">
+		<hr><a name="5">-5-</a>
 		<h2>Conclusion</h2>
 			<p>Thank you for using 'CMS' module. If you have some trouble while using CMS module, please visit <a href="http://community.impresscms.org/modules/newbb/viewforum.php?forum=9" title="ImpressCMS Community Forum" rel="external">ImpressCMS Community Forum</a>. You have some suggestions, what you'd like to change or add to the module? No problem! We can talk about. Please, use also <a href="http://community.impresscms.org/modules/newbb/viewforum.php?forum=9" title="ImpressCMS Community Forum" rel="external">ImpressCMS Community Forum</a> for this!</p>  
 			<p>You might also like to follow the recent changes in CMS module? Please, have a look at <a href="https://impresscmsdev.assembla.com/code/impresscmsaddons/subversion/nodes/modules/cms/trunk/" title="'CMS module' SVN on Assembla" rel="external">'CMS module' SVN on Assembla</a>.</p>

@@ -132,7 +132,7 @@ class mod_cms_Start extends icms_ipf_seo_Object
 				<img src="' . ICMS_IMAGES_SET_URL . '/actions/button_cancel.png" alt="' . _CO_CMS_ARCHIVED_NO . '" /></a>';
 		}
 	}
-	
+
 	/**
 	 * Converts online_status to human readable icon with toggle link
 	 * 

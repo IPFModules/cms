@@ -101,7 +101,9 @@ if($startObj && !$startObj->isNew())
 		$start['logo'] = $document_root . 'uploads/' . $directory_name . '/start/' . $start['logo'];
 	}
 	
-	// Prepare tags for display
+	// Check if an 'updated' notice should be displayed. This works by comparing the time since the
+	// project was last updated against the length of time that an updated notice should be shown
+	// (as set in the module preferences).
 	if (icms::$module->config['show_last_updated'] == TRUE)
 	{
 		$updated = strtotime($start['last_update']);

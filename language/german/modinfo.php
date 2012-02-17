@@ -61,7 +61,7 @@ define("_MI_CMS_LOGO_UPLOAD_WIDTH_DSC", "Bilddateien können diesen Wert nicht �
 define("_MI_CMS_LOGO_FILE_SIZE", "Maximale Dateigröße eines Bildes (Bytes)");
 define("_MI_CMS_LOGO_FILE_SIZE_DSC", "Bilddateien können diesen Wert nicht überschreiben. Die Dateigröße ist auch durch den Server oft auf 2MB begrenzt.");
 define("_MI_CMS_DATE_FORMAT", "Datumsformat");
-define("_MI_CMS_DATE_FORMAT_DSC", "Controls the format of the date in content 'updated' notices. See the <a href='http://php.net/manual/en/function.date.php'>PHP manual</a> for formatting options.");
+define("_MI_CMS_DATE_FORMAT_DSC", "Deutsches Format: Tag.Monat.Jahr = 'd.m.Y'. Das Datumsformat bezieht sich auf den Inhalt welcher den Hinweis 'Aktualisiert' mitsichführt. See the <a href='http://php.net/manual/en/function.date.php'>PHP manual</a> for formatting options.");
 define("_MI_CMS_UPDATED_NOTICE_PERIOD", "Zeige Hinweis 'Aktualisiert'");
 define("_MI_CMS_UPDATED_NOTICE_PERIOD_DSC", "Wie lange soll der Hinweis 'Aktualisiert' angezeigt werden?");
 
