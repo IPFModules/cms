@@ -117,7 +117,10 @@ function show_random_cms($options)
 		$updated_notice_period = $update_periods[icms_getConfig('updated_notice_period', $cmsModule->getVar('dirname'))];
 	}
 	
-	// Check if updated notices and view counter should be shown; update logo paths;
+	// Check if updated notices and view counter should be shown
+	// Update logo paths
+	// Add SEO string to URL
+	// Show view counter
 	foreach ($cms as $key => &$object)
 	{
 		// Update notices
@@ -139,6 +142,13 @@ function show_random_cms($options)
 		else
 		{
 			unset($object['logo']);
+		}
+		
+		// Add SEO friendly string to URL
+		// seourl
+		if (!empty($object['short_url']))
+		{
+			$object['itemUrl'] .= "&amp;seite=" . $object['short_url'];
 		}
 		
 		// View counter

@@ -76,6 +76,13 @@ if($startObj && !$startObj->isNew())
 	// Convert object to array for easy insertion into templates
 	$start = $startObj->toArray();
 	
+	// Add SEO friendly string to URL
+	// seourl
+	if (!empty($start['short_url']))
+	{
+	$start['itemUrl'] .= "&amp;seite=" . $start['short_url'];
+	}
+			
 	// Check if the hit counter should be displayed or not
 	if (icms::$module->config['show_view_counter'] == FALSE)
 	{
