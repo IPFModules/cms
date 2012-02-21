@@ -89,6 +89,13 @@ if($startObj && !$startObj->isNew())
 	// Convert object to array for easy insertion to templates
 	$start = $startObj->toArray();
 	
+	// Add SEO friendly string to URL
+	// seourl
+	if (!empty($start['short_url']))
+	{
+	$start['itemUrl'] .= "&amp;seite=" . $start['short_url'];
+	}
+		
 	// Check if hit counter should be displayed or not
 	if (icms::$module->config['show_view_counter'] == FALSE)
 	{
@@ -359,6 +366,14 @@ else
 			if (!empty($start['logo']))
 			$start['logo'] = $document_root . 'uploads/' . $directory_name . '/start/'
 				. $start['logo'];
+			
+			// Add SEO friendly string to URL
+			// seourl
+			if (!empty($start['short_url']))
+			{
+				$start['itemUrl'] .= "&amp;seite=" . $start['short_url'];
+			}
+			
 		}
 		$icmsTpl->assign('start_summaries', $start_summaries);
 		

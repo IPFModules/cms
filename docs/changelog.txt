@@ -1,5 +1,13 @@
+http://drupal6-wysiwyg.module-demos.org/
+
+2.0 Final from XXth XXX. 2012
+
 Changelog:
 
+ADDED:
+- Function for SEO-URL added
+
+DELETE:
 - Regular date from the templates deleted
 	(You can add if you like - see manual)
 
