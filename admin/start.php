@@ -132,7 +132,7 @@ if (in_array($clean_op, $valid_op, TRUE))
 			icms_cp_header();
 			$icmsModule->displayAdminMenu(0, _AM_CMS_CMS);
 			
-			// Display a single project, if a project_id is set
+			// Display a single start, if a start_id is set
 			if ($clean_start_id)
 			{
 				$startObj = $cms_start_handler->get($clean_start_id);
