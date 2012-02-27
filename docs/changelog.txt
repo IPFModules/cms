@@ -1,5 +1,6 @@
 http://drupal6-wysiwyg.module-demos.org/
 Link aus module ACP zum Inhalt ist ohne SEO
+Lnks von den Suchergebnissen zum Inhalt ist ohne SEO
 
 
 2.0 Final from XXth XXX. 2012
@@ -8,6 +9,7 @@ Changelog:
 
 ADDED:
 - Function for SEO-URL added
+- Link to the comments from the module
 
 DELETE:
 - Regular date from the templates deleted
