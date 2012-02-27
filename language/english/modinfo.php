@@ -17,6 +17,7 @@ define("_MI_CMS_MD_NAME", "CMS");
 define("_MI_CMS_MD_DESC", "ImpressCMS Simple Content");
 define("_MI_CMS_CMS", "Content");
 define("_MI_CMS_TEMPLATES", "Module templates");
+define("_MI_CMS_COMMENTS", "Module comments");
 define("_MI_CMS_BLOCKS", "Module blocks");
 
 // Blocks

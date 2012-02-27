@@ -17,6 +17,7 @@ define("_MI_CMS_MD_NAME", "CMS");
 define("_MI_CMS_MD_DESC", "Ein einfaches Modul für Inhalte");
 define("_MI_CMS_CMS", "Inhalte");
 define("_MI_CMS_TEMPLATES", "Modul Templates");
+define("_MI_CMS_COMMENTS", "Modul Kommentare");
 define("_MI_CMS_BLOCKS", "Modul Blöcke");
 
 // Blocks
