@@ -1,6 +1,3 @@
-http://drupal6-wysiwyg.module-demos.org/
-Link aus module ACP zum Inhalt ist ohne SEO
-Lnks von den Suchergebnissen zum Inhalt ist ohne SEO
 
 
 2.0 Final from XXth XXX. 2012

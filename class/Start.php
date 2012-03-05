@@ -154,27 +154,7 @@ class mod_cms_Start extends icms_ipf_seo_Object
 				<img src="' . ICMS_IMAGES_SET_URL . '/actions/button_cancel.png" alt="' . _CO_CMS_START_OFFLINE . '" /></a>';
 		}
 	}
-	
-	/**
-	 * Customise object URLs in IPF tables to append the SEO-friendly string.
-	 */
-	// seourl
-	public function addSEOStringToItemUrl()
-	{
-		$short_url = $this->short_url();
-		if (!empty($short_url))
-		{
-			$seo_url = '<a href="' . $this->getItemLink(TRUE) . '&amp;seite=' . $this->short_url() 
-					. '">' . $this->getVar('title', 'e') . '</a>';
-		}
-		else
-		{
-			$seo_url = $this->getItemLink(FALSE);
-		}
 		
-		return $seo_url;
-	}
-	
 	/**
 	 * Load tags linked to this start
 	 *
@@ -219,8 +199,18 @@ class mod_cms_Start extends icms_ipf_seo_Object
 	
 	//detailpage from the ACP to the front end
 	function getPreviewItemLink() {
-		$ret = '<a href="' . CMS_URL . 'start.php?start_id=' . $this->getVar('start_id', 'e') . '" title="' . _CO_CMS_PREVIEW . '" target="_blank">' . $this->getVar('title') . '</a>';
-			return $ret;
+		$short_url = $this->short_url();
+		if (!empty($short_url))
+		{
+			$seo_url = '<a href="' . $this->getItemLink(TRUE) . '&amp;seite=' . $this->short_url() 
+					. '">' . $this->getVar('title', 'e') . '</a>';
+		}
+		else
+		{
+			$seo_url = $this->getItemLink(FALSE);
+		}
+		
+		return $seo_url;
 	}
 	
 	/**

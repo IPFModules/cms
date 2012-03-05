@@ -23,7 +23,7 @@ function cms_search($queryarray, $andor, $limit, $offset, $userid)
 	foreach ($startArray as $start) 
 	{
 		$item['image'] = "images/start.png";
-		$item['link'] = $start->getItemLink(TRUE);
+		$item['link'] = $start->getItemLink(TRUE) . '&amp;seite=' . $start->short_url();
 		$item['title'] = $start->getVar("title");
 		$item['time'] = $start->getVar("date", "e");
 		$item['uid'] = $start->getVar("creator");
