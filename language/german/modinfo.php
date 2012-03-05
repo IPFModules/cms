@@ -74,7 +74,7 @@ define("_MI_CMS_THREE_DAYS", "Drei Tage");
 define("_MI_CMS_ONE_WEEK", "Eine Woche");
 define("_MI_CMS_TWO_WEEKS", "Zwei Wochen");
 define("_MI_CMS_THREE_WEEKS", "Drei Wochen");
-define("_MI_CMS_FOUR_WEEKS", "Fünf Wochen");
+define("_MI_CMS_FOUR_WEEKS", "Vier Wochen");
 
 // Submenu
 define("_MI_CMS_ARCHIVIERT", "Archiviert");
