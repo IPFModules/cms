@@ -35,7 +35,7 @@ $headermenu[] = array(
 		. $icmsConfig['template_set'] . '&moddir=' . $module->getVar("dirname"));
 $headermenu[] = array(
 	"title" => _MI_CMS_COMMENTS,
-	"link" => ICMS_URL . "/modules/system/admin.php?module=" . icms::$module -> getVar("mid") 
+	"link" => ICMS_URL . "/modules/system/admin.php?module=" . $module->getVar("dirname") 
 		. "&status=0&limit=100&fct=comments&selsubmit=Go");
 $headermenu[] = array(
 	"title" => _CO_ICMS_UPDATE_MODULE,
