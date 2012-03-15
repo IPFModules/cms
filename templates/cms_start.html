@@ -50,13 +50,13 @@
 				</div>
 			<{/if}>
 		</div>
-		<div class="cms_clear">
-			<div class="itemCmsInfo">
-				<{if $cms_start.tags}>
-					<{$cms_start.tags}>
-				<{/if}>
+		<{if $cms_start.tags}>
+			<div class="cms_clear">
+				<div class="itemCmsInfo">
+						<{$cms_start.tags}>
+				</div>
 			</div>
-		</div>
+		<{/if}>
 	</div>
 <{/if}>
 
@@ -109,13 +109,13 @@
 				<div>
 					<p class="cms_description"><a href="<{$start.itemUrl}>" title="<{$start.title}>"></a><{$start.description}><{if $start.extended_text}> <span><a href="<{$start.itemUrl}>">(<{$smarty.const._CO_CMS_READ_MORE}>)</a></span><{/if}></p>
 				</div>
-				<div class="cms_clear">
-					<div class="itemCmsInfo">
-						<{if $start.tags}>
-							<{$start.tags}>
-						<{/if}>
+				<{if $start.tags}>
+					<div class="cms_clear">
+						<div class="itemCmsInfo">
+								<{$start.tags}>
+						</div>
 					</div>
-				</div>
+				<{/if}>
 				<div class="cms_space"></div>
 			</div>
 		
