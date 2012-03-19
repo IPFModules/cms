@@ -1,0 +1,159 @@
+/* Note: Block styles are hard coded in the block template, as module style sheets don't work in 
+cached blocks (core bug?). So if you want to alter the block CSS, you'll find it in the block template. */
+.itemCmsInfo{
+	padding: 5px 0 10px;
+}
+
+.itemCmsInfo a{
+	background-color: #999999;
+    color: #FFFFFF;
+    font-size: 13px;
+    letter-spacing: -0.01em;
+    padding: 4px 6px 3px;
+    text-decoration: none;
+    line-height: 26px;
+}
+
+.itemCmsInfo a:hover{
+	background: none repeat scroll 0 0 #2A2A2A;
+    color: #FFFFFF;
+}
+
+.itemCmsInfoComment a{
+	float:right;
+	background: url("images/icon_comment.png") no-repeat scroll 0 0 transparent;
+	height:32px;
+	line-height:28px;
+	width:32px;
+	overflow: hidden;
+	text-align: center;
+	text-decoration: none;
+}
+.itemCmsInfoComment a:hover{
+	background: url("images/icon_comment_add.png") no-repeat scroll 0 0 transparent;
+	text-decoration: none;
+}
+.cms_headertable
+{
+	padding: 0; margin: 0; border-bottom: 1px solid; margin-bottom: 10px;font-size: 0.8em; text-align: left; padding-right: 0.3em; line-height: 18px;
+}
+
+.cms_modulename, .cms_breadcrumb
+{}
+
+.cms_breadcrumb
+{}
+
+.cms_adminlinks
+{
+	padding-top: 15px; padding-bottom: 5px; font-size: 0.8em; text-align: center; line-height: 18px;
+}
+
+/* Used to display start logos, floated to the right */
+.cms_float_right 
+{
+	float:right;
+	margin: 0em 0em 1em 1em;
+}
+
+/* Used to display start logos, floated to the left */
+.cms_float_left 
+{
+	float:left;
+	margin: 0em 1em 1em 0em;
+}
+
+/* Used to prevent cms overlapping logos of others on the index page */
+.cms_clear
+{
+	clear:both;
+}
+
+/* Used to vertically space elements to neaten up the display */
+.cms_separator 
+{
+	margin-bottom:1em;
+}
+
+/* Tableless layout */
+.cms_table
+{
+	display: table;
+}
+
+.cms_row
+{
+	display: table-row;
+}
+
+.cms_left_cell
+{
+	display: table-cell;
+	padding-right: 1em;
+}
+
+.cms_right_cell
+{
+	display: table-cell;
+}
+
+.cms_updated
+{
+	color:red;
+}
+
+.cms_space
+{
+	padding: 0 0 20px;
+}
+
+.button {
+   border: 1px solid #DDD;
+   border-radius: 3px;
+   text-shadow: 0 1px 1px white;
+   -webkit-box-shadow: 0 1px 1px #fff;
+   -moz-box-shadow:    0 1px 1px #fff;
+   box-shadow:         0 1px 1px #fff;
+   font: bold 11px Sans-Serif;
+   padding: 3px 5px;
+   white-space: nowrap;
+   vertical-align: middle;
+   color: #666;
+   background: transparent;
+   cursor: pointer;
+}
+.button:hover, .button:focus {
+   border-color: #999;
+   background: -webkit-linear-gradient(top, white, #E0E0E0);
+   background:    -moz-linear-gradient(top, white, #E0E0E0);
+   background:     -ms-linear-gradient(top, white, #E0E0E0);
+   background:      -o-linear-gradient(top, white, #E0E0E0);
+   -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.25), inset 0 0 3px #fff;
+   -moz-box-shadow:    0 1px 2px rgba(0,0,0,0.25), inset 0 0 3px #fff;
+   box-shadow:         0 1px 2px rgba(0,0,0,0.25), inset 0 0 3px #fff;
+}
+.button:active {
+   border: 1px solid #AAA;
+   border-bottom-color: #CCC;
+   border-top-color: #999;
+   -webkit-box-shadow: inset 0 1px 2px #aaa;
+   -moz-box-shadow:    inset 0 1px 2px #aaa;
+   box-shadow:         inset 0 1px 2px #aaa;
+   background: -webkit-linear-gradient(top, #E6E6E6, gainsboro);
+   background:    -moz-linear-gradient(top, #E6E6E6, gainsboro);
+   background:     -ms-linear-gradient(top, #E6E6E6, gainsboro);
+   background:      -o-linear-gradient(top, #E6E6E6, gainsboro);
+}
+.button:after {
+   content: "";
+   display: inline-block;
+   width: 0;
+   height: 0;
+   border-top: 4px solid #999;
+   margin: 0 0 0 4px;
+   position: relative;
+   top: -1px;
+}
+.button:hover:after {
+   border-top-color: black;
+}
