@@ -23,7 +23,7 @@ $modversion = array(
 	"credits"					=> "Thanks to QM-B and Lotus for alls tests.",
 	"help"						=> "",
 	"license"					=> "GNU General Public License (GPL)",
-	"official"					=> 0,
+	"official"					=> 1,
 	"dirname"					=> basename(dirname(__FILE__)),
 	"modname"					=> "cms",
 
@@ -34,8 +34,8 @@ $modversion = array(
 
 /**  Development information */
 	"status_version"			=> "2",
-	"status"					=> "trunk",
-	"date"						=> "xx.xx.2012",
+	"status"					=> "Final",
+	"date"						=> "19.03.2012",
 	"author_word"				=> "For ICMS 1.3+ only.",
 	"warning"					=> "trunk",
 
