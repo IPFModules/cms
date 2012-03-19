@@ -5,8 +5,9 @@
 Changelog:
 
 ADDED:
-- Function for SEO-URL added
-- Link to the comments from the module
+- Function for SEO-URL added (backend, front end and global search)
+- Link to the comments from the module (module ACP)
+- A note within the manual (How can I add PHP scripts)
 
 DELETE:
 - Regular date from the templates deleted
