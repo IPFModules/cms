@@ -1,5 +1,20 @@
 
 
+3.0 Final from xxth xxx. 2012
+
+Changelog:
+
+CHANGED:
+- Style from button deleted, otherwise you can get a issue with your theme
+
+DELETE:
+- xxx
+
+ADDED:
+- xxx
+
+
+
 2.0 Final from 19th Mar. 2012
 
 Changelog:
