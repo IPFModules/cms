@@ -12,9 +12,5 @@
  * @version		$sato-san$
 */
 
-// this two lines solve a problem with the theme-swicher
-include_once "../../mainfile.php";
-include_once ICMS_ROOT_PATH . "/header.php";
-
 header("location: start.php");
 exit;
