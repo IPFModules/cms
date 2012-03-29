@@ -1,0 +1,41 @@
+<!-- If you want to know why some style information is hard coded, the answer is that module
+style sheets do not work on cached blocks. I think this is a long-standing core bug -->
+
+<!-- Summary mode -->
+<{if $block.show_logos == TRUE}>
+	<{foreach item = start from = $block.random_cms}>
+		<h2 style="clear:both; margin-bottom:1em;"><a href="<{$start.itemUrl}>"><{$start.title}></a></h2>
+		<{if $start.updated}>
+			<div class="itemCmsInfo">
+					<span class="cms_updated"><{$smarty.const._CO_CMS_START_UPDATED}>: <{$start.date}></span>
+			</div>
+		<{/if}>
+		<div>
+			<{if $start.logo}>
+				<{if $freestyle_logo_dimensions}>
+
+					<div style="<{$block.start_logo_position}>">
+						<a href="<{$start.itemUrl}>"><img src="<{$start.logo}>" alt="<{$start.title}>" /></a>
+					</div>
+
+				<{else}>
+					<div style="<{$block.start_logo_position}>">
+						<a href="<{$start.itemUrl}>"><{resized_image file=$start.logo width=$block.logo_block_display_width height="999" fit="inside"}></a>
+					</div>
+
+				<{/if}>
+			<{/if}>
+			<div>
+				<p class="cms_description"><a href="<{$start.itemUrl}>" title="<{$start.title}>"></a><{$start.description}> <span><a href="<{$start.itemUrl}>">(<{$smarty.const._CO_CMS_READ_MORE}>)</a></span></p>
+			</div>
+		</div>
+	<{/foreach}>
+	
+<!-- Compact list mode -->
+<{else}>
+	<ul>
+		<{foreach item = start from = $block.random_cms}>
+			<li><a href="<{$start.itemUrl}>"><{$start.title}></a></li>
+		<{/foreach}>
+	</ul>
+<{/if}>

@@ -1,0 +1,55 @@
+<!-- If you want to know why some style information is hard coded, the answer is that module
+style sheets do not work on cached blocks. I think this is a long-standing core bug -->
+
+<noscript><div class="noscript"><span class="code-sitename">Slider Kit</span> jQuery plugin requires Javascript activation.</div></noscript>
+<script type="text/javascript" src="<{$icms_url}>/modules/cms/scripts/jquery.sliderkit.1.9.1.pack.js"></script>
+<script type="text/javascript" src="<{$icms_url}>/modules/cms/scripts/jquery.easing.1.3.min.js"></script>
+<link href="<{$icms_url}>/modules/cms/scripts/sliderkit-core.css" rel="stylesheet" type="text/css" />
+<link href="<{$icms_url}>/modules/cms/scripts/sliderkit-demos.css" rel="stylesheet" type="text/css" />
+
+<!-- Slider Kit launch -->
+<script type="text/javascript">
+	$(window).load(function(){
+		$(".newslider-vertical").sliderkit({
+			shownavitems:3,
+			verticalnav:true,
+			navitemshover:true,
+			circular:true
+		});
+	});
+</script>
+
+<!-- Summary mode -->
+<{if $block.show_logos == TRUE}>
+<!-- Start newslider-vertical -->
+<div class="sliderkit newslider-vertical">
+	<div class="sliderkit-nav">
+		<div class="sliderkit-nav-clip">
+			<ul>
+				<{foreach item = start from = $block.slider_cms}>
+				<li><a href="<{$start.itemUrl}>" title="<{$start.title}>"><{$start.title}></a></li>
+				<{/foreach}>
+			</ul>
+		</div>
+	</div>
+	<div class="sliderkit-panels">
+		<{foreach item = start from = $block.slider_cms}>
+		<div class="sliderkit-panel">
+			<div class="sliderkit-news">
+				<h3><a href="<{$start.itemUrl}>" title="<{$start.title}>"><{$start.title}></a></h3>
+				<p class="cms_description"><a href="<{$start.itemUrl}>" title="<{$start.title}>"></a><{$start.description}> <span><a href="<{$start.itemUrl}>">(<{$smarty.const._CO_CMS_READ_MORE}>)</a></span></p>
+				
+			</div>
+		</div>
+		<{/foreach}>
+	</div>
+</div>
+	
+<!-- Compact list mode -->
+<{else}>
+	<ul>
+		<{foreach item = start from = $block.slider_cms}>
+			<li><a href="<{$start.itemUrl}>"><{$start.title}></a></li>
+		<{/foreach}>
+	</ul>
+<{/if}>

@@ -1,0 +1,116 @@
+
+
+2.1 Final from 29th Mar. 2012
+
+Changelog:
+
+CHANGED:
+- Style from button deleted, otherwise you can get a issue with your theme
+
+FIXED:
+- Error in the module administration fixed
+
+
+
+2.0 Final from 19th Mar. 2012
+
+Changelog:
+
+ADDED:
+- Function for SEO-URL added (backend, front end and global search)
+- Link to the comments from the module (module ACP)
+- A note within the manual (How can I add PHP scripts)
+
+DELETE:
+- Regular date from the templates deleted
+	(You can add if you like - see manual)
+
+
+
+1.0 Final from 16th Feb. 2012
+
+Changelog:
+
+- Is more than one comment available, the login and register info will be display on bottom too
+- Comment anker for request URL added
+- Image resize for archived contents solved
+- Module help integrated
+- Problem with the theme changer fixed
+- Function "read more" is visible only, if extended text available
+- Resize function in the archived content fixed
+- the breadcrumb link to the archive works now 
+- Comment function for archived contents added
+- Breadcrumb fixed
+- Link to the content within the archived Page fixed
+- Table overview for archived Page fixed
+- Added counter as column within the table overview
+- German translation added
+- Comment bubbles are visible only, if comment function on
+- Comment template modified. If the visitor a guest, the can find a link for login or register to post a comment.
+- Link to the module blocks added
+- New list block added
+- New ticker block added
+- New slider block added
+- Imagesize for single page fixed
+- Some options from the module preferences are disabled by default
+- .::Module Admin page::. link on top also available 
+- Breadcrumb shows the content title too, not only the tags
+- Function for comments added
+- Link (title) goes direct to the content within the front end page
+- Preview for the module administration added
+- Content are sorted in the module administration by "last_updated" DESC now
+- The global search engine is searching within the field "extended_text" now too
+- QuickSearch is looking within "title", "description" and "extended_text" (Backend and front end)
+- Weight disabeled, the content are sorted by "date DESC" only
+- Sort content by date ASC
+- Summary page: designed "Read more" button added
+- Random block: designed "Read more" button added
+- Detail page: Logo has a lightbox effect now
+- The admin is the selected default user as the "creator"
+- Fields for content deleted
+- Field for address renamed into history
+- Field "beendet" for archive hidden
+- It will take the icons from the imageset for archived and online with new language variables
+- Search result Icon changed to 22x22
+- New module icons
+- Image upload with 2MB and maximal 3500 x 2600 pixel possible (please check the module preferences also)
+- Changed the following objects and fields from to:
+
+
+projects = cms
+PROJECTS = CMS
+Projects = Cms
+
+project = start
+PROJECT = START
+Project = Start
+
+completed = archiviert
+COMPLETED = ARCHIVIERT
+Completed = Archiviert
+
+complete = beendet
+COMPLETE = BEENDET
+Complete = Beendet
+
+completion = fertigstellung
+
+
+latest sync. Rev.23543
+
+Knowing errors:
+- <button class="button" role="button" onclick=";window.location.href=this.getAttribute('href');return false;" href="<{$start.itemUrl}>"><span><{$smarty.const._CO_CMS_READ_MORE}></span></button>
+- redirect on "register" works not, if profile module installed
+
+
+Todo:
+
+- Kommentarfunktion soll nach der Install nicht aktiv sein
+http://community.impresscms.org/modules/newbb/viewtopic.php?topic_id=5095&forum=52&post_id=45498#forumpost45498
+- Unwichtige Felder (wie z.B.: META Tags, dohtml, dobr, doimage, dosmiley) in der Moduladministration mit einem toggle versehen
+- Adding group-permissions
+http://community.impresscms.org/modules/newbb/viewtopic.php?post_id=45434#forumpost45434
+- Adding notification function
+- Use the SEO URL
+- Option for every content > comment YES/NO
+
