@@ -1,17 +1,14 @@
 
 
-3.0 Final from xxth xxx. 2012
+2.1 Final from 29th Mar. 2012
 
 Changelog:
 
 CHANGED:
 - Style from button deleted, otherwise you can get a issue with your theme
 
-DELETE:
-- xxx
-
-ADDED:
-- xxx
+FIXED:
+- Error in the module administration fixed
 
 
 
