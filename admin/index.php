@@ -12,5 +12,5 @@
  * @version		$sato-san$
 */
 
-include 'start.php';
+header('location: start.php');
 exit;
