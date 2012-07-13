@@ -223,7 +223,10 @@ class mod_cms_Start extends icms_ipf_seo_Object
 	
 		$ret['start_comment_info'] = $this->getCommentsInfo();
 		$ret['itemLink'] = $this->getItemLink();
-	
+		
+		//icons for the frontend
+		$ret['editItemLink'] = $this->getEditItemLink(FALSE, TRUE, TRUE);
+		$ret['deleteItemLink'] = $this->getDeleteItemLink(FALSE, TRUE, TRUE);
 		return $ret;
 	}
 	

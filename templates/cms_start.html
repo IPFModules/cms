@@ -3,6 +3,9 @@
 <!-- View single start -->
 <{if $cms_start}>
 	<div>
+		<{if $cms_is_admin}>
+			<p><{$cms_start.editItemLink}> <{$cms_start.deleteItemLink}></p>
+		<{/if}>
 		<div class="itemCmsInfo_title">
 			<h2><{$cms_start.title}></h2>
 			<{if $cms_post_comment}><div class="itemCmsInfoComment"><{$cms_start.start_comment_info}></div><{/if}>

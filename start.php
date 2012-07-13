@@ -19,7 +19,6 @@ include_once ICMS_ROOT_PATH . "/header.php";
 $clean_start_id = isset($_GET["start_id"]) ? (int)$_GET["start_id"] : 0 ;
 $clean_tag_id = isset($_GET["tag_id"]) ? (int)$_GET["tag_id"] : 0 ;
 $clean_start = isset($_GET["start"]) ? (int)($_GET["start"]) : 0;
-
 // Get the requested start, or retrieve the index page. Only show online cms
 $cms_start_handler = icms_getModuleHandler("start", basename(dirname(__FILE__)), "cms");
 $criteria = icms_buildCriteria(array('online_status' => '1'));
@@ -74,6 +73,7 @@ else // Align left
 
 if($startObj && !$startObj->isNew())
 {	
+	
 	//comments detailpage
 	if ($cmsConfig['com_rule']) {
 		$icmsTpl->assign('cms_post_comment', TRUE);
@@ -88,6 +88,13 @@ if($startObj && !$startObj->isNew())
 	
 	// Convert object to array for easy insertion to templates
 	$start = $startObj->toArray();
+	
+	//icons for the frontend
+	$edit_item_link = $delete_item_link = '';
+	$edit_item_link = $startObj->getEditItemLink(FALSE, TRUE, FALSE);
+	$delete_item_link = $startObj->getDeleteItemLink(FALSE, TRUE, FALSE);
+	$start['editItemLink'] = $edit_item_link;
+	$start['deleteItemLink'] = $delete_item_link;
 	
 	// Add SEO friendly string to URL
 	// seourl

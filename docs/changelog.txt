@@ -1,6 +1,9 @@
-2.2 Final from 07th June. 2012
+2.2 Final from 13th July. 2012
 
 Changelog:
+
+ADDED:
+- Functions for the Frontend. You can see an icon within the detailpage to edit and delete a content
 
 FIXED:
 - Fix slow page loading index page problem in file "cms/admin/index.php"

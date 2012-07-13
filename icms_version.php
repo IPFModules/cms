@@ -19,8 +19,8 @@ $modversion = array(
 	"name"						=> _MI_CMS_MD_NAME,
 	"version"					=> 2.2,
 	"description"				=> _MI_CMS_MD_DESC,
-	"author"					=> "Madfish (Simon Wilkinson)",
-	"credits"					=> "Thanks to QM-B and Lotus for alls tests.",
+	"author"					=> "@Madfish (Simon Wilkinson) and @sato-san (Rene Sato)",
+	"credits"					=> "Thanks to QM-B and Lotus for your help.",
 	"help"						=> "",
 	"license"					=> "GNU General Public License (GPL)",
 	"official"					=> 0,
@@ -35,7 +35,7 @@ $modversion = array(
 /**  Development information */
 	"status_version"			=> "2.2",
 	"status"					=> "Final",
-	"date"						=> "07.06.2012",
+	"date"						=> "13.07.2012",
 	"author_word"				=> "For ICMS 1.3+ only.",
 	"warning"					=> "trunk",
 
