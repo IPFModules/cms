@@ -3,11 +3,8 @@
 <!-- View single start -->
 <{if $cms_start}>
 	<div>
-		<{if $cms_is_admin}>
-			<p><{$cms_start.editItemLink}> <{$cms_start.deleteItemLink}></p>
-		<{/if}>
 		<div class="itemCmsInfo_title">
-			<h2><{$cms_start.title}></h2>
+			<h2><{$cms_start.title}> <{if $cms_is_admin}><{$cms_start.editItemLink}> <{$cms_start.deleteItemLink}><{/if}></h2>
 			<{if $cms_post_comment}><div class="itemCmsInfoComment"><{$cms_start.start_comment_info}></div><{/if}>
 		</div>
 		<{if $cms_start.counter || $cms_start.updated}>
@@ -84,7 +81,7 @@
 		<{foreach item = start from = $start_summaries}>
 			<div class="itemCmsInfo_title">
 			<h2 class="cms_separator cms_clear">
-				<a href="<{$start.itemUrl}>"><{$start.title}></a>
+				<a href="<{$start.itemUrl}>"><{$start.title}></a> <{if $cms_is_admin}><{$cms_start.editItemLink}> <{$cms_start.deleteItemLink}><{/if}>
 			</h2>
 			<{if $cms_post_comment}><div class="itemCmsInfoComment"><{$start.start_comment_info}></div><{/if}>
 			</div>

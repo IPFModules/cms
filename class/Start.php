@@ -53,6 +53,10 @@ class mod_cms_Start extends icms_ipf_seo_Object
 		$this->setControl("creator", "user");
 		$this->setControl("online_status", "yesno");
 		
+		// Add Group-Permissions
+		//$this->quickInitVar("visiblein", XOBJ_DTYPE_OTHER);
+		//$this->setControl("visiblein", "page");
+		
 		// Set controls: Allow WYSIWYG editor support in text areas
 		$this->setControl("description", "dhtmltextarea");
 		$this->setControl("extended_text", "dhtmltextarea");

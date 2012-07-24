@@ -5,7 +5,7 @@ cached blocks (core bug?). So if you want to alter the block CSS, you'll find it
 }
 
 .itemCmsInfo a{
-	background-color: #999999;
+	border: 1px solid #999999;
     color: #FFFFFF;
     font-size: 13px;
     letter-spacing: -0.01em;

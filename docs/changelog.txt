@@ -3,12 +3,14 @@
 Changelog:
 
 ADDED:
-- Functions for the Frontend. You can see an icon within the detailpage to edit and delete a content
+- Frontend: Actionicons within the detailpage to edit and delete a content
 
 FIXED:
 - Fix slow page loading index page problem in file "cms/admin/index.php"
 (http://community.impresscms.org/modules/newbb/viewtopic.php?viewmode=flat&type=&topic_id=5218&forum=9)
 
+DELETE:
+- Links from the Frontend to the Modul Administration
 
 
 
