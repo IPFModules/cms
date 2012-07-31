@@ -134,7 +134,7 @@ if($startObj && !$startObj->isNew())
 	if (icms_get_module_status("sprockets"))
 	{
 		$start['tags'] = array();
-		$start_tag_array = $sprockets_taglink_handler->getTagsForObject($startObj->getVar('start_id'), $cms_start_handler);
+		$start_tag_array = $sprockets_taglink_handler->getTagsForObject($startObj->getVar('start_id'), $cms_start_handler,0);
 		foreach ($start_tag_array as $key => $value)
 		{
 			$start['tags'][$value] = '<a href="' . CMS_URL . 'start.php?tag_id=' . $value 

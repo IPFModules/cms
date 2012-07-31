@@ -156,7 +156,7 @@ class mod_cms_StartHandler extends icms_ipf_Handler
 			$sprockets_taglink_handler = '';
 			$sprockets_taglink_handler = icms_getModuleHandler('taglink', 
 					$sprocketsModule->getVar('dirname'), 'sprockets');
-			$sprockets_taglink_handler->storeTagsForObject($obj);
+			$sprockets_taglink_handler->storeTagsForObject($obj, 'tag', 0);
 		}
 		return TRUE;
 	}
