@@ -4,6 +4,8 @@ Changelog:
 
 ADDED:
 - Frontend: Actionicons within the detailpage to edit and delete a content
+- Minor adjustments to ensure compatibility with Sprockets 2.0 for the future
+- Japanese language files (not finished)
 
 FIXED:
 - Fix slow page loading index page problem in file "cms/admin/index.php"
