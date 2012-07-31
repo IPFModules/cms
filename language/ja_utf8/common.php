@@ -16,17 +16,17 @@ defined("ICMS_ROOT_PATH") or die("ICMS root path not defined");
 define("_CO_CMS_CMS", "CMS");
 
 // Start
-define("_CO_CMS_START_TITLE", "タイトル");
-define("_CO_CMS_START_TITLE_DSC", "The title name of your content.");
+define("_CO_CMS_START_TITLE", "表題");
+define("_CO_CMS_START_TITLE_DSC", "表題をつける。");
 define("_CO_CMS_START_LOGO", "コンテンツの画像？");
 define("_CO_CMS_START_LOGO_DSC", "Upload your image or a teaser photo. You can set the resize from the image in the module preferences.");
 define("_CO_CMS_START_WEBSITE", "ウェブサイト（コンテンツのURL）");
 define("_CO_CMS_START_WEBSITE_DSC", "IMPORTANT: Start with 'http://' - If the content has a dedicated website, enter the URL here. If not, leave it blank.");
 define("_CO_CMS_START_BEENDET", "アーカイブ");
 define("_CO_CMS_START_BEENDET_DSC", "Mark the content as archived. Contents are archived, ie. they will not be shown on the index page. However, they are available from a submenu item.");
-define("_CO_CMS_START_TAG", "Tag");
+define("_CO_CMS_START_TAG", "タグ");
 define("_CO_CMS_START_TAG_DSC", "You may assign tags to the content if you wish. After them you can find a filter in the front end.");
-define("_CO_CMS_START_DESCRIPTION", "ティーザーコンテンツ");
+define("_CO_CMS_START_DESCRIPTION", "要約コンテンツ");
 define("_CO_CMS_START_DESCRIPTION_DSC", "A summary description of your content. This will be displayed on the index page only.");
 define("_CO_CMS_START_EXTENDED_TEXT", "拡張コンテンツ");
 define("_CO_CMS_START_EXTENDED_TEXT_DSC", "The full description of your content (optional). This will be displayed when the full details of the content are viewed. If you leave this blank, the summary description will be displayed instead.");
@@ -44,7 +44,7 @@ define("_CO_CMS_START_ONLINE_STATUS", "オンライン");
 define("_CO_CMS_START_ONLINE_STATUS_DSC", "Set this content online (yes) or offline (no). Offline contents are not accessible from the user side.");
 define("_CO_CMS_START_UPDATED", "更新");
 define("_CO_CMS_START_VIEWS", "views");
-define("_CO_CMS_START_TAGS", "Tags:");
+define("_CO_CMS_START_TAGS", "タグ:");
 define("_CO_CMS_ARCHIVED_NO", "Not archived right now");
 define("_CO_CMS_ARCHIVED_YES", "Content is archived");
 define("_CO_CMS_START_ONLINE", "Online, click to switch Offline");
@@ -63,7 +63,7 @@ define("_CO_CMS_OR", "or");
 define("_CO_CMS_GUEST_REGISTER", "register");
 define("_CO_CMS_TO_POST_COMMENTS", "to post comments");
 // Tag select box
-define("_CO_CMS_START_ALL_TAGS", "-- Tag filter --");
+define("_CO_CMS_START_ALL_TAGS", "-- タグフィルタ --");
 
 // Page titles
 define("_CO_CMS_BEENDET_CMS", "Archived contents");
