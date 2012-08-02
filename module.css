@@ -5,6 +5,7 @@ cached blocks (core bug?). So if you want to alter the block CSS, you'll find it
 }
 
 .itemCmsInfo a{
+	background: none repeat scroll 0 0 #E2E2E2;
 	border: 1px solid #999999;
     color: #FFFFFF;
     font-size: 13px;
@@ -12,6 +13,7 @@ cached blocks (core bug?). So if you want to alter the block CSS, you'll find it
     padding: 4px 6px 3px;
     text-decoration: none;
     line-height: 26px;
+    text-shadow: 1px 1px 1px #000000;
 }
 
 .itemCmsInfo a:hover{
