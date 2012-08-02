@@ -72,3 +72,7 @@ define("_CO_CMS_ACTIVE_CMS", "CMS");
 // Tag title
 define("_CO_CMS_TAGS_ALL_CONTENTS_ON", "Alle Inhalte in");
 define("_CO_CMS_TAGS_ALL_SHOW", "ansehen");
+
+// Category title
+define("_CO_CMS_START_CATEGORIES", "Kategorien");
+define("_CO_CMS_START_CATEGORIES_DSC", "Select the categories you wish to label this page with.");

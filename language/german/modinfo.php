@@ -81,3 +81,6 @@ define("_MI_CMS_ARCHIVIERT", "Archiviert");
 
 // Manual
 define("_MI_CMS_MANUAL", "Anleitung");
+
+// Categories
+define("_MI_CMS_CATEGORIES", "Kategorien");
