@@ -32,6 +32,7 @@ class mod_cms_Start extends icms_ipf_seo_Object
 		$this->quickInitVar("beendet", XOBJ_DTYPE_TXTBOX, TRUE, FALSE, FALSE, 0);
 		$this->hideFieldFromForm(array("beendet"));
 		$this->initNonPersistableVar('tag', XOBJ_DTYPE_INT, 'tag', FALSE, FALSE, FALSE, TRUE);
+		$this->initNonPersistableVar('category', XOBJ_DTYPE_INT, 'category', FALSE, FALSE, FALSE, TRUE);
 		$this->quickInitVar("description", XOBJ_DTYPE_TXTAREA, TRUE);
 		$this->quickInitVar("extended_text", XOBJ_DTYPE_TXTAREA, FALSE);
 		$this->quickInitVar("history", XOBJ_DTYPE_TXTAREA, FALSE);
@@ -76,11 +77,19 @@ class mod_cms_Start extends icms_ipf_seo_Object
 			'itemHandler' => 'tag',
 			'method' => 'getTags',
 			'module' => 'sprockets'));
+			
+			$this->setControl('category', array(
+			'name' => 'selectmulti',
+			'itemHandler' => 'tag',
+			'method' => 'getCategoryOptions',
+			'module' => 'sprockets'));
 		}
 		else 
 		{
 			$this->hideFieldFromForm('tag');
 			$this->hideFieldFromSingleView ('tag');
+			$this->hideFieldFromForm('category');
+			$this->hideFieldFromSingleView ('category');
 		}
 
 		// Intialise SEO functionality
@@ -176,8 +185,27 @@ class mod_cms_Start extends icms_ipf_seo_Object
 		if (icms_get_module_status("sprockets")) {
 			$sprockets_taglink_handler = icms_getModuleHandler('taglink',
 					$sprocketsModule->getVar('dirname'), 'sprockets');
-			$ret = $sprockets_taglink_handler->getTagsForObject($this->id(), $this->handler, 0);
+			$ret = $sprockets_taglink_handler->getTagsForObject($this->id(), $this->handler, 0); // label_type = 0 means only return tags
 			$this->setVar('tag', $ret);
+		}
+	}
+	
+	/**
+	 * Load categories linked to this publication
+	 *
+	 * @return void
+	 */
+	public function loadCategories() {
+		
+		$ret = array();
+		
+		// Retrieve the categories for this object
+		$sprocketsModule = icms_getModuleInfo('sprockets');
+		if (icms_get_module_status("sprockets")) {
+			$sprockets_taglink_handler = icms_getModuleHandler('taglink',
+					$sprocketsModule->getVar('dirname'), 'sprockets');
+			$ret = $sprockets_taglink_handler->getTagsForObject($this->id(), $this->handler, '1'); // label_type = 1 means only return categories
+			$this->setVar('category', $ret);
 		}
 	}
 	

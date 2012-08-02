@@ -41,3 +41,7 @@ define("_AM_CMS_START_YES", "Yes");
 define("_AM_CMS_START_NO", "No");
 define("_AM_CMS_START_ALL_CMS", "-- All Tags --");
 define("_AM_CMS_START_FILTER_BY_TAG", "Filter by tag");
+
+// Categories
+define("_AM_CMS_START_ALL_CATEGORIES", "-- All Categories --");
+define("_AM_CMS_START_FILTER_BY_CATEGORY", "Filter by category");

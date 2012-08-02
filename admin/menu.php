@@ -16,6 +16,13 @@ $adminmenu[] = array(
 	"title" => _MI_CMS_CMS,
 	"link" => "admin/start.php");
 
+// Check if Sprockets module is available, otherwise categories page is not available
+if (icms_get_module_status("sprockets")) {
+	$adminmenu[] = array(
+	"title" => _MI_CMS_CATEGORIES,
+	"link" => "admin/category.php");
+}
+
 $module = icms::handler("icms_module")->getByDirname(basename(dirname(dirname(__FILE__))));
 
 $headermenu[] = array(

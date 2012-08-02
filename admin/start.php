@@ -27,6 +27,7 @@ function editstart($start_id = 0)
 	if (!$startObj->isNew())
 	{
 		$startObj->loadTags();
+		$startObj->loadCategories();
 		$icmsModule->displayAdminMenu(0, _AM_CMS_CMS . " > " . _CO_ICMS_EDITING);
 		$sform = $startObj->getForm(_AM_CMS_START_EDIT, "addstart");
 		$sform->assign($icmsAdminTpl);
@@ -139,9 +140,12 @@ if (in_array($clean_op, $valid_op, TRUE))
 				$startObj->displaySingleObject();
 			}
 			
-			// Display a tag select filter (if the Sprockets module is installed)
+			// Display a tag + category select filter (if the Sprockets module is installed)
 			if (icms_get_module_status("sprockets")) {
 			
+				////////////////////////////////////
+				////////// TAG SELECT BOX //////////
+				////////////////////////////////////
 				$tag_select_box = '';
 				$taglink_array = $tagged_article_list = array();
 				$sprockets_tag_handler = icms_getModuleHandler('tag', 'sprockets', 'sprockets');
@@ -149,11 +153,6 @@ if (in_array($clean_op, $valid_op, TRUE))
 				
 				$tag_select_box = $sprockets_tag_handler->getTagSelectBox('start.php', $clean_tag_id,
 					_AM_CMS_START_ALL_CMS, FALSE, icms::$module->getVar('mid'));
-				
-				if (!empty($tag_select_box)) {
-					echo '<h3>' . _AM_CMS_START_FILTER_BY_TAG . '</h3>';
-					echo $tag_select_box;
-				}
 				
 				if ($clean_tag_id) {
 				
@@ -172,11 +171,59 @@ if (in_array($clean_op, $valid_op, TRUE))
 					$criteria = new icms_db_criteria_Compo();
 					$criteria->add(new icms_db_criteria_Item('start_id', $tagged_start_list, 'IN'));
 				}
+				
+				/////////////////////////////////////////
+				////////// CATEGORY SELECT BOX //////////
+				/////////////////////////////////////////
+				$category_select_box = '';
+				$taglink_array = $categorised_start_list = array();
+
+				$category_select_box = $sprockets_tag_handler->getCategorySelectBox('start.php', 
+							$clean_tag_id, _AM_CMS_START_ALL_CATEGORIES, icms::$module->getVar('mid'));
+
+				if ($clean_tag_id)
+				{
+					// Get a list of start IDs belonging to this tag
+					$criteria = new icms_db_criteria_Compo();
+					$criteria->add(new icms_db_criteria_Item('tid', $clean_tag_id));
+					$criteria->add(new icms_db_criteria_Item('mid', icms::$module->getVar('mid')));
+					$criteria->add(new icms_db_criteria_Item('item', 'start'));
+					$taglink_array = $sprockets_taglink_handler->getObjects($criteria);
+					foreach ($taglink_array as $taglink) {
+						$categorised_start_list[] = $taglink->getVar('iid');
+					}
+					$categorised_start_list = "('" . implode("','", $categorised_start_list) . "')";
+
+					// Use the list to filter the persistable table
+					$criteria = new icms_db_criteria_Compo();
+					$criteria->add(new icms_db_criteria_Item('start_id', $categorised_start_list, 'IN'));
+				}
 			}
 				
-				if (empty($criteria)) {
-					$criteria = null;
+			// Display the tag/category select boxes in a table, side by side to save space
+			if (!empty($tag_select_box) || !empty($category_select_box))
+			{
+				$select_box_code = '<table><tr>';
+				if (!empty($tag_select_box)) {
+					$select_box_code .= '<td><h3>' . _AM_CMS_START_FILTER_BY_TAG . '</h3></td>';
+				}
+				if (!empty($category_select_box)) {
+					$select_box_code .= '<td><h3>' . _AM_CMS_START_FILTER_BY_CATEGORY . '</h3></td>';
+				}
+				$select_box_code .= '</tr><tr>';
+				if (!empty($tag_select_box)) {
+					$select_box_code .= '<td>' . $tag_select_box . '</td>';
+				}
+				if (!empty($category_select_box)) {
+					$select_box_code .= '<td>' . $category_select_box . '</td>';
+				}
+				echo $select_box_code . '</tr></table>';
 			}
+
+			if (empty($criteria)) {
+				$criteria = null;
+			}
+		
 			$objectTable = new icms_ipf_view_Table($cms_start_handler, $criteria);
 			$objectTable->addQuickSearch(array('title','description','extended_text'));
 			
