@@ -175,7 +175,11 @@ function show_list_cms($options)
 		
 		// Get a reference array of tags
 		$sprockets_tag_handler = icms_getModuleHandler('tag', $sprocketsModule->getVar('dirname'), 'sprockets');
-		$sprockets_tag_buffer = $sprockets_tag_handler->getObjects(NULL, TRUE, FALSE);
+		$criteria = icms_buildCriteria(array('label_type' => '0'));
+		$sprockets_tag_buffer = $sprockets_tag_handler->getList($criteria, TRUE, TRUE);
+		if ($sprockets_tag_buffer) {
+			$sprockets_tag_ids = "(" . implode(',', array_keys($sprockets_tag_buffer)) . ")";
+		}
 
 		// Prepare multidimensional array of tag_ids with start_id (iid) as key
 		$taglink_buffer = $start_tag_id_buffer = array();
@@ -183,6 +187,7 @@ function show_list_cms($options)
 		$criteria->add(new icms_db_criteria_Item('mid', $cmsModule->getVar('mid')));
 		$criteria->add(new icms_db_criteria_Item('item', 'start'));
 		$criteria->add(new icms_db_criteria_Item('iid', $linked_start_ids, 'IN'));
+		$criteria->add(new icms_db_criteria_Item('tid', $sprockets_tag_ids, 'IN'));
 		$taglink_buffer = $sprockets_taglink_handler->getObjects($criteria, TRUE, TRUE);
 		unset($criteria);
 
@@ -196,7 +201,7 @@ function show_list_cms($options)
 			$start_tag_id_buffer[$taglink->getVar('iid')][] = '<a href="' . ICMS_URL . '/modules/' 
 					. $cmsModule->getVar('dirname') . '/start.php?tag_id=' 
 					. $taglink->getVar('tid') . '">' 
-					. $sprockets_tag_buffer[$taglink->getVar('tid')]['title']
+					. $sprockets_tag_buffer[$taglink->getVar('tid')]
 					. '</a>';
 		}
 

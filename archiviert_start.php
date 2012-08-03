@@ -39,7 +39,11 @@ if (icms_get_module_status("sprockets"))
 	icms_loadLanguageFile("sprockets", "common");
 	$sprockets_tag_handler = icms_getModuleHandler('tag', $sprocketsModule->getVar('dirname'), 'sprockets');
 	$sprockets_taglink_handler = icms_getModuleHandler('taglink', $sprocketsModule->getVar('dirname'), 'sprockets');
-	$sprockets_tag_buffer = $sprockets_tag_handler->getObjects(NULL, TRUE, FALSE);
+	$criteria = icms_buildCriteria(array('label_type' => '0'));
+	$sprockets_tag_buffer = $sprockets_tag_handler->getList($criteria, TRUE, TRUE);
+	if ($sprockets_tag_buffer) {
+		$sprockets_tag_ids = "(" . implode(',', array_keys($sprockets_tag_buffer)) . ")";
+	}
 }
 
 // Assign common logo preferences to template
@@ -103,8 +107,8 @@ if($startObj && !$startObj->isNew())
 		foreach ($start_tag_array as $key => $value)
 		{
 			$start['tags'][$value] = '<a href="' . CMS_URL . 'archiviert_start.php?tag_id=' . $value 
-					. '" title="' . _CO_CMS_TAGS_ALL_CONTENTS_ON . ' '. $sprockets_tag_buffer[$value]['title']
-						.' ' . _CO_CMS_TAGS_ALL_SHOW . '">' . $sprockets_tag_buffer[$value]['title'] . '</a>';
+					. '" title="' . _CO_CMS_TAGS_ALL_CONTENTS_ON . ' '. $sprockets_tag_buffer[$value]
+						.' ' . _CO_CMS_TAGS_ALL_SHOW . '">' . $sprockets_tag_buffer[$value] . '</a>';
 		}
 		$start['tags'] = implode(' ', $start['tags']);
 	}
@@ -142,8 +146,8 @@ else
 		// Append the tag to the breadcrumb title
 		if (array_key_exists($clean_tag_id, $sprockets_tag_buffer) && ($clean_tag_id !== 0))
 		{
-			$cms_tag_name = $sprockets_tag_buffer[$clean_tag_id]['title'];
-			$icmsTpl->assign('cms_category_path', $sprockets_tag_buffer[$clean_tag_id]['title']);
+			$cms_tag_name = $sprockets_tag_buffer[$clean_tag_id];
+			$icmsTpl->assign('cms_category_path', $sprockets_tag_buffer[$clean_tag_id]);
 		}
 		
 		// Load the tag navigation select box
@@ -166,7 +170,7 @@ else
 		{
 			if (array_key_exists($clean_tag_id, $sprockets_tag_buffer) && ($clean_tag_id !== 0))
 			{
-				$cms_tag_name = $sprockets_tag_buffer[$clean_tag_id]['title'];
+				$cms_tag_name = $sprockets_tag_buffer[$clean_tag_id];
 				$icmsTpl->assign('cms_tag_name', $cms_tag_name);
 			}
 		}
@@ -278,6 +282,7 @@ else
 			$criteria->add(new icms_db_criteria_Item('mid', icms::$module->getVar('mid')));
 			$criteria->add(new icms_db_criteria_Item('item', 'start'));
 			$criteria->add(new icms_db_criteria_Item('iid', $linked_start_ids, 'IN'));
+			$criteria->add(new icms_db_criteria_Item('tid', $sprockets_tag_ids, 'IN'));
 			$taglink_buffer = $sprockets_taglink_handler->getObjects($criteria, TRUE, TRUE);
 			unset($criteria);
 
@@ -288,9 +293,11 @@ else
 					$start_tag_id_buffer[$taglink->getVar('iid')] = array();
 				}
 				$start_tag_id_buffer[$taglink->getVar('iid')][] = '<a href="' . CMS_URL . 
-						'archiviert_start.php?tag_id=' . $taglink->getVar('tid') . '" title="' . _CO_CMS_TAGS_ALL_CONTENTS_ON . ' '. $sprockets_tag_buffer[$taglink->getVar('tid')]['title']
+						'archiviert_start.php?tag_id=' . $taglink->getVar('tid') . '" title="' 
+						. _CO_CMS_TAGS_ALL_CONTENTS_ON . ' '
+						. $sprockets_tag_buffer[$taglink->getVar('tid')]
 						.' ' . _CO_CMS_TAGS_ALL_SHOW . '">' 
-						. $sprockets_tag_buffer[$taglink->getVar('tid')]['title']
+						. $sprockets_tag_buffer[$taglink->getVar('tid')]
 						. '</a>';
 			}
 
