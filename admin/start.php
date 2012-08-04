@@ -162,14 +162,16 @@ if (in_array($clean_op, $valid_op, TRUE))
 					$criteria->add(new icms_db_criteria_Item('mid', icms::$module->getVar('mid')));
 					$criteria->add(new icms_db_criteria_Item('item', 'start'));
 					$taglink_array = $sprockets_taglink_handler->getObjects($criteria);
+
+					$criteria = new icms_db_criteria_Compo();
 					foreach ($taglink_array as $taglink) {
 					$tagged_start_list[] = $taglink->getVar('iid');
 					}
-					$tagged_start_list = "('" . implode("','", $tagged_start_list) . "')";
-					
-					// use the list to filter the persistable table
-					$criteria = new icms_db_criteria_Compo();
-					$criteria->add(new icms_db_criteria_Item('start_id', $tagged_start_list, 'IN'));
+					if ($tagged_start_list) {
+						$tagged_start_list = "('" . implode("','", $tagged_start_list) . "')";
+						// use the list to filter the persistable table
+						$criteria->add(new icms_db_criteria_Item('start_id', $tagged_start_list, 'IN'));
+					}
 				}
 				
 				/////////////////////////////////////////
