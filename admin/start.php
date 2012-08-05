@@ -147,7 +147,7 @@ if (in_array($clean_op, $valid_op, TRUE))
 				////////// TAG SELECT BOX //////////
 				////////////////////////////////////
 				$tag_select_box = '';
-				$taglink_array = $tagged_article_list = array();
+				$taglink_array = $tagged_start_list = $tagged_article_list = array();
 				$sprockets_tag_handler = icms_getModuleHandler('tag', 'sprockets', 'sprockets');
 				$sprockets_taglink_handler = icms_getModuleHandler('taglink', 'sprockets', 'sprockets');
 				
