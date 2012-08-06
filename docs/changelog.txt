@@ -11,6 +11,7 @@ ADDED:
 FIXED:
 - Fix slow page loading index page problem in file "cms/admin/index.php"
 (http://community.impresscms.org/modules/newbb/viewtopic.php?viewmode=flat&type=&topic_id=5218&forum=9)
+- Bugfix in breadcrumb
 
 DELETE:
 - Links from the Frontend to the Modul Administration
