@@ -76,3 +76,5 @@ define("_CO_CMS_TAGS_ALL_SHOW", "see");
 // Category title
 define("_CO_CMS_START_CATEGORY", "Categories");
 define("_CO_CMS_START_CATEGORY_DSC", "Select the categories you wish to label this page with.");
+
+define("_CO_CMS_START_RELATED_ITEMS", "関連商品");

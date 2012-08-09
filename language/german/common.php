@@ -76,3 +76,5 @@ define("_CO_CMS_TAGS_ALL_SHOW", "ansehen");
 // Category title
 define("_CO_CMS_START_CATEGORY", "Kategorien");
 define("_CO_CMS_START_CATEGORY_DSC", "Wählen Sie eine oder mehrere Kategorien aus, mit der dieser Inhalt verknüpft werden soll.");
+
+define("_CO_CMS_START_RELATED_ITEMS", "Weitere Inhalte");

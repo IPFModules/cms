@@ -1,17 +1,18 @@
-2.2 Final from 13th July. 2012
+2.2 Final from 9th August. 2012
 
 Changelog:
 
 ADDED:
 - Frontend: Actionicons within the detailpage to edit and delete a content
 - Minor adjustments to ensure compatibility with Sprockets 2.0 for the future
-- Japanese language files (not finished)
+- Japanese language files (unfinished)
 - Added the categories into the form from sprockets (thank you to @Madfish)
 
 FIXED:
 - Fix slow page loading index page problem in file "cms/admin/index.php"
 (http://community.impresscms.org/modules/newbb/viewtopic.php?viewmode=flat&type=&topic_id=5218&forum=9)
 - Bugfix in breadcrumb
+- Tag design for the front end page improved
 
 DELETE:
 - Links from the Frontend to the Modul Administration
