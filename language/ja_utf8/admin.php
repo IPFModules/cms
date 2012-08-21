@@ -43,5 +43,5 @@ define("_AM_CMS_START_ALL_CMS", "-- すべてのタグ --");
 define("_AM_CMS_START_FILTER_BY_TAG", "タグによるフィルタリング");
 
 // Categories
-define("_AM_CMS_START_ALL_CATEGORIES", "-- All Categories --");
-define("_AM_CMS_START_FILTER_BY_CATEGORY", "Filter by category");
+define("_AM_CMS_START_ALL_CATEGORIES", "-- すべてのカテゴリ --");
+define("_AM_CMS_START_FILTER_BY_CATEGORY", "カテゴリーによるフィルタリング");

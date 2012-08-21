@@ -54,14 +54,14 @@ define("_CO_CMS_START_VIEW", "Preview within the module administration");
 define("_CO_CMS_PREVIEW", "Show the content in the front end");
 
 define("_CO_CMS_COMMENTS_INFO", "%d");
-define("_CO_CMS_COMMENTS_TITLE", "Comment on");
+define("_CO_CMS_COMMENTS_TITLE", "へのコメント");
 define("_CO_CMS_NO_COMMENT", "0");
 
 
-define("_CO_CMS_GUEST_LOGIN", "Login");
-define("_CO_CMS_OR", "or");
-define("_CO_CMS_GUEST_REGISTER", "register");
-define("_CO_CMS_TO_POST_COMMENTS", "to post comments");
+define("_CO_CMS_GUEST_LOGIN", "ログイン");
+define("_CO_CMS_OR", "や");
+define("_CO_CMS_GUEST_REGISTER", "登録");
+define("_CO_CMS_TO_POST_COMMENTS", "コメントを投稿");
 // Tag select box
 define("_CO_CMS_START_ALL_TAGS", "-- タグフィルタ --");
 
@@ -70,11 +70,11 @@ define("_CO_CMS_BEENDET_CMS", "Archived contents");
 define("_CO_CMS_ACTIVE_CMS", "CMS");
 
 // Tag title
-define("_CO_CMS_TAGS_ALL_CONTENTS_ON", "All contents in");
-define("_CO_CMS_TAGS_ALL_SHOW", "see");
+define("_CO_CMS_TAGS_ALL_CONTENTS_ON", "すべての内容に");
+define("_CO_CMS_TAGS_ALL_SHOW", "見る");
 
 // Category title
-define("_CO_CMS_START_CATEGORY", "Categories");
+define("_CO_CMS_START_CATEGORY", "カテゴリー");
 define("_CO_CMS_START_CATEGORY_DSC", "Select the categories you wish to label this page with.");
 
 define("_CO_CMS_START_RELATED_ITEMS", "関連商品");
