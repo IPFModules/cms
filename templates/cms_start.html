@@ -1,0 +1,146 @@
+<{includeq file='db:cms_header.html'}>
+
+<!-- View single start -->
+<{if $cms_start}>
+	<div>
+		<div class="itemCmsInfo_title">
+			<h2><{$cms_start.title}> <{if $cms_is_admin}><{$cms_start.editItemLink}> <{$cms_start.deleteItemLink}><{/if}></h2>
+			<{if $cms_post_comment}><div class="itemCmsInfoComment"><{$cms_start.start_comment_info}></div><{/if}>
+			<{if $cms_start.subtitle}><h3><{$cms_start.subtitle}></h3><{/if}>
+		</div>
+		<{if $cms_start.counter || $cms_start.updated}>
+			<div class="itemCmsInfo">
+				<{if $cms_start.counter}>
+					<{$cms_start.counter}> <{$smarty.const._CO_CMS_START_VIEWS}>
+				<{/if}>
+				<{if $cms_start.counter && $cms_start.updated}> | <{/if}>
+				<{if $cms_start.updated}>
+					<span class="cms_updated"><{$smarty.const._CO_CMS_START_UPDATED}>: <{$cms_start.last_update}></span>
+				<{/if}>
+			</div>
+		<{/if}>
+		<{if $cms_start.logo && $display_start_logos}>
+			<{if $freestyle_logo_dimensions}>
+				<div class="<{$start_logo_position}>">
+					<{if $cms_start.website}>
+						<a rel="lightbox" title="<{$cms_start.title}> | <{$cms_start.website}>" href="<{$cms_start.website}>"><img src="<{$cms_start.logo}>" alt="<{$cms_start.title}> | <{$cms_start.website}>" /></a>
+					<{else}>
+						<a rel="lightbox" title="<{$cms_start.title}>" href="<{$cms_start.logo}>" ><img src="<{$cms_start.logo}>" alt="<{$cms_start.title}>" /></a>
+					<{/if}>
+				</div>
+			<{else}>
+				<div class="<{$start_logo_position}>">
+					<{if $cms_start.website}>
+						<a rel="lightbox" title="<{$cms_start.title}> | <{$cms_start.website}>" href="<{$cms_start.logo}>"><{resized_image file=$cms_start.logo width=$logo_display_width height="999" fit="inside"}></a>
+					<{else}>
+						<a rel="lightbox" title="<{$cms_start.title}>" href="<{$cms_start.logo}>" ><{resized_image file=$cms_start.logo width=$logo_display_width height="999" fit="inside"}></a>
+					<{/if}>
+				</div>
+			<{/if}>
+		<{/if}>
+		<{if $cms_start.extended_text}>
+			<div class="cms_separator"><{$cms_start.extended_text}></div>
+		<{else}>
+			<div class="cms_separator"><{$cms_start.description}></div>
+		<{/if}>
+		<div class="cms_table">
+			<{if $cms_start.website}>
+				<div class="cms_row">
+					<div class="cms_left_cell"><strong><{$smarty.const._CO_CMS_START_WEBSITE}>: </strong></div>
+					<div class="cms_right_cell"><a href="<{$cms_start.website}>"><{$cms_start.website}></a></div>
+				</div>
+			<{/if}>
+		</div>
+		<{if $cms_start.tags}>
+			<div class="cms_clear">
+				<div class="itemCmsInfo">
+						<span><{$smarty.const._CO_CMS_START_RELATED_ITEMS}></span> <{$cms_start.tags}>
+				</div>
+			</div>
+		<{/if}>
+	</div>
+<{/if}>
+
+<!-- View start index in summary mode -->
+<{if $start_summaries}>
+	<div>
+		
+		<!-- Tag select box -->
+		<{if $cms_tag_select_box}>
+			<div>
+				<{$cms_tag_select_box}>
+			</div>
+		<{/if}>
+		
+		<!-- Pagination control -->
+		<{if $cms_navbar }>
+			<div>
+				<{$cms_navbar}>
+			</div>
+		<{/if}>
+		
+		<{foreach item = start from = $start_summaries}>
+			<div class="itemCmsInfo_title">
+			<h2 class="cms_separator cms_clear">
+				<a href="<{$start.itemUrl}>"><{$start.title}></a> <{if $cms_is_admin}><{$cms_start.editItemLink}> <{$cms_start.deleteItemLink}><{/if}>
+			</h2>
+			<{if $start.subtitle}><h3><{$start.subtitle}></h3><{/if}>
+			<{if $cms_post_comment}><div class="itemCmsInfoComment"><{$start.start_comment_info}></div><{/if}>
+			</div>
+			<div class="itemCmsInfo">
+				<{if $start.updated}>
+					<span class="cms_updated"><{$smarty.const._CO_CMS_START_UPDATED}>: <{$start.last_update}></span>
+				<{/if}>
+			</div>
+			<div>
+				<{if $start.logo && $display_start_logos}>
+					<{if $freestyle_logo_dimensions}>
+					
+						<div class="<{$start_logo_position}>">
+							<a href="<{$start.itemUrl}>"><img src="<{$start.logo}>" alt="<{$start.title}>" /></a>
+						</div>
+					
+					<{else}>
+					
+						<div class="<{$start_logo_position}>">
+							<a title="<{$start.title}>" href="<{$start.itemUrl}>"><{resized_image file=$start.logo width=$logo_display_width height="999" fit="inside"}></a>
+						</div>
+					
+					<{/if}>
+				<{/if}>
+				<div>
+					<p class="cms_description"><a href="<{$start.itemUrl}>" title="<{$start.title}>"></a><{$start.description}><{if $start.extended_text}> <span><a href="<{$start.itemUrl}>">(<{$smarty.const._CO_CMS_READ_MORE}>)</a></span><{/if}></p>
+				</div>
+				<{if $start.tags}>
+					<div class="cms_clear">
+						<div class="itemCmsInfo">
+								<span><{$smarty.const._CO_CMS_START_RELATED_ITEMS}></span> <{$start.tags}>
+						</div>
+					</div>
+				<{/if}>
+				<div class="cms_space"></div>
+			</div>
+		
+		<{/foreach}>
+
+		<!-- Pagination control -->
+		<{if $cms_navbar }>
+			<div class="cms_clear">
+				<{$cms_navbar}>
+			</div>
+		<{/if}>
+		
+	</div>
+<{/if}>
+
+<!-- View start index as compact table -->
+<{if $cms_start_table}>
+	<div>
+		<{if $cms_tag_select_box}>
+			<{$cms_tag_select_box}>
+		<{/if}>
+	</div>
+	<{$cms_start_table}>
+<{/if}>
+
+<{includeq file='db:cms_footer.html'}>
