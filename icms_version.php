@@ -132,6 +132,16 @@ $modversion['blocks'][4] = array(
 	'template' => 'cms_block_ticker.html'
 );
 
+$modversion['blocks'][5] = array(
+	'file' => 'select_content_cms.php',
+	'name' => _MI_CMS_SELECT_CONTENT,
+	'description' => _MI_CMS_SELECT_CONTENTDSC,
+	'show_func' => 'show_select_content_cms',
+	'edit_func' => 'edit_select_content_cms',
+	'options' => '5|0|0|0',
+	'template' => 'cms_block_select_content.html'
+);
+
 /** Preferences */
 $modversion['config'][1] = array(
   'name' => 'index_display_mode',

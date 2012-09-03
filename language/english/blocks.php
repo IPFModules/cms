@@ -48,3 +48,11 @@ define("_MB_CMS_TICKER_YES", "Yes");
 define("_MB_CMS_TICKER_NO", "No");
 define("_MB_CMS_TICKER_WARNING1", "WARNING:");
 define("_MB_CMS_TICKER_WARNING2", "Don't change the values. -- This block needs 570px for the width. -- Please be carefull with this block. You can get a JavaScript Crash.");
+
+define("_MB_CMS_SELECT_ALL", "All tags");
+define("_MB_CMS_SELECT_TAG", "Sort contents by tag");
+define("_MB_CMS_SELECT_LIMIT", "Number of contents to show in block");
+define("_MB_CMS_SELECT_OR_FIXED", "Randomise? (Do not cache the block!)");
+define("_MB_CMS_SELECT_LOGOS_OR_LIST", "Show a summaries? (default: No)");
+define("_MB_CMS_SELECT_YES", "Yes");
+define("_MB_CMS_SELECT_NO", "No");
