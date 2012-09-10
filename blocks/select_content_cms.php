@@ -249,6 +249,8 @@ function edit_select_content_cms($options)
 	$cmsModule = icms::handler("icms_module")->getByDirname('cms');
 	include_once(ICMS_ROOT_PATH . '/modules/' . $cmsModule->getVar('dirname') . '/include/common.php');
 	$cms_start_handler = icms_getModuleHandler('start', $cmsModule->getVar('dirname'), 'cms');
+	$selcontent = new icms_form_elements_Select('', 'options[4]', $options[4]);
+	$selcontent->addOptionArray($cms_start_handler->getContentList(FALSE));
 	
 	// Select number of list cms to display in the block
 	$form = '<table>';
@@ -317,6 +319,9 @@ function edit_select_content_cms($options)
 		$form_select->addOptionArray($tagList);
 		$form .= '<td>' . $form_select->render() . '</td></tr>';
 	}
+	
+	$form .= '<tr><td>' . _MB_CMS_LIST_CONTENT . '</td>';
+	$form .= '<td>' . $selcontent->render() '</td></tr>';
 	
 	$form .= '</table>';
 	

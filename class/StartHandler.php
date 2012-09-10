@@ -14,6 +14,7 @@ defined("ICMS_ROOT_PATH") or die("ICMS root path not defined");
 
 class mod_cms_StartHandler extends icms_ipf_Handler
 {
+	private $_contentArray;
 	/**
 	 * Constructor
 	 *
@@ -23,6 +24,19 @@ class mod_cms_StartHandler extends icms_ipf_Handler
 	{
 		parent::__construct($db, "start", "start_id", "title", "description", "cms");
 		$this->enableUpload(array("image/gif", "image/jpeg", "image/pjpeg", "image/png"), 2512000, 3800, 2600);
+	}
+	
+	public function getContentList($showNull = FALSE) {
+		if(!count($this->_contentArray)) {
+			$contents = $this->getObjects(new icms_db_criteria_Item("online_status", 1), TRUE, FALSE);
+			if($showNull) {
+				$this->_contentArray[0] = '--------------';
+			}
+			foreach $contents as $key => $value {
+				$this->_contentArray[$key] = $value['title'];
+			}
+		}
+		return $this->_contentArray;
 	}
 
 	/**
