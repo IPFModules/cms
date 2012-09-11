@@ -321,7 +321,7 @@ function edit_select_content_cms($options)
 	}
 	
 	$form .= '<tr><td>' . _MB_CMS_LIST_CONTENT . '</td>';
-	$form .= '<td>' . $selcontent->render() '</td></tr>';
+	$form .= '<td>' . $selcontent->render() . '</td></tr>';
 	
 	$form .= '</table>';
 	

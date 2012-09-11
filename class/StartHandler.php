@@ -32,7 +32,7 @@ class mod_cms_StartHandler extends icms_ipf_Handler
 			if($showNull) {
 				$this->_contentArray[0] = '--------------';
 			}
-			foreach $contents as $key => $value {
+			foreach ($contents as $key => $value) {
 				$this->_contentArray[$key] = $value['title'];
 			}
 		}
