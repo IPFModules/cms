@@ -1,18 +1,13 @@
 <!-- If you want to know why some style information is hard coded, the answer is that module
 style sheets do not work on cached blocks. I think this is a long-standing core bug -->
 
-<!-- Summary mode -->
+<!-- Full mode -->
 <{if $block.show_logos == TRUE}>
-	<{foreach item = start from = $block.select_content_cms}>
-		<h2 style="clear:both; margin-bottom:1em;"><{$start.title}></h2>
-		<p class="cms_description"><a href="<{$start.itemUrl}>" title="<{$start.title}>"></a><{$start.extended_text}></p>
-	<{/foreach}>
+	<h2 style="clear:both; margin-bottom:1em;"><{$block.select_content_cms.title}></h2>
+	<p class="cms_description"><a href="<{$start.itemUrl}>" title="<{$start.title}>"></a><{$block.select_content_cms.extended_text}></p>
 	
 <!-- Compact list mode -->
 <{else}>
-	<ul>
-		<{foreach item = start from = $block.select_content_cms}>
-			<li><a href="<{$start.itemUrl}>" title="<{$start.title}>"><{$start.title}></a></li>
-		<{/foreach}>
-	</ul>
+	<a href="<{$start.itemUrl}>"><h2 style="clear:both; margin-bottom:1em;"><{$block.select_content_cms.title}></h2></a>
+	<p class="cms_description"><a href="<{$start.itemUrl}>" title="<{$start.title}>"></a><{$block.select_content_cms.description}>  <span><a href="<{$start.itemUrl}>">(<{$smarty.const._CO_CMS_READ_MORE}>)</a></span></p>
 <{/if}>

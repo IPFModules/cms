@@ -50,3 +50,6 @@ define("_MB_CMS_TICKER_WARNING1", "WARNUNG:");
 define("_MB_CMS_TICKER_WARNING2", "Block Einstellungen nicht Ändern. -- Dieser Block benötigt in der Breite 570px. -- Dieser Block kann JavaScript Fehler in der Darstellung verursachen, bitte vorsichtig sein.");
 
 define("_MB_CMS_LIST_CONTENT", "Ein Inhalt auswählen");
+define("_MB_CMS_LIST_CONTENT_LOGOS_OR_LIST", "Den ganzen Inhalt zeigen?");
+define("_MB_CMS_LIST_CONTENT_YES", "Ja, den erweiterten Inhalt");
+define("_MB_CMS_LIST_CONTENT_NO", "Nein, nur den Anreißer");

@@ -50,3 +50,6 @@ define("_MB_CMS_TICKER_WARNING1", "WARNING:");
 define("_MB_CMS_TICKER_WARNING2", "Don't change the values. -- This block needs 570px for the width. -- Please be carefull with this block. You can get a JavaScript Crash.");
 
 define("_MB_CMS_LIST_CONTENT", "Select a content");
+define("_MB_CMS_LIST_CONTENT_LOGOS_OR_LIST", "Show the full content");
+define("_MB_CMS_LIST_CONTENT_YES", "Yes, show the extended content");
+define("_MB_CMS_LIST_CONTENT_NO", "No, only the teaser content");

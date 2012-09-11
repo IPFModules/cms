@@ -43,7 +43,7 @@ function show_select_content_cms($options)
 		$block['start_logo_position'] = 'float:left; margin: 0em 1em 1em 0em;';
 	}
 	$block['freestyle_logo_dimensions'] = icms_getConfig('freestyle_logo_dimensions', $cmsModule->getVar('dirname'));
-
+	
 	return $block;
 }
 
@@ -64,22 +64,22 @@ function edit_select_content_cms($options)
 	// Select number of list cms to display in the block
 	$form = '<table>';
 	$form .= '<tr><td>' . _MB_CMS_LIST_CONTENT . '</td>';
-	$form .= '<td>' . $selcontent->render() . '"/></td></tr>';
+	$form .= '<td>' . $selcontent->render() . '</td></tr>';
 	
 	
-	$form .= '<tr><td>' . _MB_CMS_LIST_LOGOS_OR_LIST . '</td>';
+	$form .= '<tr><td>' . _MB_CMS_LIST_CONTENT_LOGOS_OR_LIST . '</td>';
 	$form .= '<td><input type="radio" name="options[1]" value="1"';
 	if ($options[1] == 1) 
 	{
 		$form .= ' checked="checked"';
 	}
-	$form .= '/>' . _MB_CMS_LIST_YES;
+	$form .= '/>' . _MB_CMS_LIST_CONTENT_YES;
 	$form .= '<input type="radio" name="options[1]" value="0"';
 	if ($options[1] == 0) 
 	{
 		$form .= 'checked="checked"';
 	}
-	$form .= '/>' . _MB_CMS_LIST_NO . '</td></tr>';		
+	$form .= '/>' . _MB_CMS_LIST_CONTENT_NO . '</td></tr>';		
 	
 	$form .= '</table>';
 	

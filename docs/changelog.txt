@@ -1,3 +1,13 @@
+3.0 Final from 11th September. 2012
+
+Changelog:
+
+ADDED:
+- A new block to select one content (many thanks to @QM-B)
+
+
+
+
 2.2 Final from 9th August. 2012
 
 Changelog:
