@@ -138,7 +138,7 @@ $modversion['blocks'][5] = array(
 	'description' => _MI_CMS_SELECT_CONTENTDSC,
 	'show_func' => 'show_select_content_cms',
 	'edit_func' => 'edit_select_content_cms',
-	'options' => '1|0|1|0|0',
+	'options' => '1|1|0',
 	'template' => 'cms_block_select_content.html'
 );
 
