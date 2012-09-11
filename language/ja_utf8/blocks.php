@@ -48,3 +48,5 @@ define("_MB_CMS_TICKER_YES", "Yes");
 define("_MB_CMS_TICKER_NO", "No");
 define("_MB_CMS_TICKER_WARNING1", "WARNING:");
 define("_MB_CMS_TICKER_WARNING2", "Don't change the values. -- This block needs 570px for the width. -- Please be carefull with this block. You can get a JavaScript Crash.");
+
+define("_MB_CMS_LIST_CONTENT", "Select a content");
