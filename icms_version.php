@@ -262,7 +262,7 @@ $modversion['config'][] = array(
 	'description' => '_MI_CMS_SHOW_LAST_UPDATED_DSC',
 	'formtype' => 'yesno',
 	'valuetype' => 'int',
-	'default' => '1');
+	'default' => '0');
 
 $modversion['config'][] = array(
   'name' => 'updated_notice_period',
