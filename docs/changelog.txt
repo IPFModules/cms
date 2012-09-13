@@ -1,10 +1,12 @@
-3.0 Final from 11th September. 2012
+3.0 Final from 13th September. 2012
 
 Changelog:
 
 ADDED:
 - A new block to select one content (many thanks to @QM-B)
 
+FIXED:
+- Set the logged in User as default within the form
 
 
 

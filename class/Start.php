@@ -36,10 +36,12 @@ class mod_cms_Start extends icms_ipf_seo_Object
 		$this->quickInitVar("description", XOBJ_DTYPE_TXTAREA, TRUE);
 		$this->quickInitVar("extended_text", XOBJ_DTYPE_TXTAREA, FALSE);
 		$this->quickInitVar("history", XOBJ_DTYPE_TXTAREA, FALSE);
-		$this->quickInitVar("creator", XOBJ_DTYPE_INT, TRUE, FALSE, FALSE, 1); //make Admin as default
+		//make Admin (1) as default, but the "creator" will be overwriten by /admin/start.php 
+		$this->quickInitVar("creator", XOBJ_DTYPE_INT, TRUE, FALSE, FALSE, 1);
 		$this->quickInitVar("date", XOBJ_DTYPE_LTIME, TRUE);
 		$this->quickInitVar("last_update", XOBJ_DTYPE_LTIME, TRUE);
-		$this->quickInitVar('start_comments', XOBJ_DTYPE_INT); //commets
+		//commets
+		$this->quickInitVar('start_comments', XOBJ_DTYPE_INT);
 		$this->hideFieldFromForm('start_comments');
 		$this->hideFieldFromSingleView('start_comments');
 		//$this->quickInitVar("weight", XOBJ_DTYPE_INT, TRUE, FALSE, FALSE, 0); // ausgeschaltet, da Sortierung nach Datum
