@@ -34,7 +34,10 @@ function editstart($start_id = 0)
 	}
 	else
 	{
-		$startObj->setVar("creator", icms::$user->getVar("uid")); //set the username as default within the form
+		//set the username as default within the form
+		$uid = (is_object(icms::$user)) ? icms::$user->getVar("uid") : 0;
+		$startObj->setVar("creator", $uid);
+		
 		$icmsModule->displayAdminMenu(0, _AM_CMS_CMS . " > " . _CO_ICMS_CREATINGNEW);
 		$sform = $startObj->getForm(_AM_CMS_START_CREATE, "addstart");
 		$sform->assign($icmsAdminTpl);
