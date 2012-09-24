@@ -85,4 +85,4 @@ define("_MI_CMS_ARCHIVIERT", "アーカイブ");
 define("_MI_CMS_MANUAL", "マニュアル");
 
 // Categories
-define("_MI_CMS_CATEGORIES", "範疇");
+define("_MI_CMS_CATEGORIES", "カテゴリ");
