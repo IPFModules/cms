@@ -5,8 +5,12 @@ Changelog:
 ADDED:
 - A new block to select one content (many thanks to @QM-B)
 
+UPDATED:
+- jquery sliderkit updated to version 1.9.2
+
 FIXED:
 - Set the logged in User as default within the form
+- slider-demos.css is much more smaller now
 
 
 
