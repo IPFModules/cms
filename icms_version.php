@@ -17,7 +17,7 @@ defined("ICMS_ROOT_PATH") or die("ICMS root path not defined");
 /**  General Information  */
 $modversion = array(
 	"name"						=> _MI_CMS_MD_NAME,
-	"version"					=> 2.2,
+	"version"					=> 3.0,
 	"description"				=> _MI_CMS_MD_DESC,
 	"author"					=> "@Madfish (Simon Wilkinson) and @sato-san (Rene Sato)",
 	"credits"					=> "Thanks to QM-B and Lotus for your help.",
@@ -33,9 +33,9 @@ $modversion = array(
 	"image"						=> "images/icon_big.png", /* for backward compatibility */
 
 /**  Development information */
-	"status_version"			=> "2.2",
+	"status_version"			=> "3.0",
 	"status"					=> "Final",
-	"date"						=> "09.08.2012",
+	"date"						=> "13.09.2012",
 	"author_word"				=> "For ICMS 1.3+ only.",
 	"warning"					=> "trunk",
 
@@ -89,6 +89,7 @@ $modversion['templates'] = array(
 	array("file" => "cms_start.html", "description" => "Start index."),
 	array("file" => "cms_header.html", "description" => "Module header."),
 	array("file" => "cms_footer.html", "description" => "Module footer."),
+	array("file" => "cms_print.html", "description" => "Module print template."),
 	array("file" => "cms_requirements.html", "description" => "Alert if module requirements not met."));
 
 /** Blocks */
@@ -130,6 +131,16 @@ $modversion['blocks'][4] = array(
 	'edit_func' => 'edit_ticker_cms',
 	'options' => '5|0|0|0',
 	'template' => 'cms_block_ticker.html'
+);
+
+$modversion['blocks'][5] = array(
+	'file' => 'select_content_cms.php',
+	'name' => _MI_CMS_SELECT_CONTENT,
+	'description' => _MI_CMS_SELECT_CONTENTDSC,
+	'show_func' => 'show_select_content_cms',
+	'edit_func' => 'edit_select_content_cms',
+	'options' => '1|1|0',
+	'template' => 'cms_block_select_content.html'
 );
 
 /** Preferences */
