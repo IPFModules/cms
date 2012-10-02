@@ -13,3 +13,4 @@
 defined("ICMS_ROOT_PATH") or die("ICMS root path not defined");
 define("_MD_CMS_ADMIN_PAGE", ". : : Module admin page : : .");
 define("_MD_CMS_ALL_CMS", "すべてのコンテンツ");
+define("_MD_CMS_PRINT", "印刷");

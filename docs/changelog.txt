@@ -1,4 +1,4 @@
-3.0 Final from 02th October. 2012
+3.0 Final from 13th September. 2012
 
 Changelog:
 
@@ -11,7 +11,6 @@ UPDATED:
 FIXED:
 - Set the logged in User as default within the form
 - slider-demos.css is much more smaller now
-- Error for input and output fixed, the comment is not any longer available (many thanks to @QM-B)
 
 
 

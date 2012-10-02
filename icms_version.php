@@ -35,7 +35,7 @@ $modversion = array(
 /**  Development information */
 	"status_version"			=> "3.0",
 	"status"					=> "Final",
-	"date"						=> "02.10.2012",
+	"date"						=> "13.09.2012",
 	"author_word"				=> "For ICMS 1.3+ only.",
 	"warning"					=> "trunk",
 
@@ -89,6 +89,7 @@ $modversion['templates'] = array(
 	array("file" => "cms_start.html", "description" => "Start index."),
 	array("file" => "cms_header.html", "description" => "Module header."),
 	array("file" => "cms_footer.html", "description" => "Module footer."),
+	array("file" => "cms_print.html", "description" => "Module print template."),
 	array("file" => "cms_requirements.html", "description" => "Alert if module requirements not met."));
 
 /** Blocks */
