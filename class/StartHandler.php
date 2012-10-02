@@ -151,16 +151,16 @@ class mod_cms_StartHandler extends icms_ipf_Handler
 		return $this->getObjects($criteria, TRUE, TRUE);
 	}
 	
-	protected function beforeInsert(& $obj) { 
-		$dsc = $obj->getVar("description", "s"); 
-		$dsc = icms_core_DataFilter::checkVar($dsc, "html", "input"); 
-		$obj->setVar("description", $dsc); 
+	//protected function beforeInsert(& $obj) { 
+	//	$dsc = $obj->getVar("description", "s"); 
+	//	$dsc = icms_core_DataFilter::checkVar($dsc, "html", "input"); 
+	//	$obj->setVar("description", $dsc);
 
-		$body = $obj->getVar("extended_text", "s"); 
-		$body = icms_core_DataFilter::checkVar($body , "html", "input");
-		$obj->setVar("extended_text", $body); 
-		return TRUE; 
-	}
+	//	$body = $obj->getVar("extended_text", "s"); 
+	//	$body = icms_core_DataFilter::checkVar($body , "html", "input");
+	//	$obj->setVar("extended_text", $body); 
+	//	return TRUE; 
+	//}
 	
 	/**
 	 * Stores tags when a start is inserted or updated

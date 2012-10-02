@@ -225,17 +225,17 @@ class mod_cms_Start extends icms_ipf_seo_Object
 		}
 	}
 	
-	public function getDescription(){ 
-		$dsc = $this->getVar("description", "s"); 
-		$dsc = icms_core_DataFilter::checkVar($dsc, "html", "output"); 
-		return $dsc; 
-	} 
+	//public function getDescription(){ 
+	//	$dsc = $this->getVar("description", "s"); 
+	//	$dsc = icms_core_DataFilter::checkVar($dsc, "html", "output"); 
+	//	return $dsc; 
+	//} 
 
-	public function getExtendedText(){ 
-		$body = $this->getVar("extended_text", "s"); 
-		$body = icms_core_DataFilter::checkVar($body, "html", "output");
-		return $body;
-	} 
+	//public function getExtendedText(){ 
+	//	$body = $this->getVar("extended_text", "s"); 
+	//	$body = icms_core_DataFilter::checkVar($body, "html", "output");
+	//	return $body;
+	//} 
 
 	//detailpage content preview within the ACP (Aktions)
 	public function getViewItemLink() {
@@ -274,8 +274,8 @@ class mod_cms_Start extends icms_ipf_seo_Object
 		$ret['editItemLink'] = $this->getEditItemLink(FALSE, TRUE, TRUE);
 		$ret['deleteItemLink'] = $this->getDeleteItemLink(FALSE, TRUE, TRUE);
 
-		$ret['description'] = $this->getDescription();
-		$ret['extended_text'] = $this->getExtendedText();
+		//$ret['description'] = $this->getDescription();
+		//$ret['extended_text'] = $this->getExtendedText();
 		return $ret;
 	}
 
