@@ -146,6 +146,6 @@ http://community.impresscms.org/modules/newbb/viewtopic.php?topic_id=5095&forum=
 - Adding group-permissions
 http://community.impresscms.org/modules/newbb/viewtopic.php?post_id=45434#forumpost45434
 - Adding notification function
-- Use the SEO URL
 - Option for every content > comment YES/NO
+- Use for print, pdf, mailto this CSS: http://secure.cssdeck.com/labs/full/share-it/0/noframe#dontkillanim
 
