@@ -198,7 +198,7 @@ function show_slider_cms($options)
 			{
 				$start_tag_id_buffer[$taglink->getVar('iid')] = array();
 			}
-			$start_tag_id_buffer[$taglink->getVar('iid')][] = '<a href="' . ICMS_URL . '/modules/' 
+			$start_tag_id_buffer[$taglink->getVar('iid')][] = '<a class="label label-info" href="' . ICMS_URL . '/modules/' 
 					. $cmsModule->getVar('dirname') . '/start.php?tag_id=' 
 					. $taglink->getVar('tid') . '">' 
 					. $sprockets_tag_buffer[$taglink->getVar('tid')]

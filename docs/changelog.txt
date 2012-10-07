@@ -4,6 +4,7 @@ Changelog:
 
 ADDED:
 - A new block to select one content (many thanks to @QM-B)
+- CSS lable for Tags added
 
 UPDATED:
 - jquery sliderkit updated to version 1.9.2

@@ -141,7 +141,7 @@ if($startObj && !$startObj->isNew())
 		$start_tag_array = $sprockets_taglink_handler->getTagsForObject($startObj->getVar('start_id'), $cms_start_handler,0);
 		foreach ($start_tag_array as $key => $value)
 		{
-			$start['tags'][$value] = '<a href="' . CMS_URL . 'start.php?tag_id=' . $value 
+			$start['tags'][$value] = '<a class="label label-info" href="' . CMS_URL . 'start.php?tag_id=' . $value 
 					. '" title="' . _CO_CMS_TAGS_ALL_CONTENTS_ON . ' '. $sprockets_tag_buffer[$value]
 						.' ' . _CO_CMS_TAGS_ALL_SHOW . '">' . $sprockets_tag_buffer[$value] . '</a>';
 		}
@@ -336,7 +336,7 @@ else
 				if (!array_key_exists($taglink->getVar('iid'), $start_tag_id_buffer)) {
 					$start_tag_id_buffer[$taglink->getVar('iid')] = array();
 				}				
-				$start_tag_id_buffer[$taglink->getVar('iid')][] = '<a href="' . CMS_URL . 
+				$start_tag_id_buffer[$taglink->getVar('iid')][] = '<a class="label label-info" href="' . CMS_URL . 
 						'start.php?tag_id=' . $taglink->getVar('tid') . '" title="' 
 						. _CO_CMS_TAGS_ALL_CONTENTS_ON . ' '
 						. $sprockets_tag_buffer[$taglink->getVar('tid')]
