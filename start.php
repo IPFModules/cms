@@ -458,6 +458,7 @@ else
 }
 
 $icmsTpl->assign("show_breadcrumb", icms::$module->config['show_breadcrumb']);
+$icmsTpl->assign("show_extension_print", icms::$module->config['show_extension_print']);
 $icmsTpl->assign("cms_module_home", '<a href="' . ICMS_URL . "/modules/" . icms::$module->getVar("dirname") . '/">' . icms::$module->getVar("name") . "</a>");
 
 include_once "footer.php";

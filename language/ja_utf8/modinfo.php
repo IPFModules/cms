@@ -41,6 +41,8 @@ define("_MI_CMS_SHOW_TAG_SELECT_BOX", "Show tag select box");
 define("_MI_CMS_SHOW_TAG_SELECT_BOX_DSC", "Toggles the tag select box on/off for the index page (only if Sprockets module installed).");
 define("_MI_CMS_SHOW_BREADCRUMB", "Show breadcrumb");
 define("_MI_CMS_SHOW_BREADCRUMB_DSC", "Toggles the module breadcrumb on/off");
+define("_MI_CMS_EXTENSION_PRINT", "Show print icon");
+define("_MI_CMS_EXTENSION_PRINT_DSC", "Show a print icon within the detailpage");
 define("_MI_CMS_SHOW_VIEW_COUNTER", "Show views counter?");
 define("_MI_CMS_SHOW_VIEW_COUNTER_DSC", "Toggles the visibility of the views counter field.");
 define("_MI_CMS_SHOW_LAST_UPDATED", "Show date last updated?");

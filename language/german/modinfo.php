@@ -41,6 +41,8 @@ define("_MI_CMS_SHOW_TAG_SELECT_BOX", "Zeige eine Auswahlbox mit Tags");
 define("_MI_CMS_SHOW_TAG_SELECT_BOX_DSC", "Wechseln zwischen Ja und Nein. Wenn das Modul 'Sprockets' installiert wurde, kann eine Auswahlbox in der Hauptseite für die Tags angezeigt werden.");
 define("_MI_CMS_SHOW_BREADCRUMB", "Zeige Navigation");
 define("_MI_CMS_SHOW_BREADCRUMB_DSC", "Die Navigation (breadcrumb) kann ein- und ausgeschaltet werden.");
+define("_MI_CMS_EXTENSION_PRINT", "Zeige ein Drucksymbol");
+define("_MI_CMS_EXTENSION_PRINT_DSC", "In der Detailseite wird ein Icon dargestellt. Beim anklicken wir die Seite druckfertig vorbereitet.");
 define("_MI_CMS_SHOW_VIEW_COUNTER", "Zeige die Anzahl der Zugriffe?");
 define("_MI_CMS_SHOW_VIEW_COUNTER_DSC", "Es kann in der Detailseite des Inhalts angezeigt werden, wie oft ein Inhalt bereits gelesen wurde.");
 define("_MI_CMS_SHOW_LAST_UPDATED", "Zeige das Datum der Aktualisierung?");

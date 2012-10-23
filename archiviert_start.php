@@ -419,6 +419,8 @@ if (icms::$module->config['show_breadcrumb'])
 	
 }
 
+$icmsTpl->assign("show_extension_print", icms::$module->config['show_extension_print']);
+
 // Page title
 $icmsTpl->assign("cms_page_title", _CO_CMS_BEENDET_CMS);
 

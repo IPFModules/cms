@@ -35,7 +35,7 @@ $modversion = array(
 /**  Development information */
 	"status_version"			=> "3.0",
 	"status"					=> "Final",
-	"date"						=> "13.09.2012",
+	"date"						=> "23.10.2012",
 	"author_word"				=> "For ICMS 1.3+ only.",
 	"warning"					=> "trunk",
 
@@ -167,6 +167,14 @@ $modversion['config'][] = array(
 	'formtype' => 'yesno',
 	'valuetype' => 'int',
 	'default' => '0');
+
+$modversion['config'][] = array(
+		'name' => 'show_extension_print',
+		'title' => '_MI_CMS_EXTENSION_PRINT',
+		'description' => '_MI_CMS_EXTENSION_PRINT_DSC',
+		'formtype' => 'yesno',
+		'valuetype' => 'int',
+		'default' => '0');
 
 $modversion['config'][] = array(
 	'name' => 'show_view_counter',

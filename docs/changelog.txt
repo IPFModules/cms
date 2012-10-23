@@ -1,10 +1,11 @@
-3.0 Final from 13th September. 2012
+3.0 Final from 23th October. 2012
 
 Changelog:
 
 ADDED:
 - A new block to select one content (many thanks to @QM-B)
 - CSS lable for Tags added
+- New option to display a print icon in the detailpage
 
 UPDATED:
 - jquery sliderkit updated to version 1.9.2
