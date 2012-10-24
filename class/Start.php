@@ -279,4 +279,19 @@ class mod_cms_Start extends icms_ipf_seo_Object
 		return $ret;
 	}
 
+	//notifications
+	function sendNotifFillingPublished() {
+		$module = icms::handler('icms_module')->getByDirname(basename(dirname(dirname(__FILE__))));
+		$tags ['CMS_TITLE'] = $this->getVar('title');
+		$tags ['CMS_URL'] = $this->getItemLink(false);
+		icms::handler('icms_data_notification')->triggerEvent('global', 0, 'new_filling', $tags, array(), $module->getVar('mid'));
+	}
+	//notifications
+	function sendNotifFillingUpdated() {
+		$module = icms::handler('icms_module')->getByDirname(basename(dirname(dirname(__FILE__))));
+		$tags ['CMS_TITLE'] = $this->getVar('title');
+		$tags ['CMS_URL'] = $this->getItemLink(false);
+		icms::handler('icms_data_notification')->triggerEvent('global', 0, 'filling_modified', $tags, array(), $module->getVar('mid'));
+	}
+
 }

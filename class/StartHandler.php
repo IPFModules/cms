@@ -188,6 +188,17 @@ class mod_cms_StartHandler extends icms_ipf_Handler
 			// Store categories
 			$sprockets_taglink_handler->storeTagsForObject($obj, 'category', '1');
 		}
+
+		//notifications
+		//if ($obj->updating_counter)
+		//	return true;
+		if ((!$obj->getVar("notification_sent", "e") || $obj->getVar("notification_sent", "e") == 0 ) && $obj->getVar("online_status", "e") == TRUE) {
+			$obj->sendNotifFillingPublished();
+			$obj->setVar("notification_sent", 1);
+			$this->insert($obj);
+		} else {
+			$obj->sendNotifFillingUpdated();
+		}
 		return TRUE;
 	}
 	
@@ -228,5 +239,4 @@ class mod_cms_StartHandler extends icms_ipf_Handler
 			$this->insert($startObj, true);
 		}
 	}
-
 }

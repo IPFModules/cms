@@ -1,3 +1,8 @@
+Todo: afterDelete Funktion ansehen bei QM-B. 
+Die eingetragenen Notifications werden irgendwie nicht automatisch wieder rausgenommen.
+Dann hat man sie nach dem Löschen eines Objektes noch drin.
+
+
 3.0 Final from 23th October. 2012
 
 Changelog:

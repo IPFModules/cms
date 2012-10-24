@@ -1,0 +1,1 @@
+mail template fuer notifications new

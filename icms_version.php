@@ -90,7 +90,39 @@ $modversion['templates'] = array(
 	array("file" => "cms_header.html", "description" => "Module header."),
 	array("file" => "cms_footer.html", "description" => "Module footer."),
 	array("file" => "cms_print.html", "description" => "Module print template."),
-	array("file" => "cms_requirements.html", "description" => "Alert if module requirements not met."));
+	array("file" => "cms_requirements.html", "description" => "Alert if module requirements not met.")
+);
+
+
+/** Notification information */
+$modversion['hasNotification'] = 1;
+$modversion['notification']['lookup_file'] = 'include/notification.inc.php';
+$modversion['notification']['lookup_func'] = 'cms_notify_iteminfo';
+
+$modversion['notification']['category'][1] = array (
+	'name'				=> 'global',
+	'title'				=> _MI_CMS_GLOBAL_NOTIFY,
+	'description'		=> _MI_CMS_GLOBAL_NOTIFY_DSC,
+	'subscribe_from'	=> array('start.php')
+);
+$modversion['notification']['event'][2] = array(
+	'name'				=> 'new_filling',
+	'category'			=> 'global',
+	'title'				=> _MI_CMS_GLOBAL_NEW_FILLING_NOTIFY,
+	'caption'			=> _MI_CMS_GLOBAL_NEW_FILLING_NOTIFY_CAP,
+	'description'		=> _MI_CMS_GLOBAL_NEW_FILLING_NOTIFY_DSC,
+	'mail_template'		=> 'new_filling',  //create a mail template
+	'mail_subject'		=> _MI_CMS_GLOBAL_NEW_FILLING_NOTIFY_SBJ
+);
+$modversion['notification']['event'][3] = array(
+	'name'				=> 'filling_modified',
+	'category'			=> 'global',
+	'title'				=> _MI_CMS_GLOBAL_FILLING_NOTIFY,
+	'caption'			=> _MI_CMS_GLOBAL_FILLING_NOTIFY_CAP,
+	'description'		=> _MI_CMS_GLOBAL_FILLING_NOTIFY_DSC,
+	'mail_template'		=> 'filling_modified',  //create a mail template
+	'mail_subject'		=> _MI_CMS_GLOBAL_FILLING_NOTIFY_SBJ
+);
 
 /** Blocks */
 $modversion['blocks'][1] = array(
@@ -145,20 +177,20 @@ $modversion['blocks'][5] = array(
 
 /** Preferences */
 $modversion['config'][1] = array(
-  'name' => 'index_display_mode',
-  'title' => '_MI_CMS_INDEX_DISPLAY_MODE',
-  'description' => '_MI_CMS_INDEX_DISPLAY_MODE_DSC',
-  'formtype' => 'yesno',
-  'valuetype' => 'int',
-  'default' =>  '1');
+	'name' => 'index_display_mode',
+	'title' => '_MI_CMS_INDEX_DISPLAY_MODE',
+	'description' => '_MI_CMS_INDEX_DISPLAY_MODE_DSC',
+	'formtype' => 'yesno',
+	'valuetype' => 'int',
+	'default' =>  '1');
 
 $modversion['config'][] = array(
-  'name' => 'number_of_cms_per_page',
-  'title' => '_MI_CMS_NUMBER_CMS_PER_PAGE',
-  'description' => '_MI_CMS_NUMBER_CMS_PER_PAGE_DSC',
-  'formtype' => 'textbox',
-  'valuetype' => 'int',
-  'default' =>  '5');
+	'name' => 'number_of_cms_per_page',
+	'title' => '_MI_CMS_NUMBER_CMS_PER_PAGE',
+	'description' => '_MI_CMS_NUMBER_CMS_PER_PAGE_DSC',
+	'formtype' => 'textbox',
+	'valuetype' => 'int',
+	'default' =>  '5');
 
 $modversion['config'][] = array(
 	'name' => 'show_breadcrumb',
@@ -169,12 +201,12 @@ $modversion['config'][] = array(
 	'default' => '0');
 
 $modversion['config'][] = array(
-		'name' => 'show_extension_print',
-		'title' => '_MI_CMS_EXTENSION_PRINT',
-		'description' => '_MI_CMS_EXTENSION_PRINT_DSC',
-		'formtype' => 'yesno',
-		'valuetype' => 'int',
-		'default' => '0');
+	'name' => 'show_extension_print',
+	'title' => '_MI_CMS_EXTENSION_PRINT',
+	'description' => '_MI_CMS_EXTENSION_PRINT_DSC',
+	'formtype' => 'yesno',
+	'valuetype' => 'int',
+	'default' => '0');
 
 $modversion['config'][] = array(
 	'name' => 'show_view_counter',
@@ -218,28 +250,28 @@ $modversion['config'][] = array(
 	'default' => '0');
 
 $modversion['config'][] = array(
-  'name' => 'logo_index_display_width',
-  'title' => '_MI_CMS_LOGO_INDEX_DISPLAY_WIDTH',
-  'description' => '_MI_CMS_LOGO_INDEX_DISPLAY_WIDTH_DSC',
-  'formtype' => 'text',
-  'valuetype' => 'int',
-  'default' =>  '150');
+	'name' => 'logo_index_display_width',
+	'title' => '_MI_CMS_LOGO_INDEX_DISPLAY_WIDTH',
+	'description' => '_MI_CMS_LOGO_INDEX_DISPLAY_WIDTH_DSC',
+	'formtype' => 'text',
+	'valuetype' => 'int',
+	'default' =>  '150');
 
 $modversion['config'][] = array(
-  'name' => 'logo_single_display_width',
-  'title' => '_MI_CMS_LOGO_SINGLE_DISPLAY_WIDTH',
-  'description' => '_MI_CMS_LOGO_SINGLE_DISPLAY_WIDTH_DSC',
-  'formtype' => 'text',
-  'valuetype' => 'int',
-  'default' =>  '300');
+	'name' => 'logo_single_display_width',
+	'title' => '_MI_CMS_LOGO_SINGLE_DISPLAY_WIDTH',
+	'description' => '_MI_CMS_LOGO_SINGLE_DISPLAY_WIDTH_DSC',
+	'formtype' => 'text',
+	'valuetype' => 'int',
+	'default' =>  '300');
 
 $modversion['config'][] = array(
-  'name' => 'logo_block_display_width',
-  'title' => '_MI_CMS_LOGO_BLOCK_DISPLAY_WIDTH',
-  'description' => '_MI_CMS_LOGO_BLOCK_DISPLAY_WIDTH_DSC',
-  'formtype' => 'text',
-  'valuetype' => 'int',
-  'default' =>  '100');
+	'name' => 'logo_block_display_width',
+	'title' => '_MI_CMS_LOGO_BLOCK_DISPLAY_WIDTH',
+	'description' => '_MI_CMS_LOGO_BLOCK_DISPLAY_WIDTH_DSC',
+	'formtype' => 'text',
+	'valuetype' => 'int',
+	'default' =>  '100');
 
 $modversion['config'][] = array(
 	'name' => 'logo_upload_height',
@@ -274,24 +306,24 @@ $modversion['config'][] = array(
 	'default' => '0');
 
 $modversion['config'][] = array(
-  'name' => 'updated_notice_period',
-  'title' => '_MI_CMS_UPDATED_NOTICE_PERIOD',
-  'description' => '_MI_CMS_UPDATED_NOTICE_PERIOD_DSC',
-  'formtype' => 'select',
-  'valuetype' => 'int',
-  'options' => array(
-	  '_MI_CMS_ONE_DAY' => 1,
-	  '_MI_CMS_THREE_DAYS' => 2,
-	  '_MI_CMS_ONE_WEEK' => 3,
-	  '_MI_CMS_TWO_WEEKS' => 4,
-	  '_MI_CMS_THREE_WEEKS' => 5,
-	  '_MI_CMS_FOUR_WEEKS' => 6),
-  'default' => 3);
+	'name' => 'updated_notice_period',
+	'title' => '_MI_CMS_UPDATED_NOTICE_PERIOD',
+	'description' => '_MI_CMS_UPDATED_NOTICE_PERIOD_DSC',
+	'formtype' => 'select',
+	'valuetype' => 'int',
+	'options' => array(
+		'_MI_CMS_ONE_DAY' => 1,
+		'_MI_CMS_THREE_DAYS' => 2,
+		'_MI_CMS_ONE_WEEK' => 3,
+		'_MI_CMS_TWO_WEEKS' => 4,
+		'_MI_CMS_THREE_WEEKS' => 5,
+		'_MI_CMS_FOUR_WEEKS' => 6),
+		'default' => 3);
 
 $modversion['config'][] = array(
-  'name' => 'date_format',
-  'title' => '_MI_CMS_DATE_FORMAT',
-  'description' => '_MI_CMS_DATE_FORMAT_DSC',
-  'formtype' => 'textbox',
-  'valuetype' => 'text',
-  'default' =>  'j/n/Y');
+	'name' => 'date_format',
+	'title' => '_MI_CMS_DATE_FORMAT',
+	'description' => '_MI_CMS_DATE_FORMAT_DSC',
+	'formtype' => 'textbox',
+ 	'valuetype' => 'text',
+ 	'default' =>  'j/n/Y');
