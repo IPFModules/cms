@@ -88,3 +88,15 @@ define("_MI_CMS_MANUAL", "マニュアル");
 
 // Categories
 define("_MI_CMS_CATEGORIES", "カテゴリ");
+
+// Notification
+define("_MI_CMS_GLOBAL_NOTIFY", "Global");
+define("_MI_CMS_GLOBAL_NOTIFY_DSC", "Global notification options.");
+define("_MI_CMS_GLOBAL_NEW_FILLING_NOTIFY", "New content created");
+define("_MI_CMS_GLOBAL_NEW_FILLING_NOTIFY_CAP", "Notify me when a new content was created.");
+define("_MI_CMS_GLOBAL_NEW_FILLING_NOTIFY_DSC", "Receive notification when any new content was created.");
+define("_MI_CMS_GLOBAL_NEW_FILLING_NOTIFY_SBJ", "[{X_SITENAME}] {X_MODULE} auto-notify : New content was created");
+define("_MI_CMS_GLOBAL_FILLING_NOTIFY", "Content modifications");
+define("_MI_CMS_GLOBAL_FILLING_NOTIFY_CAP", "Notify me of any content modifications.");
+define("_MI_CMS_GLOBAL_FILLING_NOTIFY_DSC", "Receive notification when any modification was submitted.");
+define("_MI_CMS_GLOBAL_FILLING_NOTIFY_SBJ", "[{X_SITENAME}] {X_MODULE} auto-notify : A content was modified");
