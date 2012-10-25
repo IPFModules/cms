@@ -15,9 +15,9 @@
 
 	<body>
 		<div id="cms_print_pagelayer">
-		    <div id="cms_print_title"><img src="<{$printlogourl}>" border="0" alt="<{$start.title}>" /></div>
-		    <div id="cms_print_url">URL: <{$start.itemUrl}></div>
-		    <div id="title"><{$start.title}></div>
+		    <div id="cms_print_url"><{$start.itemUrl}></div>
+		    <div id="title"><h2><{$start.title}></h2></div>
+		    <{if $start.subtitle}><h3><{$start.subtitle}></h3><{/if}>
 			<div id="cms_print_body">
 				<{if $start.extended_text}>
 					<div class="cms_print_separator"><{$start.extended_text}></div>
