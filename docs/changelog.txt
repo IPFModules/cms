@@ -11,7 +11,7 @@ ADDED:
 - A new block to select one content (many thanks to @QM-B)
 - CSS lable for Tags added
 - New option to display a print icon in the detailpage
-- Subtitle as option field added
+- Subtitle as an option field added
 
 UPDATED:
 - jquery sliderkit updated to version 1.9.2
@@ -142,8 +142,9 @@ completion = fertigstellung
 latest sync. Rev.23543
 
 Knowing errors:
-- <button class="button" role="button" onclick=";window.location.href=this.getAttribute('href');return false;" href="<{$start.itemUrl}>"><span><{$smarty.const._CO_CMS_READ_MORE}></span></button>
-- redirect on "register" works not, if profile module installed
+- redirect on "register" works not 100% perfect, if profile module installed
+- resize images works not in blocks
+- resize images are not visible in print page
 
 
 Todo:
