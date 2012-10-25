@@ -39,7 +39,7 @@ style sheets do not work on cached blocks. I think this is a long-standing core 
 	<div class="sliderkit-panels">
 		<{foreach item = start from = $block.ticker_cms}>
 		<div class="sliderkit-panel">
-			<a href="<{$start.itemUrl}>" title="<{$start.title}>"><{$start.title}></a>
+			<a href="<{$start.itemUrl}>" title="<{$start.title}>"><{$start.title}> <{if $start.subtitle}><{$start.subtitle}><{/if}></a>
 		</div>
 		<{/foreach}>
 	</div>

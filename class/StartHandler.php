@@ -138,6 +138,7 @@ class mod_cms_StartHandler extends icms_ipf_Handler
 			for ($i = 0; $i < count($queryarray); $i++) {
 				$criteriaKeyword = new icms_db_criteria_Compo();
 				$criteriaKeyword->add(new icms_db_criteria_Item('title', '%' . $queryarray[$i] . '%', 'LIKE'), 'OR');
+				$criteriaKeyword->add(new icms_db_criteria_Item('subtitle', '%' . $queryarray[$i] . '%', 'LIKE'), 'OR');
 				$criteriaKeyword->add(new icms_db_criteria_Item('description', '%' . $queryarray[$i] . '%', 'LIKE'), 'OR');
 				$criteriaKeyword->add(new icms_db_criteria_Item('extended_text', '%' . $queryarray[$i] . '%', 'LIKE'), 'OR'); //neu hinzugefügt
 				$criteriaKeywords->add($criteriaKeyword, $andor);

@@ -18,6 +18,8 @@ define("_CO_CMS_CMS", "CMS");
 // Start
 define("_CO_CMS_START_TITLE", "表題");
 define("_CO_CMS_START_TITLE_DSC", "表題をつける。");
+define("_CO_CMS_START_SUBTITLE", "副題");
+define("_CO_CMS_START_SUBTITLE_DSC", "副は、表の下に表示されます。");
 define("_CO_CMS_START_LOGO", "コンテンツの画像？");
 define("_CO_CMS_START_LOGO_DSC", "Upload your image or a teaser photo. You can set the resize from the image in the module preferences.");
 define("_CO_CMS_START_WEBSITE", "ウェブサイト（コンテンツのURL）");

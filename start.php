@@ -439,7 +439,7 @@ else
 		// Retrieve the table
 		$objectTable = new icms_ipf_view_Table($cms_start_handler, $criteria, array());
 		$objectTable->isForUserSide();
-		$objectTable->addQuickSearch(array('title','description','extended_text'));
+		$objectTable->addQuickSearch(array('title','subtitle','description','extended_text'));
 		$objectTable->addColumn(new icms_ipf_view_Column("title", "left", "100", 'getItemLink'));
 		$objectTable->addColumn(new icms_ipf_view_Column("date", "center", "20"));
 		$objectTable->addColumn(new icms_ipf_view_Column("last_update", "center", "20"));

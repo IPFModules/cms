@@ -18,6 +18,8 @@ define("_CO_CMS_CMS", "CMS");
 // Start
 define("_CO_CMS_START_TITLE", "Title");
 define("_CO_CMS_START_TITLE_DSC", "The title name of your content.");
+define("_CO_CMS_START_SUBTITLE", "Subtitle");
+define("_CO_CMS_START_SUBTITLE_DSC", "The subtitle will be displayed below the title.");
 define("_CO_CMS_START_LOGO", "Content image?");
 define("_CO_CMS_START_LOGO_DSC", "Upload your image or a teaser photo. You can set the resize from the image in the module preferences.");
 define("_CO_CMS_START_WEBSITE", "Website");

@@ -5,6 +5,7 @@ style sheets do not work on cached blocks. I think this is a long-standing core 
 <{if $block.show_logos == TRUE}>
 	<{foreach item = start from = $block.list_cms}>
 		<h2 style="clear:both; margin-bottom:1em;"><a href="<{$start.itemUrl}>"><{$start.title}></a></h2>
+		<{if $start.subtitle}><h3 style="clear:both; margin-bottom:1em;"><{$start.subtitle}></h3><{/if}>
 		<div class="itemCmsInfo">
 			<{if $start.counter}>
 				<{$start.counter}> <{$smarty.const._CO_CMS_START_VIEWS}>

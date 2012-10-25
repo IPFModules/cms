@@ -11,6 +11,7 @@ ADDED:
 - A new block to select one content (many thanks to @QM-B)
 - CSS lable for Tags added
 - New option to display a print icon in the detailpage
+- Subtitle as option field added
 
 UPDATED:
 - jquery sliderkit updated to version 1.9.2

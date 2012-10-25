@@ -231,7 +231,7 @@ if (in_array($clean_op, $valid_op, TRUE))
 			}
 		
 			$objectTable = new icms_ipf_view_Table($cms_start_handler, $criteria);
-			$objectTable->addQuickSearch(array('title','description','extended_text'));
+			$objectTable->addQuickSearch(array('title','subtitle','description','extended_text'));
 			
 			//get Preview
 			$objectTable->addColumn(new icms_ipf_view_Column("title", FALSE, FALSE, 'getPreviewItemLink'));

@@ -18,6 +18,8 @@ define("_CO_CMS_CMS", "CMS");
 // Start
 define("_CO_CMS_START_TITLE", "Überschrift");
 define("_CO_CMS_START_TITLE_DSC", "Eine kurze aber aussagekräftigen Überschrift eingeben.");
+define("_CO_CMS_START_SUBTITLE", "Untertitel");
+define("_CO_CMS_START_SUBTITLE_DSC", "Optional, einen Untertitel eingeben. Er wird unterhalb der Überschrift dargestellt.");
 define("_CO_CMS_START_LOGO", "Bild");
 define("_CO_CMS_START_LOGO_DSC", "Hochladen eines Bildes oder Foto. Die Größenänderung kann in den Modul Einstellungen vorgenommen werden.");
 define("_CO_CMS_START_WEBSITE", "Website");

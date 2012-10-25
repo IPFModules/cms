@@ -4,6 +4,7 @@ style sheets do not work on cached blocks. I think this is a long-standing core 
 <!-- Full mode -->
 <{if $block.show_logos == TRUE}>
 	<h2 style="clear:both; margin-bottom:1em;"><{$block.select_content_cms.title}></h2>
+	<{if $start.subtitle}><h3 style="clear:both; margin-bottom:1em;"><{$start.subtitle}></h3><{/if}>
 	<p class="cms_description"><a href="<{$start.itemUrl}>" title="<{$start.title}>"></a><{$block.select_content_cms.extended_text}></p>
 	
 <!-- Compact list mode -->

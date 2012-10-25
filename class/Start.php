@@ -27,6 +27,7 @@ class mod_cms_Start extends icms_ipf_seo_Object
 		
 		$this->quickInitVar("start_id", XOBJ_DTYPE_INT, TRUE);
 		$this->quickInitVar("title", XOBJ_DTYPE_TXTBOX, TRUE);
+		$this->quickInitVar("subtitle", XOBJ_DTYPE_TXTBOX, TRUE);
 		$this->quickInitVar("logo", XOBJ_DTYPE_IMAGE, FALSE);
 		$this->quickInitVar("website", XOBJ_DTYPE_TXTBOX, FALSE);
 		$this->quickInitVar("beendet", XOBJ_DTYPE_TXTBOX, TRUE, FALSE, FALSE, 0);
