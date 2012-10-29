@@ -458,7 +458,10 @@ else
 }
 
 $icmsTpl->assign("show_breadcrumb", icms::$module->config['show_breadcrumb']);
-$icmsTpl->assign("show_extension_print", icms::$module->config['show_extension_print']);
+$icmsTpl->assign("show_toolbar_print", icms::$module->config['show_toolbar_print']);
+$icmsTpl->assign("show_toolbar_pdf", icms::$module->config['show_toolbar_pdf']);
+$icmsTpl->assign("show_toolbar_email", icms::$module->config['show_toolbar_email']);
+$icmsTpl->assign("show_toolbar_share", icms::$module->config['show_toolbar_share']);
 $icmsTpl->assign("cms_module_home", '<a href="' . ICMS_URL . "/modules/" . icms::$module->getVar("dirname") . '/">' . icms::$module->getVar("name") . "</a>");
 
 include_once "footer.php";

@@ -419,7 +419,10 @@ if (icms::$module->config['show_breadcrumb'])
 	
 }
 
-$icmsTpl->assign("show_extension_print", icms::$module->config['show_extension_print']);
+$icmsTpl->assign("show_toolbar_print", icms::$module->config['show_toolbar_print']);
+$icmsTpl->assign("show_toolbar_pdf", icms::$module->config['show_toolbar_pdf']);
+$icmsTpl->assign("show_toolbar_email", icms::$module->config['show_toolbar_email']);
+$icmsTpl->assign("show_toolbar_share", icms::$module->config['show_toolbar_share']);
 
 // Page title
 $icmsTpl->assign("cms_page_title", _CO_CMS_BEENDET_CMS);

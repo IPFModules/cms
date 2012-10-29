@@ -2,15 +2,25 @@ Todo: afterDelete Funktion ansehen bei QM-B.
 Die eingetragenen Notifications werden irgendwie nicht automatisch wieder rausgenommen.
 Dann hat man sie nach dem Löschen eines Objektes noch drin.
 
+Notifi nur bestimmte Gruppen sichtbar machen.
 
-3.0 Final from 23th October. 2012
+Add the details for sharing
+
+
+
+
+
+3.0 Final from 29th October. 2012
 
 Changelog:
 
 ADDED:
 - A new block to select one content (many thanks to @QM-B)
 - CSS lable for Tags added
-- New option to display a print icon in the detailpage
+- New option to display a Print icon in the detailpage
+- New option to display a PDF icon in the detailpage
+- New option to display a eMail icon in the detailpage
+- New option to display a Share icon in the detailpage
 - Subtitle as an option field added
 
 UPDATED:

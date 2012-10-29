@@ -6,7 +6,18 @@
 		<div class="itemCmsInfo_title">
 			<h2><{$cms_start.title}> <{if $cms_is_admin}><{$cms_start.editItemLink}> <{$cms_start.deleteItemLink}><{/if}></h2>
 			<{if $cms_start.subtitle}><h3><{$cms_start.subtitle}></h3><{/if}>
-			<{if $show_extension_print == TRUE}><a href="print.php?start_id=<{$cms_start.start_id}>" rel="nofollow" title="<{$smarty.const._MD_CMS_PRINT}>" target="_blank"><img style="vertical-align: middle;" alt="<{$smarty.const._MD_CMS_PRINT}>" title="<{$smarty.const._MD_CMS_PRINT}>" src="<{$smarty.const.ICMS_IMAGES_SET_URL}>/actions/fileprint.png" /></a><{/if}>
+			
+			<{if $show_toolbar_print == TRUE}><a rel="nofollow" href="<{$cms_url}>print.php?start_id=<{$cms_start.start_id}>" title="<{$smarty.const._MD_CMS_PRINT}>" target="_blank"><img style="vertical-align: middle;" alt="<{$smarty.const._MD_CMS_PRINT}>" title="<{$smarty.const._MD_CMS_PRINT}>" src="<{$cms_images_url}>application-text.png" /></a><{/if}>
+			
+			<{if $show_toolbar_pdf == TRUE}><a rel="nofollow" href="<{$cms_url}>pdf.php?start_id=<{$cms_start.start_id}>" title="<{$smarty.const._MD_CMS_PDF}>" target="_blank"><img style="vertical-align: middle;" alt="<{$smarty.const._MD_CMS_PDF}>" title="<{$smarty.const._MD_CMS_PDF}>" src="<{$cms_images_url}>application-pdf.png" /></a><{/if}>
+			
+			<{if $show_toolbar_email == TRUE}><a rel="nofollow" href="mailto:?subject=<{$cms_start.title}>&nbsp;-&nbsp;<{if $cms_start.subtitle}><{$cms_start.subtitle}><{/if}>&body=<{$cms_start.itemUrl}>" title="<{$smarty.const._MD_CMS_EMAIL}>" target="_blank"><img style="vertical-align: middle;" alt="<{$smarty.const._MD_CMS_EMAIL}>" title="<{$smarty.const._MD_CMS_EMAIL}>" src="<{$cms_images_url}>application-mbox.png" /></a><{/if}>
+			
+			<{if $show_toolbar_share == TRUE}><a rel="nofollow" href="#" title="<{$smarty.const._MD_CMS_SHARE}>" target="_blank"><img style="vertical-align: middle;" alt="<{$smarty.const._MD_CMS_SHARE}>" title="<{$smarty.const._MD_CMS_SHARE}>" src="<{$cms_images_url}>application-text.png" /></a><{/if}>
+
+
+
+			</a>
 			<{if $cms_post_comment}><div class="itemCmsInfoComment"><{$cms_start.start_comment_info}></div><{/if}>
 		</div>
 		<{if $cms_start.counter || $cms_start.updated}>

@@ -29,7 +29,7 @@ define("_MI_CMS_SLIDER", "(Slide) content");
 define("_MI_CMS_SLIDERDSC", "Display (slide) content");
 define("_MI_CMS_TICKER", "(Ticker) content");
 define("_MI_CMS_TICKERDSC", "Display (ticked) content");
-define("_MI_CMS_SELECT_CONTENT", "(Select) content");
+define("_MI_CMS_SELECT_CONTENT", "(select) content");
 define("_MI_CMS_SELECT_CONTENTDSC", "Display (selected) content");
 
 // Preferences

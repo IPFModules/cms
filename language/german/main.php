@@ -14,3 +14,7 @@ defined("ICMS_ROOT_PATH") or die("ICMS root path not defined");
 define("_MD_CMS_ADMIN_PAGE", ". : : Modul Admin Seite : : .");
 define("_MD_CMS_ALL_CMS", "Alle Inhalte");
 define("_MD_CMS_PRINT", "Drucken");
+define("_MD_CMS_PDF", "PDF");
+define("_MD_CMS_EMAIL", "Email");
+define("_MD_CMS_SHARE", "Teilen");
+define("_MD_CMS_NO_CONTENT", "Kein Inhalt gefunden!");

@@ -35,7 +35,7 @@ $modversion = array(
 /**  Development information */
 	"status_version"			=> "3.0",
 	"status"					=> "Final",
-	"date"						=> "23.10.2012",
+	"date"						=> "29.10.2012",
 	"author_word"				=> "For ICMS 1.3+ only.",
 	"warning"					=> "trunk",
 
@@ -201,9 +201,33 @@ $modversion['config'][] = array(
 	'default' => '0');
 
 $modversion['config'][] = array(
-	'name' => 'show_extension_print',
-	'title' => '_MI_CMS_EXTENSION_PRINT',
-	'description' => '_MI_CMS_EXTENSION_PRINT_DSC',
+	'name' => 'show_toolbar_print',
+	'title' => '_MI_CMS_TOOLBAR_PRINT',
+	'description' => '_MI_CMS_TOOLBAR_PRINT_DSC',
+	'formtype' => 'yesno',
+	'valuetype' => 'int',
+	'default' => '0');
+
+$modversion['config'][] = array(
+	'name' => 'show_toolbar_pdf',
+	'title' => '_MI_CMS_TOOLBAR_PDF',
+	'description' => '_MI_CMS_TOOLBAR_PDF_DSC',
+	'formtype' => 'yesno',
+	'valuetype' => 'int',
+	'default' => '0');
+
+$modversion['config'][] = array(
+	'name' => 'show_toolbar_email',
+	'title' => '_MI_CMS_TOOLBAR_EMAIL',
+	'description' => '_MI_CMS_TOOLBAR_EMAIL_DSC',
+	'formtype' => 'yesno',
+	'valuetype' => 'int',
+	'default' => '0');
+
+$modversion['config'][] = array(
+	'name' => 'show_toolbar_share',
+	'title' => '_MI_CMS_TOOLBAR_SHARE',
+	'description' => '_MI_CMS_TOOLBAR_SHARE_DSC',
 	'formtype' => 'yesno',
 	'valuetype' => 'int',
 	'default' => '0');

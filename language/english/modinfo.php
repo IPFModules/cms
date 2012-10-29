@@ -29,7 +29,7 @@ define("_MI_CMS_SLIDER", "(Slide) content");
 define("_MI_CMS_SLIDERDSC", "Display (slide) content");
 define("_MI_CMS_TICKER", "(Ticker) content");
 define("_MI_CMS_TICKERDSC", "Display (ticked) content");
-define("_MI_CMS_SELECT_CONTENT", "(Select) content");
+define("_MI_CMS_SELECT_CONTENT", "(select) content");
 define("_MI_CMS_SELECT_CONTENTDSC", "Display (selected) content");
 
 // Preferences
@@ -41,8 +41,14 @@ define("_MI_CMS_SHOW_TAG_SELECT_BOX", "Show tag select box");
 define("_MI_CMS_SHOW_TAG_SELECT_BOX_DSC", "Toggles the tag select box on/off for the index page (only if Sprockets module installed).");
 define("_MI_CMS_SHOW_BREADCRUMB", "Show breadcrumb");
 define("_MI_CMS_SHOW_BREADCRUMB_DSC", "Toggles the module breadcrumb on/off");
-define("_MI_CMS_EXTENSION_PRINT", "Show print icon");
-define("_MI_CMS_EXTENSION_PRINT_DSC", "Show a print icon within the detailpage");
+define("_MI_CMS_TOOLBAR_PRINT", "TOOLBAR: Show print icon");
+define("_MI_CMS_TOOLBAR_PRINT_DSC", "Show a print icon within the detailpage");
+define("_MI_CMS_TOOLBAR_PDF", "TOOLBAR: Show PDF icon");
+define("_MI_CMS_TOOLBAR_PDF_DSC", "Show a PDF icon within the detailpage");
+define("_MI_CMS_TOOLBAR_EMAIL", "TOOLBAR: Show email icon");
+define("_MI_CMS_TOOLBAR_EMAIL_DSC", "Show a email icon within the detailpage");
+define("_MI_CMS_TOOLBAR_SHARE", "TOOLBAR: Show share icon");
+define("_MI_CMS_TOOLBAR_SHARE_DSC", "Show a share icon within the detailpage");
 define("_MI_CMS_SHOW_VIEW_COUNTER", "Show views counter?");
 define("_MI_CMS_SHOW_VIEW_COUNTER_DSC", "Toggles the visibility of the views counter field.");
 define("_MI_CMS_SHOW_LAST_UPDATED", "Show date last updated?");
