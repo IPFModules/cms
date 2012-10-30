@@ -7,17 +7,51 @@
 			<h2><{$cms_start.title}> <{if $cms_is_admin}><{$cms_start.editItemLink}> <{$cms_start.deleteItemLink}><{/if}></h2>
 			<{if $cms_start.subtitle}><h3><{$cms_start.subtitle}></h3><{/if}>
 			
-			<{if $show_toolbar_print == TRUE}><a rel="nofollow" href="<{$cms_url}>print.php?start_id=<{$cms_start.start_id}>" title="<{$smarty.const._MD_CMS_PRINT}>" target="_blank"><img style="vertical-align: middle;" alt="<{$smarty.const._MD_CMS_PRINT}>" title="<{$smarty.const._MD_CMS_PRINT}>" src="<{$cms_images_url}>application-text.png" /></a><{/if}>
+			<{if $show_toolbar_print == TRUE}>
+			<span style="width: 22px;float: left;padding-right:3px;">
+			<a rel="nofollow" href="<{$cms_url}>print.php?start_id=<{$cms_start.start_id}>" title="<{$smarty.const._MD_CMS_PRINT}>" target="_blank"><img style="vertical-align: middle;" alt="<{$smarty.const._MD_CMS_PRINT}>" title="<{$smarty.const._MD_CMS_PRINT}>" src="<{$cms_images_url}>application-print-22px.png" /></a>
+			</span>
+			<{/if}>
 			
-			<{if $show_toolbar_pdf == TRUE}><a rel="nofollow" href="<{$cms_url}>pdf.php?start_id=<{$cms_start.start_id}>" title="<{$smarty.const._MD_CMS_PDF}>" target="_blank"><img style="vertical-align: middle;" alt="<{$smarty.const._MD_CMS_PDF}>" title="<{$smarty.const._MD_CMS_PDF}>" src="<{$cms_images_url}>application-pdf.png" /></a><{/if}>
+			<{if $show_toolbar_pdf == TRUE}>
+			<span style="width: 22px;float: left;padding-right:3px;">
+			<a rel="nofollow" href="<{$cms_url}>pdf.php?start_id=<{$cms_start.start_id}>" title="<{$smarty.const._MD_CMS_PDF}>" target="_blank"><img style="vertical-align: middle;" alt="<{$smarty.const._MD_CMS_PDF}>" title="<{$smarty.const._MD_CMS_PDF}>" src="<{$cms_images_url}>application-pdf-22px.png" /></a>
+			</span>
+			<{/if}>
 			
-			<{if $show_toolbar_email == TRUE}><a rel="nofollow" href="mailto:?subject=<{$cms_start.title}>&nbsp;-&nbsp;<{if $cms_start.subtitle}><{$cms_start.subtitle}><{/if}>&body=<{$cms_start.itemUrl}>" title="<{$smarty.const._MD_CMS_EMAIL}>" target="_blank"><img style="vertical-align: middle;" alt="<{$smarty.const._MD_CMS_EMAIL}>" title="<{$smarty.const._MD_CMS_EMAIL}>" src="<{$cms_images_url}>application-mbox.png" /></a><{/if}>
+			<{if $show_toolbar_email == TRUE}>
+			<span style="width: 22px;float: left;padding-right:3px;">
+			<a rel="nofollow" href="mailto:?subject=<{$cms_start.title}>&nbsp;-&nbsp;<{if $cms_start.subtitle}><{$cms_start.subtitle}><{/if}>&body=<{$cms_start.itemUrl}>" title="<{$smarty.const._MD_CMS_EMAIL}>" target="_blank"><img style="vertical-align: middle;" alt="<{$smarty.const._MD_CMS_EMAIL}>" title="<{$smarty.const._MD_CMS_EMAIL}>" src="<{$cms_images_url}>application-mbox-22px.png" /></a>
+			</span>
+			<{/if}>
 			
-			<{if $show_toolbar_share == TRUE}><a rel="nofollow" href="#" title="<{$smarty.const._MD_CMS_SHARE}>" target="_blank"><img style="vertical-align: middle;" alt="<{$smarty.const._MD_CMS_SHARE}>" title="<{$smarty.const._MD_CMS_SHARE}>" src="<{$cms_images_url}>application-text.png" /></a><{/if}>
-
-
-
-			</a>
+			<{if $show_toolbar_share == TRUE}>
+			<div id="mouseon-examples" style="float:left;padding-right:3px;">
+				<div style="width: 22px;text-align: center;">
+					<img style="vertical-align: middle;" src="<{$cms_images_url}>application-share-22px.png" />
+				</div>
+			</div>
+			<script type="text/javascript" src="<{$icms_url}>/modules/cms/scripts/jquery.powertip-1.1.0.min.js"></script>
+			<link href="<{$icms_url}>/modules/cms/scripts/jquery.powertip.css" rel="stylesheet" type="text/css" />
+			<script type="text/javascript">
+				$(function() {
+					// mouse-on examples
+					$('#mouseon-examples div').data('powertipjq', $([
+						'<div class="overtiphere">',
+						'<a rel="nofollow" href="https://plus.google.com/share?url=<{$cms_start.itemUrl}>" target="_blank"><img src="<{$icms_url}>/modules/cms/images/toolbar-gplus-32px.png"></a>',
+						'<a rel="nofollow" href="https://twitter.com/home?status=<{$cms_start.title}>%20<{$cms_start.itemUrl}>" target="_blank"><img src="<{$icms_url}>/modules/cms/images/toolbar-twitter-32px.png"></a>',
+						'<a rel="nofollow" href="https://www.facebook.com/sharer.php?u=<{$cms_start.itemUrl}>&t=<{$cms_start.title}>"><img src="<{$icms_url}>/modules/cms/images/toolbar-facebook-32px.png"></a>',
+						'<a rel="nofollow" href="https://www.linkedin.com/shareArticle?mini=true&url=<{$cms_start.itemUrl}>&title=<{$cms_start.title}>" target="_blank"><img src="<{$icms_url}>/modules/cms/images/toolbar-linkedin-32px.png"></a>',
+						'</div>'
+					].join('\n')));
+					$('#mouseon-examples div').powerTip({
+						placement: 'e',
+						mouseOnToPopup: true
+					});
+				});
+			</script>
+			<{/if}>
+			<div style="clear:both;padding: 0 0 10px 0;"></div>
 			<{if $cms_post_comment}><div class="itemCmsInfoComment"><{$cms_start.start_comment_info}></div><{/if}>
 		</div>
 		<{if $cms_start.counter || $cms_start.updated}>

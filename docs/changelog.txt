@@ -4,7 +4,7 @@ Dann hat man sie nach dem Löschen eines Objektes noch drin.
 
 Notifi nur bestimmte Gruppen sichtbar machen.
 
-Add the details for sharing
+
 
 
 
@@ -20,7 +20,7 @@ ADDED:
 - New option to display a Print icon in the detailpage
 - New option to display a PDF icon in the detailpage
 - New option to display a eMail icon in the detailpage
-- New option to display a Share icon in the detailpage
+- New option to display a Share icon in the detailpage (Google+, Twitter, Facebook, LinkedIn)
 - Subtitle as an option field added
 
 UPDATED:
