@@ -28,7 +28,7 @@
 			<{if $show_toolbar_share == TRUE}>
 			<div id="mouseon-examples" style="float:left;padding-right:3px;">
 				<div style="width: 22px;text-align: center;">
-					<img style="vertical-align: middle;" src="<{$cms_images_url}>application-share-22px.png" />
+					<img style="vertical-align: middle;" alt="<{$smarty.const._MD_CMS_SHARE}>" title="<{$smarty.const._MD_CMS_SHARE}>" src="<{$cms_images_url}>application-share-22px.png" />
 				</div>
 			</div>
 			<script type="text/javascript" src="<{$icms_url}>/modules/cms/scripts/jquery.powertip-1.1.0.min.js"></script>
@@ -38,10 +38,10 @@
 					// mouse-on examples
 					$('#mouseon-examples div').data('powertipjq', $([
 						'<div class="overtiphere">',
-						'<a rel="nofollow" href="https://plus.google.com/share?url=<{$cms_start.itemUrl}>" target="_blank"><img src="<{$icms_url}>/modules/cms/images/toolbar-gplus-32px.png"></a>',
-						'<a rel="nofollow" href="https://twitter.com/home?status=<{$cms_start.title}>%20<{$cms_start.itemUrl}>" target="_blank"><img src="<{$icms_url}>/modules/cms/images/toolbar-twitter-32px.png"></a>',
-						'<a rel="nofollow" href="https://www.facebook.com/sharer.php?u=<{$cms_start.itemUrl}>&t=<{$cms_start.title}>"><img src="<{$icms_url}>/modules/cms/images/toolbar-facebook-32px.png"></a>',
-						'<a rel="nofollow" href="https://www.linkedin.com/shareArticle?mini=true&url=<{$cms_start.itemUrl}>&title=<{$cms_start.title}>" target="_blank"><img src="<{$icms_url}>/modules/cms/images/toolbar-linkedin-32px.png"></a>',
+						'<a rel="nofollow" href="https://plus.google.com/share?url=<{$cms_start.itemUrl}>" target="_blank"><img src="<{$icms_url}>/modules/cms/images/toolbar-gplus-32px.png" alt="<{$smarty.const._MD_CMS_SHARE_WITH}> <{$smarty.const._MD_CMS_SHARE_WITH_GOOGLE}>" title="<{$smarty.const._MD_CMS_SHARE_WITH}> <{$smarty.const._MD_CMS_SHARE_WITH_GOOGLE}>" /></a>',
+						'<a rel="nofollow" href="https://twitter.com/home?status=<{$cms_start.title}>%20<{$cms_start.itemUrl}>" target="_blank"><img src="<{$icms_url}>/modules/cms/images/toolbar-twitter-32px.png"  alt="<{$smarty.const._MD_CMS_SHARE_WITH}> <{$smarty.const._MD_CMS_SHARE_WITH_TWITTER}>" title="<{$smarty.const._MD_CMS_SHARE_WITH}> <{$smarty.const._MD_CMS_SHARE_WITH_TWITTER}>" /></a>',
+						'<a rel="nofollow" href="https://www.facebook.com/sharer.php?u=<{$cms_start.itemUrl}>&t=<{$cms_start.title}>"><img src="<{$icms_url}>/modules/cms/images/toolbar-facebook-32px.png"  alt="<{$smarty.const._MD_CMS_SHARE_WITH}> <{$smarty.const._MD_CMS_SHARE_WITH_FACEBOOK}>" title="<{$smarty.const._MD_CMS_SHARE_WITH}> <{$smarty.const._MD_CMS_SHARE_WITH_FACEBOOK}>" /></a>',
+						'<a rel="nofollow" href="https://www.linkedin.com/shareArticle?mini=true&url=<{$cms_start.itemUrl}>&title=<{$cms_start.title}>" target="_blank"><img src="<{$icms_url}>/modules/cms/images/toolbar-linkedin-32px.png"  alt="<{$smarty.const._MD_CMS_SHARE_WITH}> <{$smarty.const._MD_CMS_SHARE_WITH_LINKEDIN}>" title="<{$smarty.const._MD_CMS_SHARE_WITH}> <{$smarty.const._MD_CMS_SHARE_WITH_LINKEDIN}>" /></a>',
 						'</div>'
 					].join('\n')));
 					$('#mouseon-examples div').powerTip({
