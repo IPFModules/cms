@@ -29,6 +29,7 @@ UPDATED:
 FIXED:
 - Set the logged in User as default within the form
 - slider-demos.css is much more smaller now
+- Bugfix for global search within StartHandler.php (submitter -> creator)
 
 
 

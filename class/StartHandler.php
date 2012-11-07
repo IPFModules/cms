@@ -129,7 +129,7 @@ class mod_cms_StartHandler extends icms_ipf_Handler
 
 		if ($userid != 0) 
 		{
-			$criteria->add(new icms_db_criteria_Item('submitter', $userid));
+			$criteria->add(new icms_db_criteria_Item('creator', $userid));
 		}
 		
 		if ($queryarray) 
