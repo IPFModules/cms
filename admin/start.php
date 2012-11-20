@@ -235,20 +235,20 @@ if (in_array($clean_op, $valid_op, TRUE))
 			
 			//get Preview
 			$objectTable->addColumn(new icms_ipf_view_Column("title", FALSE, FALSE, 'getPreviewItemLink'));
-			
-			$objectTable->addColumn(new icms_ipf_view_Column("date"));
-			$objectTable->addColumn(new icms_ipf_view_Column("last_update"));
-			$objectTable->addColumn(new icms_ipf_view_Column("counter"));
+
+			$objectTable->addColumn(new icms_ipf_view_Column("date", "center", "100"));
+			$objectTable->addColumn(new icms_ipf_view_Column("last_update", "center", "100"));
+			$objectTable->addColumn(new icms_ipf_view_Column("counter", "center", "100"));
 			//$objectTable->addColumn(new icms_ipf_view_Column('weight', 'center', TRUE, 'getWeightControl'));
 			//$objectTable->addActionButton("changeWeight", FALSE, _SUBMIT);
-			$objectTable->addColumn(new icms_ipf_view_Column("beendet", "center", TRUE));
-			$objectTable->addColumn(new icms_ipf_view_Column("online_status", "center", TRUE));
+			$objectTable->addColumn(new icms_ipf_view_Column("beendet", "center", "90", TRUE));
+			$objectTable->addColumn(new icms_ipf_view_Column("online_status", "center", "90", TRUE));
 			$objectTable->setDefaultSort('last_update'); //geändert von date zu last_update
 			$objectTable->setDefaultOrder('DESC'); //geändert von ASC zu DESC
 			$objectTable->addIntroButton("addstart", "start.php?op=mod", _AM_CMS_START_CREATE);
 			$objectTable->addFilter('beendet', 'beendet_filter');
 			$objectTable->addFilter('online_status', 'online_status_filter');
-			
+				
 			//detailpage ACP
 			$objectTable->addCustomAction( 'getViewItemLink' );
 			

@@ -36,7 +36,7 @@ define("_CO_CMS_START_HISTORY", "Historie / Neuer Entwurf");
 define("_CO_CMS_START_HISTORY_DSC", "Dieser Text ist nur fuer den Admin sichtbar. Daher kann dieses Feld als Historie oder auch als Feld für einen neuen Entwurf genutzt werden.");
 define("_CO_CMS_START_CREATOR", "Autor");
 define("_CO_CMS_START_CREATOR_DSC", "Die Person, welche den Inhalt erstellt hat.");
-define("_CO_CMS_START_DATE", "Erstellungsdatum");
+define("_CO_CMS_START_DATE", "Erstellt am");
 define("_CO_CMS_START_DATE_DSC", "Datum eingeben, seit wann der Inhalt erstellt wurde.");
 define("_CO_CMS_START_LAST_UPDATE", "Aktualisiert?");
 define("_CO_CMS_START_LAST_UPDATE_DSC", "Wann wurde ein Inhalt aktualisiert. Das aktualisierte Datum kann in der Hauptseite und Detailseite dargestellt werden um darauf aufmerksam zu machen. Weitere Konfiguarationen dazu gibt es in den Modul Einstellungen.");
