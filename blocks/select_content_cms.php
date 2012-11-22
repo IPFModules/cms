@@ -32,6 +32,10 @@ function show_select_content_cms($options)
 	
 	// Assign to template
 	$block['select_content_cms'] = $cms->toArray();
+	
+	// Create a Smarty-Link for the block <{$block.itemUrl}>
+	$block['itemUrl'] = $cms->getItemLink(TRUE).'&seite='.$cms->short_url();
+	
 	$block['show_logos'] = $options[1];
 	$block['logo_block_display_width'] = icms_getConfig('logo_block_display_width', $cmsModule->getVar('dirname'));
 	if (icms_getConfig('start_logo_position', $cmsModule->getVar('dirname') == 1)) // Align right

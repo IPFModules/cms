@@ -12,7 +12,7 @@ content klonen
 
 
 
-3.0 Final from 29th October. 2012
+3.0 Final from 22th Nov. 2012
 
 Changelog:
 
@@ -33,6 +33,7 @@ FIXED:
 - slider-demos.css is much more smaller now
 - Bugfix for global search within StartHandler.php (submitter -> creator)
 - Link to the comments improved
+- The link from "title" and "read more" was brocken from the "block_select_content"
 
 
 

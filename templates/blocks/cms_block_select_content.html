@@ -9,6 +9,6 @@ style sheets do not work on cached blocks. I think this is a long-standing core 
 	
 <!-- Compact list mode -->
 <{else}>
-	<a href="<{$start.itemUrl}>"><h2 style="clear:both; margin-bottom:1em;"><{$block.select_content_cms.title}></h2></a>
-	<p class="cms_description"><a href="<{$start.itemUrl}>" title="<{$start.title}>"></a><{$block.select_content_cms.description}>  <span><a href="<{$start.itemUrl}>">(<{$smarty.const._CO_CMS_READ_MORE}>)</a></span></p>
+	<a href="<{$block.itemUrl}>"><h2 style="clear:both; margin-bottom:1em;"><{$block.select_content_cms.title}></h2></a>
+	<p class="cms_description"><a href="<{$block.itemUrl}>" title="<{$start.title}>"></a><{$block.select_content_cms.description}>  <span><a href="<{$block.itemUrl}>">(<{$smarty.const._CO_CMS_READ_MORE}>)</a></span></p>
 <{/if}>
