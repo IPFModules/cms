@@ -28,6 +28,10 @@ function editstart($start_id = 0)
 	{
 		$startObj->loadTags();
 		$startObj->loadCategories();
+		
+		//show the new date in the form
+		$startObj->setVar("last_update", time());
+	
 		$icmsModule->displayAdminMenu(0, _AM_CMS_CMS . " > " . _CO_ICMS_EDITING);
 		$sform = $startObj->getForm(_AM_CMS_START_EDIT, "addstart");
 		$sform->assign($icmsAdminTpl);

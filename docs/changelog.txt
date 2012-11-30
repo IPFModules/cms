@@ -34,6 +34,7 @@ FIXED:
 - Bugfix for global search within StartHandler.php (submitter -> creator)
 - Link to the comments improved
 - The link from "title" and "read more" was brocken from the "block_select_content"
+- The updated date was not set in the edit form
 
 
 
