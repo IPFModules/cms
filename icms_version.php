@@ -35,7 +35,7 @@ $modversion = array(
 /**  Development information */
 	"status_version"			=> "3.0",
 	"status"					=> "Final",
-	"date"						=> "22.11.2012",
+	"date"						=> "05.12.2012",
 	"author_word"				=> "For ICMS 1.3+ only.",
 	"warning"					=> "trunk",
 

@@ -34,7 +34,7 @@ class mod_cms_Start extends icms_ipf_seo_Object
 		$this->hideFieldFromForm(array("beendet"));
 		$this->initNonPersistableVar('tag', XOBJ_DTYPE_INT, 'tag', FALSE, FALSE, FALSE, TRUE);
 		$this->initNonPersistableVar('category', XOBJ_DTYPE_INT, 'category', FALSE, FALSE, FALSE, TRUE);
-		$this->quickInitVar("description", XOBJ_DTYPE_TXTAREA, TRUE);
+		$this->quickInitVar("description", XOBJ_DTYPE_TXTAREA, FALSE);
 		$this->quickInitVar("extended_text", XOBJ_DTYPE_TXTAREA, FALSE);
 		$this->quickInitVar("history", XOBJ_DTYPE_TXTAREA, FALSE);
 		//make Admin (1) as default, but the "creator" will be overwriten by /admin/start.php 

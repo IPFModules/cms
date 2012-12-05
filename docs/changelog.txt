@@ -1,18 +1,19 @@
-Todo: afterDelete Funktion ansehen bei QM-B. 
+Todo: 
+1) afterDelete Funktion ansehen bei QM-B. 
 Die eingetragenen Notifications werden irgendwie nicht automatisch wieder rausgenommen.
 Dann hat man sie nach dem Löschen eines Objektes noch drin.
 
-Notifi nur bestimmte Gruppen sichtbar machen.
+2) Notifi nur bestimmte Gruppen sichtbar machen.
 
-oninstall with IPF
+3) oninstall with IPF
 
-content klonen
-
-
+4) content klonen
 
 
 
-3.0 Final from 22th Nov. 2012
+
+
+3.0 Final from 05th Dez. 2012
 
 Changelog:
 
@@ -35,6 +36,7 @@ FIXED:
 - Link to the comments improved
 - The link from "title" and "read more" was brocken from the "block_select_content"
 - The updated date was not set in the edit form
+- HTML bugfix in the teaser text (many thanks to @debianus)
 
 
 
