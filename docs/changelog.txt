@@ -5,9 +5,7 @@ Dann hat man sie nach dem Löschen eines Objektes noch drin.
 
 2) Notifi nur bestimmte Gruppen sichtbar machen.
 
-3) oninstall with IPF
-
-4) content klonen
+3) content klonen
 
 
 
@@ -25,6 +23,8 @@ ADDED:
 - New option to display a eMail icon in the detailpage
 - New option to display a Share icon in the detailpage
 - Subtitle as an option field added
+- Module support URL added
+- First sample page after a fresh module installation
 
 UPDATED:
 - jquery sliderkit updated to version 1.9.2

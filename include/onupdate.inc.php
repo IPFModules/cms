@@ -71,6 +71,27 @@ function icms_module_update_cms($module)
 	return TRUE;
 }
 
+function cms_start() {
+	$cms_start_handler = icms_getModuleHandler( 'start', basename( dirname( dirname( __FILE__ ) ) ), 'cms' );
+	$startObj = $cms_start_handler -> create(TRUE);
+	$startObj->setVar('title', 'My first demo content is ready');
+	$startObj->setVar('subtitle', 'Thank you for installing the cms module');
+	$startObj->setVar('website', 'http://www.impresscms.de');
+	$startObj->setVar('description', '<p><a href="http://www.impresscms.de/content/impresscms-demo-content-cms-module.png" title="ACP of ImpressCMS" rel="lightbox"><img style="float: left; margin: 0px 10px 5px 0px;" src="http://www.impresscms.de/content/impresscms-demo-content-cms-module_thumb.png" /></a>Vestibulum pretium blandit sem vel consequat. Phasellus convallis pellentesque ipsum ac lobortis. Suspendisse adipiscing magna non tellus ornare vel ullamcorper diam elementum. Nam dictum, diam ac porttitor pellentesque, eros ligula tempor urna, vel porttitor urna magna in sapien? Donec quis dolor risus. Vivamus rutrum tristique lorem, non rutrum felis porta quis. Pellentesque quis nisl et quam tempor ultrices eu in tortor.</p><p>Aliquam ipsum dolor, vulputate vel semper nec, mollis quis augue. Nulla id mauris a enim pellentesque malesuada at eget nulla. Pellentesque molestie luctus laoreet. Ut lectus sem, accumsan sit amet laoreet sed, dapibus eu tortor. Etiam consectetur, quam a mattis dignissim, mi elit dignissim orci, ut adipiscing urna sem eu lacus. Proin gravida orci id mi suscipit fermentum.</p>');
+	$startObj->setVar('extended_text', '<p><a href="http://www.impresscms.de/content/impresscms-demo-content-cms-module.png" title="ACP of ImpressCMS" rel="lightbox"><img style="float: left; margin: 0px 10px 5px 0px;" src="http://www.impresscms.de/content/impresscms-demo-content-cms-module_thumb.png" /></a>Here, on the left site is a tumbnail image. If you click on it, will open it and load the right image with a "lightbox". The lightbox function is in ImpressCMS included, you can use it in all modules and blocks. Estibulum pretium blandit sem vel consequat. Phasellus convallis pellentesque ipsum ac lobortis. Suspendisse adipiscing magna non tellus ornare vel ullamcorper diam elementum. Nam dictum, diam ac porttitor pellentesque, eros ligula tempor urna, vel porttitor urna magna in sapien? Donec quis dolor risus. Vivamus rutrum tristique lorem, non rutrum felis porta quis. Pellentesque quis nisl et quam tempor ultrices eu in tortor. Aliquam ipsum dolor, vulputate vel semper nec, mollis quis augue. Nulla id mauris a enim pellentesque malesuada at eget nulla. Pellentesque molestie luctus laoreet. Ut lectus sem, accumsan sit amet laoreet sed, dapibus eu tortor. Etiam consectetur, quam a mattis dignissim, mi elit dignissim orci, ut adipiscing urna sem eu lacus. Proin gravida orci id mi suscipit fermentum. Paragraph end.<br /><br />Second paragraph. Nulla at venenatis leo. Sed nibh est, cursus vitae convallis at, convallis at felis. Sed adipiscing tincidunt elementum. Pellentesque viverra sem non massa tempus vel commodo mauris vulputate. Duis nec enim in velit consectetur ultrices. Proin a pretium ligula. Ut varius imperdiet rhoncus! Praesent sed neque at lacus vehicula placerat ut quis nunc. Vivamus dictum tristique tincidunt! Nulla facilisi. Maecenas lobortis vehicula velit, non bibendum ligula consequat nec. Maecenas ac nibh ligula. Cras risus nibh, ullamcorper ac pretium in, interdum et nunc. Nunc erat mauris, blandit quis suscipit molestie, eleifend nec quam. Ut blandit nunc sed turpis egestas a mollis nisi commodo. Etiam blandit sollicitudin nibh nec consectetur.</p><p>Here some Typography examples. The output is&nbsp;heavily dependent from your used theme design. Enjoy it.</p><h1></h1><h1>Heading 1</h1><h2>Heading 2</h2><h3>Heading 3</h3><h4>Heading 4</h4><h5>Heading 5</h5><h6>Heading 6</h6><h1><br />Blockquote</h1><div class="xoopsQuote">Sed sit amet mauris erat. Fusce imperdiet euismod justo, ut faucibus augue placerat id. Proin eleifend vulputate consequat. Vestibulum nibh elit; interdum ac pulvinar ut; pulvinar eu dolor. Integer viverra posuere odio vel molestie! Morbi vel elementum enim. Mauris tristique mi in magna dictum ut viverra ipsum laoreet! Maecenas et elit et mi commodo aliquam non ac ipsum. Suspendisse potenti. Mauris eget urna eget nunc tincidunt dignissim.</div><h1></h1><h1>Blockcode</h1> <div class="xoopsCode">function cms_notify_iteminfo($category, $item_id){<br />&nbsp;&nbsp;&nbsp; global $icmsModule, $icmsModuleConfig, $icmsConfig;<br /><br />&nbsp;&nbsp;&nbsp; if ($category == &#039;&#039;global&#039;&#039;) {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $item[&#039;&#039;name&#039;&#039;] = &#039;&#039;&#039;&#039;;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $item[&#039;&#039;url&#039;&#039;] = &#039;&#039;&#039;&#039; ;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return $item;<br />&nbsp;&nbsp;&nbsp; }<br />}</div><h1><br />Lists</h1><p>Some list examples here:</p><h2>Unordered List</h2><!-- Unordered List --><ul><li>tation ullamcorper suscipit lobortis</li><li>Nam liber tempor cum soluta nobis</li><li>imperdiet doming id quod mazim</li><li>suscipit lobortis nisl ut aliquip ex</li></ul><h2><span class="com">Ordered List</span></h2><!-- Ordered List --><ol><li>tation ullamcorper suscipit lobortis</li><li>Nam liber tempor cum soluta nobis</li><li>imperdiet doming id quod mazim</li><li>suscipit lobortis nisl ut aliquip ex</li></ol><h1></h1><h1>Tables</h1><p>Some table examples here:</p><h2>Easy Table</h2><!-- Table --><table style="width: 100%;" cellpadding="0" cellspacing="0"><thead><tr><th>Item1</th><th>Item2</th><th>Item3</th></tr></thead><tbody><tr><td>Item1</td><td>Item2</td><td>Item3</td></tr><tr><td>Item1</td><td>Item2</td><td>Item3</td></tr><tr><td>Item1</td><td>Item2</td><td>Item3</td></tr><tr><td>Item1</td><td>Item2</td><td>Item3</td></tr></tbody></table><h2>ImpressCMS Table</h2><!-- Table --><table style="width: 100%;" class="outer" cellpadding="0" cellspacing="0"><thead><tr><th>Item1</th><th>Item2</th><th>Item3</th></tr></thead><tbody><tr class="even"><td>Item1</td><td>Item2</td><td>Item3</td></tr><tr class="odd"><td>Item1</td><td>Item2</td><td>Item3</td></tr><tr class="even"><td>Item1</td><td>Item2</td><td>Item3</td></tr><tr class="odd"><td>Item1</td><td>Item2</td><td>Item3</td></tr></tbody></table><h1></h1><h1>Horizontal Rules</h1><p>HR</p><!-- HR --><hr /><h1></h1><h1>ImpressCMS Messages</h1><p>confirmMsg</p><div class="confirmMsg"><b>Success</b> - This is a success message.</div><p>&nbsp;</p><p>errorMsg</p><div class="errorMsg"><b>Failure</b> - This is a failure message.</div><p>&nbsp;</p><p>resultMsg</p><div class="resultMsg"><b>Information</b> - This is an information message.</div><p>&nbsp;</p><h1>default Pagination</h1><div class="pagination default"><a href="#">◄ Prev</a> <a href="#">1</a> <span class="current"><strong>(2)</strong></span> <a href="#">3</a> <a href="#">4</a> <a href="#">Next ►</a></div><p>&nbsp;</p><p>END of Typo.</p><p><img src="http://localhost/01-testing/impresscms/icms_13trunk/uploads/smil3dbd4d6422f04.gif" alt="" /></p>');
+	$startObj->setVar('history', '<p>- My first content from 2012-10-25</p>');
+	$startObj->setVar('date', '1351144200');
+	$startObj->setVar('last_update', '1351144200');
+	$startObj->setVar('start_comments', '0');
+	$startObj->setVar('meta_keywords', 'my,keywords,here');
+	$startObj->setVar('meta_description', 'describe your content and write here your very short text');
+	$startObj->setVar('short_url', 'my-first-demo-content-is-ready');
+	$cms_start_handler -> insert( $startObj, TRUE );
+	echo '<code> --<b>CMS Start </b> successfully imported!</code><br />';
+}
+
+
+
 function icms_module_install_cms($module)
 {
 	// set the notifications OFF as default after the module installation
@@ -81,52 +102,10 @@ function icms_module_install_cms($module)
 	$config = $config_handler->getConfig($configs[0]->getVar('conf_id'));
 	$config->setVar("conf_value", 0);
 	$config_handler->insertConfig($config);
-
-
-	// insert some licenses so that it is ready for use on installation
-	$queries = array();
 	
-	// a generic tag to hold untagged content
-	$queries[] = "INSERT into " . icms::$xoopsDB->prefix('cms_start') . " (
-			`start_id`, 
-			`title`, 
-			`subtitle`, 
-			`logo`, 
-			`website`, 
-			`beendet`, 
-			`description`, 
-			`extended_text`, 
-			`history`, 
-			`creator`, 
-			`date`, 
-			`last_update`, 
-			`start_comments`, 
-			`online_status`, 
-			`counter`, 
-			`dohtml`, 
-			`doimage`, 
-			`dosmiley`, 
-			`meta_keywords`, 
-			`meta_description`, 
-			`short_url`) values 
-	(1, 'My first demo content is ready', 'Thank you for installing the cms module', '', 'http://www.impresscms.de', '0', '<p><a href=\"http://www.impresscms.de/content/impresscms-demo-content-cms-module.png\" title=\"ACP of ImpressCMS\" rel=\"lightbox\"><img style=\"float: left; margin: 0px 10px 5px 0px;\" src=\"http://www.impresscms.de/content/impresscms-demo-content-cms-module_thumb.png\" /></a>Vestibulum pretium blandit sem vel consequat. Phasellus convallis pellentesque ipsum ac lobortis. Suspendisse adipiscing magna non tellus ornare vel ullamcorper diam elementum. Nam dictum, diam ac porttitor pellentesque, eros ligula tempor urna, vel porttitor urna magna in sapien? Donec quis dolor risus. Vivamus rutrum tristique lorem, non rutrum felis porta quis. Pellentesque quis nisl et quam tempor ultrices eu in tortor.</p>\r\n<p>Aliquam ipsum dolor, vulputate vel semper nec, mollis quis augue. Nulla id mauris a enim pellentesque malesuada at eget nulla. Pellentesque molestie luctus laoreet. Ut lectus sem, 
-accumsan sit amet 
-laoreet sed, dapibus eu tortor. Etiam consectetur, quam a mattis dignissim, mi elit dignissim orci, ut adipiscing urna sem eu lacus. Proin gravida orci id mi suscipit fermentum.</p>', '<p></p>\r\n<p><a href=\"http://www.impresscms.de/content/impresscms-demo-content-cms-module.png\" title=\"ACP of ImpressCMS\" rel=\"lightbox\"><img style=\"float: left; margin: 0px 10px 5px 0px;\" src=\"http://www.impresscms.de/content/impresscms-demo-content-cms-module_thumb.png\" /></a>Here, on the left site is a tumbnail image. If you click on it, will open it and load the right image with a \"lightbox\". The lightbox function is in ImpressCMS included, you can use it in all modules and blocks. Estibulum pretium blandit sem vel consequat. Phasellus convallis pellentesque ipsum ac lobortis. Suspendisse adipiscing magna non tellus ornare vel ullamcorper diam elementum. Nam dictum, diam ac porttitor pellentesque, eros ligula tempor urna, vel porttitor urna magna in sapien? Donec quis dolor risus. Vivamus rutrum tristique lorem,
- non rutrum 
-felis porta quis. Pellentesque quis nisl et quam tempor ultrices eu in tortor. Aliquam ipsum dolor, vulputate vel semper nec, mollis quis augue. Nulla id mauris a enim pellentesque malesuada at eget nulla. Pellentesque molestie luctus laoreet. Ut lectus sem, accumsan sit amet laoreet sed, dapibus eu tortor. Etiam consectetur, quam a mattis dignissim, mi elit dignissim orci, ut adipiscing urna sem eu lacus. Proin gravida orci id mi suscipit fermentum. Paragraph end.<br /><br />Second paragraph. Nulla at venenatis leo. Sed nibh est, cursus vitae convallis at, convallis at felis. Sed adipiscing tincidunt elementum. Pellentesque viverra sem non massa tempus vel commodo mauris vulputate. Duis nec enim in velit consectetur ultrices. Proin a pretium ligula. Ut varius imperdiet rhoncus! Praesent sed neque at lacus vehicula placerat ut quis nunc. Vivamus dictum tristique tincidunt! Nulla facilisi. Maecenas lobortis vehicula velit, non bibendum ligula consequat nec. Maecenas ac nibh ligula. Cras risus nibh, 
-ullamcorper ac pretium in, interdum et nunc. Nunc erat mauris, blandit quis suscipit molestie, eleifend nec quam. Ut blandit nunc sed turpis egestas a mollis nisi commodo. Etiam blandit sollicitudin nibh nec consectetur.</p>\r\n<p>Here some Typography examples. The output is&nbsp;heavily dependent from your used theme design. Enjoy it.</p>\r\n<h1></h1>\r\n<h1>Heading 1</h1>\r\n<h2>Heading 2</h2>\r\n<h3>Heading 3</h3>\r\n<h4>Heading 4</h4>\r\n<h5>Heading 5</h5>\r\n<h6>Heading 6</h6>\r\n<h1><br />Blockquote</h1>\r\n<div class=\"xoopsQuote\">Sed sit amet mauris erat. Fusce imperdiet euismod justo, ut faucibus augue placerat id. Proin eleifend vulputate consequat. Vestibulum nibh elit; interdum ac pulvinar ut; pulvinar eu dolor. Integer viverra posuere odio vel molestie! Morbi vel elementum enim. Mauris tristique mi in magna dictum ut viverra ipsum laoreet! Maecenas et elit et mi commodo aliquam non ac ipsum. Suspendisse potenti. Mauris eget urna eget nunc tincidunt dignissim.</div>\r\n<h1></h1>\r\
-n<h1>Blockcode</h1> \r\n<div class=\"xoopsCode\">function cms_notify_iteminfo(\$category, \$item_id){<br />&nbsp;&nbsp;&nbsp; global \$icmsModule, \$icmsModuleConfig, \$icmsConfig;<br /><br />&nbsp;&nbsp;&nbsp; if (\$category == ''global'') {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \$item[''name''] = '''';<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \$item[''url''] = '''';<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return \$item;<br />&nbsp;&nbsp;&nbsp; }<br />}</div>\r\n<h1><br />Lists</h1>\r\n<p>Some list examples here:</p>\r\n<h2>Unordered List</h2>\r\n<!-- Unordered List -->\r\n<ul>\r\n<li>tation ullamcorper suscipit lobortis</li>\r\n<li>Nam liber tempor cum soluta nobis</li>\r\n<li>imperdiet doming id quod mazim</li>\r\n<li>suscipit lobortis nisl ut aliquip ex</li>\r\n</ul>\r\n<h2><span class=\"com\">Ordered List</span></h2>\r\n<!-- Ordered List --><ol>\r\n<li>tation ullamcorper suscipit lobortis</li>\r\n<li>Nam liber tempor cum soluta nobis</li>\r\n<li>imperdiet doming id quod mazim</
-li>\r\n<li>suscipit lobortis 
-nisl ut aliquip ex</li>\r\n</ol>\r\n<h1></h1>\r\n<h1>Tables</h1>\r\n<p>Some table examples here:</p>\r\n<h2>Easy Table</h2>\r\n<!-- Table -->\r\n<table style=\"width: 100%;\" cellpadding=\"0\" cellspacing=\"0\">\r\n<thead>\r\n<tr><th>Item1</th><th>Item2</th><th>Item3</th></tr>\r\n</thead>\r\n<tbody>\r\n<tr>\r\n<td>Item1</td>\r\n<td>Item2</td>\r\n<td>Item3</td>\r\n</tr>\r\n<tr>\r\n<td>Item1</td>\r\n<td>Item2</td>\r\n<td>Item3</td>\r\n</tr>\r\n<tr>\r\n<td>Item1</td>\r\n<td>Item2</td>\r\n<td>Item3</td>\r\n</tr>\r\n<tr>\r\n<td>Item1</td>\r\n<td>Item2</td>\r\n<td>Item3</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<h2>ImpressCMS Table</h2>\r\n<!-- Table -->\r\n<table style=\"width: 100%;\" class=\"outer\" cellpadding=\"0\" cellspacing=\"0\">\r\n<thead>\r\n<tr><th>Item1</th><th>Item2</th><th>Item3</th></tr>\r\n</thead>\r\n<tbody>\r\n<tr class=\"even\">\r\n<td>Item1</td>\r\n<td>Item2</td>\r\n<td>Item3</td>\r\n</tr>\r\n<tr class=\"odd\">\r\n<td>Item1</td>\r\n<td>Item2</td>\r\n<td>Item3</td>\r\n</tr>\r\n<tr class=\"even\"
->\r\n<td>Item1
-	</td>\r\n<td>Item2</td>\r\n<td>Item3</td>\r\n</tr>\r\n<tr class=\"odd\">\r\n<td>Item1</td>\r\n<td>Item2</td>\r\n<td>Item3</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<h1></h1>\r\n<h1>Horizontal Rules</h1>\r\n<p>HR</p>\r\n<!-- HR --><hr />\r\n<h1></h1>\r\n<h1>ImpressCMS Messages</h1>\r\n<p>confirmMsg</p>\r\n<div class=\"confirmMsg\"><b>Success</b> - This is a success message.</div>\r\n<p>&nbsp;</p>\r\n<p>errorMsg</p>\r\n<div class=\"errorMsg\"><b>Failure</b> - This is a failure message.</div>\r\n<p>&nbsp;</p>\r\n<p>resultMsg</p>\r\n<div class=\"resultMsg\"><b>Information</b> - This is an information message.</div>\r\n<p>&nbsp;</p>\r\n<h1>default Pagination</h1>\r\n<div class=\"pagination default\"><a href=\"#\">◄ Prev</a> <a href=\"#\">1</a> <span class=\"current\"><strong>(2)</strong></span> <a href=\"#\">3</a> <a href=\"#\">4</a> <a href=\"#\">Next ►</a></div>\r\n<p>&nbsp;</p>\r\n<p>END of Typo.</p>\r\n<p><img src=\"http://localhost/01-testing/impresscms/icms_13trunk/uploads/smil3dbd4d6422f04.gif\" alt=\"\" /
-></p>', '<p>- My first content 
-from 2012-10-25</p>', 1, 1351144200, 1351144200, 0, 1, 0, 1, 1, 1, 'keyword', 'description', 'vestibulum-pretium-blandit-sem-vel-consequat');
-	";
-	foreach($queries as $query) {
-	$result = icms::$xoopsDB->query($query);
-	}
-
+	// start the function to install the demo content
+	cms_start();
+	
 	return TRUE;
 }
 

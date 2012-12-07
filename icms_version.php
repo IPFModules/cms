@@ -75,6 +75,10 @@ $modversion["sub"][0]["url"] = "archiviert_start.php";
 $modversion['people']['developers'][] = "<a href='http://community.impresscms.org/userinfo.php?uid=91' target='_blank'>Madfish</a> | Simon Wilkinson | <a href='https://www.isengard.biz'>isengard.biz</a> | simon@isengard.biz";
 $modversion['people']['developers'][] = "<a href='http://community.impresscms.org/userinfo.php?uid=10' target='_blank'>sato-san</a> | René Sato| 佐藤レネー | <a href='http://www.impresscms.de'>impresscms.de</a> | sato-san@impresscms.org";
 
+/** Menu suppoprt info */
+$modversion['support_site_url'] = 'http://www.impresscms.de/modules/forum';
+$modversion['support_site_name']= 'ImpressCMS Community (German)';
+
 /** Manual */
 $modversion['manual']['wiki'][] = "<a href='http://wiki.impresscms.org/index.php?title=cms' target='_blank'>English</a>";
 
