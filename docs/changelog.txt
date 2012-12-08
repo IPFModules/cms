@@ -28,6 +28,7 @@ ADDED:
 
 UPDATED:
 - jquery sliderkit updated to version 1.9.2
+- changed the manual (recommendation for sprockets > 2.0)
 
 FIXED:
 - Set the logged in User as default within the form
