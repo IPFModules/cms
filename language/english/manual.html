@@ -18,7 +18,7 @@
 				<li>You can create contents.</li>
 				<li>You can upload images or photos in any sizes.</li>
 				<li>Set a image resize for the INDEX page, DETAIL page and RANDOM BLOCK.</li>
-				<li>Add the Sprockets Module to use the Tag function.</li>
+				<li>Add the Sprockets Module to use the Tag and Category function.</li>
 				<li>Present your content with 4 integrated blocks.</li>
 				<li>A new art of comments with informations bubbles.</li>
 				<li>Guest find new comment link for login and register incl content redirect.</li>
@@ -33,6 +33,7 @@
 			
 				<p>At first we need to install the Sprockets Module. Important is to use version 2.0 or higher.</p>
 				<p>Create some tags with the Sprockets Module.</p>
+				<p>If you installed the Sprockets version >2.0, you can use into the cms module a category system too.</p>
 		
 			<h3>Check out the module preferences</h3>
 				<p>There might be some preferences, you'd like to change before using the module first time. Go to Modules > CMS > Preferences</p>
@@ -41,17 +42,26 @@
 					<li>You can display the contents with teaser text within the index page or as a table.</li>
 					<li>How many contents do you like to display in the index page? A good value is 3 or 5.</li>
 					<li>Breadcrumb: This is a small navigation on top of the page</li>
-					<li>Counter: The Hit Counter shows in the detail page of your content the numbers hits.</li>
+					<li>Breadcrumb: This is a small navigation on top of the page</li>
+					<li>TOOLBAR: The Toolbar is visible within the content page only, not in the blocks. If you like you can enable a icon to print a page, create a PDF file, send a link via email, share the content.</li>
 					<li>Select box: If Sprockets are instelled, it's possible to display a select box of tags.</li>
 					<li>Freestyle: If you don't like to use the resize function, switch to the freestyle. After them, you can upload your images with your size.</li>
 					<li>Image file size: Please remember, the server has a limit too. In the most time you can not upload images higher 2MB.</li>
 					<li>Updated content: The updated content will be present on top. You can mark besides a content and display the notice "updated". In addition, you can select between 6 times to show this notice.</li>
 					<li>Comments: This module has some special effects to comment a content. First is, the bubble within the content incl comment counter. If you click as guest, you can not comment a content, but you can find two links. One is for login and one for thr registration. Both links using a redirect, back to the content. This is a new way in ImpressCMS.</li>
+					<li>Notification: This module can send notifications to the user if enabled. The user can select between two types if the administrator allows.</li>
 				</ul>
 				<p>Done! Next step.</p>
 			<hr><a name="2">-2-</a>
+			<h3>System settings</h3>
+				<h5>General Setting > Default Editors</h5>
+				<p>Set the "TinyMCE" to the default editor.</p>
+				<h5>General Setting > HTMLPurifier</h5>
+				<p>If you like to add some special CSS and/or JS within your content, maybe the cms module would not show the right content. The reason is the HTMLPurifier, since he filtered some HTML tags. If you create a business website, maybe you should dissable it. But in the most case your should'nt dissable, because your security could be going down.</p>
+				<h5>Groups > Webmaster</h5>
+				<p>Edit the webmaster group and allow the WYSIWYG editor for the cms module. This means, the webmaster can use the TinyMCE.</p>
 			<h3>Create a new content</h3>
-				<p>Go to the Tab "Content" and click it. Enter a short but descriptive title on top for your new content.</p>
+				<p>Go to the Tab "Content" and click it. Enter a short but descriptive title on top for your new content. (Important is the following: If you create a content with the DHTMLeditor, dissable the option "Enable HTML tags". Otherwise the line break works not correct.)</p>
 			<h3>Upload images or photos</h3>
 				<p>Finally you can start uploading a image or photo for your content. Clicke the upload-button and select your file from your Computer or Digicam. Alternative you can choose a URL.</p>
 			<h3>Content</h3>
@@ -83,6 +93,11 @@
 				<li>Slide content
 					<ul>
 						<li>This is a very nice slider. He will show the latest 3 contents (Please don't change the preferences in this block!). This block use by default a blue color. If you like to change, you need to touch the module CSS files or overwrite the class with your Theme.</li>
+					</ul>
+				</li>
+				<li>Select content
+					<ul>
+						<li>A very useful block, since you can clone it. You can show the teaser text only or the full content in your block. Select your prefered content and setup to your position. Play with the "Block-Position" and "Symlinks" from ImpressCMS also.</li>
 					</ul>
 				</li>
 			</ul>
@@ -122,4 +137,3 @@
 		</div>
     </body>
 </html>
-

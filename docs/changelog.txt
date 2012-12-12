@@ -11,7 +11,7 @@ Dann hat man sie nach dem Löschen eines Objektes noch drin.
 
 
 
-3.0 Final from 05th Dez. 2012
+3.0 Final from Dec. 12th 2012
 
 Changelog:
 
@@ -29,6 +29,8 @@ ADDED:
 UPDATED:
 - jquery sliderkit updated to version 1.9.2
 - changed the manual (recommendation for sprockets > 2.0)
+- module manual updated
+- language files updated
 
 FIXED:
 - Set the logged in User as default within the form

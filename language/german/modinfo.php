@@ -22,15 +22,15 @@ define("_MI_CMS_BLOCKS", "Modul Blöcke");
 
 // Blocks
 define("_MI_CMS_RANDOM", "(Random) content");
-define("_MI_CMS_RANDOMDSC", "Display (random) content");
+define("_MI_CMS_RANDOMDSC", "Ein per Zufall ausgewählter Inhalt wird im Block angezeigt.");
 define("_MI_CMS_LIST", "(List) content");
-define("_MI_CMS_LISTDSC", "Display (listed) content");
+define("_MI_CMS_LISTDSC", "Eine Liste mit Inhalten wird angezeigt.");
 define("_MI_CMS_SLIDER", "(Slide) content");
-define("_MI_CMS_SLIDERDSC", "Display (slide) content");
+define("_MI_CMS_SLIDERDSC", "In einem Slider werden die 3 neuesten Contents dargestellt.");
 define("_MI_CMS_TICKER", "(Ticker) content");
-define("_MI_CMS_TICKERDSC", "Display (ticked) content");
+define("_MI_CMS_TICKERDSC", "In einem schmalen Band wird ein Ticker eingeblendet, der den Titel von neuen Inhalten anzeigt.");
 define("_MI_CMS_SELECT_CONTENT", "(Select) content");
-define("_MI_CMS_SELECT_CONTENTDSC", "Display (selected) content");
+define("_MI_CMS_SELECT_CONTENTDSC", "Zeigt einen ausgewählten Inhalt in der Kurzfassung oder in voller Länge.");
 
 // Preferences
 define("_MI_CMS_INDEX_DISPLAY_MODE", "Anreißer in der Hauptseite anzeigen?");
@@ -41,6 +41,14 @@ define("_MI_CMS_SHOW_TAG_SELECT_BOX", "Zeige eine Auswahlbox mit Tags");
 define("_MI_CMS_SHOW_TAG_SELECT_BOX_DSC", "Wechseln zwischen Ja und Nein. Wenn das Modul 'Sprockets' installiert wurde, kann eine Auswahlbox in der Hauptseite für die Tags angezeigt werden.");
 define("_MI_CMS_SHOW_BREADCRUMB", "Zeige Navigation");
 define("_MI_CMS_SHOW_BREADCRUMB_DSC", "Die Navigation (breadcrumb) kann ein- und ausgeschaltet werden.");
+define("_MI_CMS_TOOLBAR_PRINT", "TOOLBAR: Icon zum Drucken");
+define("_MI_CMS_TOOLBAR_PRINT_DSC", "Zeigt ein kleines Icon mit dem eine druckbare Seite erstellt wird.");
+define("_MI_CMS_TOOLBAR_PDF", "TOOLBAR: Icon für PDF");
+define("_MI_CMS_TOOLBAR_PDF_DSC", "Zeigt ein PDF Icon, mit welchem ein PDF Dokument des Inhaltes erstellt werden kann.");
+define("_MI_CMS_TOOLBAR_EMAIL", "TOOLBAR: Icon für Email");
+define("_MI_CMS_TOOLBAR_EMAIL_DSC", "Zeigt ein Icon mit dem eine Email an einen Freund geschickt werden kann, dabei wird der Link zum Inhalt gleich mit erstellt und in die Email eingefügt.");
+define("_MI_CMS_TOOLBAR_SHARE", "TOOLBAR: Icon zum Teilen");
+define("_MI_CMS_TOOLBAR_SHARE_DSC", "Zeigt ein Icon zum Teilen von Inhalten (share). Dabei wurde bewußt auf Cookies und Javascript verzichtet um den Datenschutz zu gewährleisten.");
 define("_MI_CMS_EXTENSION_PRINT", "Zeige ein Drucksymbol");
 define("_MI_CMS_EXTENSION_PRINT_DSC", "In der Detailseite wird ein Icon dargestellt. Beim anklicken wir die Seite druckfertig vorbereitet.");
 define("_MI_CMS_SHOW_VIEW_COUNTER", "Zeige die Anzahl der Zugriffe?");
