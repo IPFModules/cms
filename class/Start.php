@@ -57,7 +57,7 @@ class mod_cms_Start extends icms_ipf_seo_Object
 		$this->setControl("creator", "user");
 		$this->setControl("online_status", "yesno");
 		
-		// Add Group-Permissions
+		// Add "Visible in" function
 		//$this->quickInitVar("visiblein", XOBJ_DTYPE_OTHER);
 		//$this->setControl("visiblein", "page");
 		
