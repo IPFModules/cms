@@ -443,9 +443,9 @@ else
 		$objectTable->addColumn(new icms_ipf_view_Column("title", "left", "100", 'getItemLink'));
 		$objectTable->addColumn(new icms_ipf_view_Column("date", "center", "20"));
 		$objectTable->addColumn(new icms_ipf_view_Column("last_update", "center", "20"));
-		$objectTable->addColumn(new icms_ipf_view_Column("counter", "center", "20"));
-		$objectTable->setDefaultSort('date');
-		$objectTable->setDefaultOrder('DESC');
+		$objectTable->addColumn(new icms_ipf_view_Column("counter", "center", "40"));
+		$objectTable->setDefaultSort('last_update'); //geändert von date zu last_update
+		$objectTable->setDefaultOrder('DESC'); //geändert von ASC zu DESC
 		$icmsTpl->assign("cms_start_table", $objectTable->fetch());
 	}
 	
