@@ -1,17 +1,4 @@
-Todo: 
-1) afterDelete Funktion ansehen bei QM-B. 
-Die eingetragenen Notifications werden irgendwie nicht automatisch wieder rausgenommen.
-Dann hat man sie nach dem Löschen eines Objektes noch drin.
-
-2) Notifi nur bestimmte Gruppen sichtbar machen.
-
-3) content klonen
-
-
-
-
-
-3.0 Final from Dec. 12th 2012
+3.0 Final from Dec. 13th 2012
 
 Changelog:
 
@@ -25,12 +12,14 @@ ADDED:
 - Subtitle as an option field added
 - Module support URL added
 - First sample page after a fresh module installation
+- Two notification function added, but the default value is OFF 
 
 UPDATED:
 - jquery sliderkit updated to version 1.9.2
 - changed the manual (recommendation for sprockets > 2.0)
 - module manual updated
 - language files updated
+- the comment function is as default NOT ON after the first module installation
 
 FIXED:
 - Set the logged in User as default within the form
@@ -162,20 +151,32 @@ completion = fertigstellung
 
 latest sync. Rev.23543
 
+
+
+
 Knowing errors:
 - redirect on "register" works not 100% perfect, if profile module installed
 - resize images works not in blocks
 - resize images are not visible in print page
 
 
+
 Todo:
 
-- Kommentarfunktion soll nach der Install nicht aktiv sein
-http://community.impresscms.org/modules/newbb/viewtopic.php?topic_id=5095&forum=52&post_id=45498#forumpost45498
-- Unwichtige Felder (wie z.B.: META Tags, dohtml, dobr, doimage, dosmiley) in der Moduladministration mit einem toggle versehen
+- Unwichtige Felder (wie z.B.: META Tags, dohtml, dobr, doimage, dosmiley) in der Moduladministration mit einem Toggle ausstatten
+
 - Adding group-permissions
-http://community.impresscms.org/modules/newbb/viewtopic.php?post_id=45434#forumpost45434
-- Adding notification function
+	http://community.impresscms.org/modules/newbb/viewtopic.php?post_id=45434#forumpost45434
+
 - Option for every content > comment YES/NO
-- Use for print, pdf, mailto this CSS: http://secure.cssdeck.com/labs/full/share-it/0/noframe#dontkillanim
+
+- afterDelete Funktion ansehen bei QM-B. 
+	Die eingetragenen Notifications werden irgendwie nicht automatisch wieder rausgenommen.
+	Dann hat man sie nach dem Löschen eines Objektes noch drin.
+
+- Notifi nur bestimmte Gruppen sichtbar machen.
+
+- content klonen
+
+
 

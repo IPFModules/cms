@@ -94,10 +94,19 @@ function cms_start() {
 
 function icms_module_install_cms($module)
 {
-	// set the notifications OFF as default after the module installation
+	// set the notification function OFF as default after the module installation
 	$config_handler = icms::handler('icms_config');
 	$criteria = new icms_db_criteria_Compo(new icms_db_criteria_Item("conf_modid", $module->getVar("mid")));
 	$criteria->add(new icms_db_criteria_Item("conf_name", "notification_enabled"));
+	$configs = $config_handler->getConfigs($criteria, FALSE);
+	$config = $config_handler->getConfig($configs[0]->getVar('conf_id'));
+	$config->setVar("conf_value", 0);
+	$config_handler->insertConfig($config);
+	
+	// set the comment function OFF as default after the module installation
+	$config_handler = icms::handler('icms_config');
+	$criteria = new icms_db_criteria_Compo(new icms_db_criteria_Item("conf_modid", $module->getVar("mid")));
+	$criteria->add(new icms_db_criteria_Item("conf_name", "com_rule"));
 	$configs = $config_handler->getConfigs($criteria, FALSE);
 	$config = $config_handler->getConfig($configs[0]->getVar('conf_id'));
 	$config->setVar("conf_value", 0);
