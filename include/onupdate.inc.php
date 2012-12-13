@@ -87,7 +87,7 @@ function cms_start() {
 	$startObj->setVar('meta_description', 'describe your content and write here your very short text');
 	$startObj->setVar('short_url', 'my-first-demo-content-is-ready');
 	$cms_start_handler -> insert( $startObj, TRUE );
-	echo '<code> --<b>CMS Start </b> successfully imported!</code><br />';
+	echo '<code> --<b>CMS Start </b> Sample content successfully imported!</code><br />';
 }
 
 
