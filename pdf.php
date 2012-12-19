@@ -38,7 +38,9 @@ $content .= icms_core_DataFilter::undoHtmlSpecialChars($cmsConfig['cms_print_foo
 
 require_once ICMS_PDF_LIB_PATH.'/tcpdf.php';
 	icms_loadLanguageFile('core', 'pdf');
-	$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, TRUE);
+	
+	$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, TRUE, 'UTF-8', FALSE);
+
 	// set document information
 	$pdf->SetCreator(PDF_CREATOR);
 	$pdf->SetAuthor(PDF_AUTHOR);
@@ -49,6 +51,10 @@ require_once ICMS_PDF_LIB_PATH.'/tcpdf.php';
 	$siteslogan = $icmsConfig['slogan'];
 	$pdfheader = icms_core_DataFilter::undoHtmlSpecialChars($sitename.' - '.$siteslogan);
 	$pdf->SetHeaderData($cmsConfig['cms_print_logo'], PDF_HEADER_LOGO_WIDTH, $pdfheader, ICMS_URL);
+	
+	// set header and footer fonts
+	$pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
+	$pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
 
 	//set margins
 	$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
@@ -58,13 +64,19 @@ require_once ICMS_PDF_LIB_PATH.'/tcpdf.php';
 	$pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
 	$pdf->setImageScale(PDF_IMAGE_SCALE_RATIO); //set image scale factor
 
-	$pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
-	$pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
+	//set image scale factor
+	$pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
 
 	$pdf->setLanguageArray($l); //set language items
+	
+	// set default font subsetting mode
+	$pdf->setFontSubsetting(TRUE);
+
 	// set font
-	//$TextFont = (@_PDF_LOCAL_FONT && file_exists(ICMS_PDF_LIB_PATH.'/fonts/'._PDF_LOCAL_FONT.'.php')) ? _PDF_LOCAL_FONT : 'dejavusans';
-	//$pdf -> SetFont($TextFont);
+	$TextFont = (@_PDF_LOCAL_FONT && file_exists(ICMS_PDF_LIB_PATH.'/fonts/'._PDF_LOCAL_FONT.'.php')) ? _PDF_LOCAL_FONT : 'arialunicid0';
+	$pdf -> SetFont($TextFont);
+	//$pdf->SetFont('arialunicid0', '', 14, '', true);
+
 
 	//initialize document
 	$pdf->AliasNbPages();
