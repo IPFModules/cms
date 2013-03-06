@@ -56,6 +56,7 @@ class mod_cms_Start extends icms_ipf_seo_Object
 		$this->setControl("beendet", "yesno");
 		$this->setControl("creator", "user");
 		$this->setControl("online_status", "yesno");
+		$this->quickInitVar('notification_sent', XOBJ_DTYPE_INT, TRUE, FALSE, FALSE, 0);
 		
 		// Add "Visible in" function
 		//$this->quickInitVar("visiblein", XOBJ_DTYPE_OTHER);
