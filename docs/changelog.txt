@@ -1,4 +1,4 @@
-3.0 Final from Dec. 13th 2012
+3.0 Final from Mar. 7th 2013
 
 Changelog:
 
@@ -29,6 +29,7 @@ FIXED:
 - The link from "title" and "read more" was brocken from the "block_select_content"
 - The updated date was not set in the edit form
 - HTML bugfix in the teaser text (many thanks to @debianus)
+- Bugfix for categories if the sprockets module used (many thanks to @madfish)
 
 
 
