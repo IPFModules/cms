@@ -71,12 +71,17 @@ define("_CO_CMS_START_ALL_TAGS", "-- タグフィルタ --");
 define("_CO_CMS_BEENDET_CMS", "Archived contents");
 define("_CO_CMS_ACTIVE_CMS", "CMS");
 
-// Tag title
+// Tag title (Mouse overview)
 define("_CO_CMS_TAGS_ALL_CONTENTS_ON", "すべての内容に");
 define("_CO_CMS_TAGS_ALL_SHOW", "見る");
+
+// Category title (Mouse overview)
+define("_CO_CMS_CATEGORIES_ALL_CONTENTS_ON", "すべての内容に");
+define("_CO_CMS_CATEGORIES_ALL_SHOW", "見る");
 
 // Category title
 define("_CO_CMS_START_CATEGORY", "カテゴリー");
 define("_CO_CMS_START_CATEGORY_DSC", "Select the categories you wish to label this page with.");
 
 define("_CO_CMS_START_RELATED_ITEMS", "関連商品");
+define("_CO_CMS_START_RELATED_CATEGORIES", "カテゴリ");

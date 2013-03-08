@@ -104,6 +104,14 @@
 				</div>
 			</div>
 		<{/if}>
+		
+		<{if $cms_start.categories}>
+			<div class="cms_clear">
+				<div class="itemCmsInfo">
+						<span><{$smarty.const._CO_CMS_START_RELATED_CATEGORIES}></span> <{$cms_start.categories}>
+				</div>
+			</div>
+		<{/if}>
 	</div>
 <{/if}>
 
@@ -161,6 +169,13 @@
 					<div class="cms_clear">
 						<div class="itemCmsInfo">
 								<span><{$smarty.const._CO_CMS_START_RELATED_ITEMS}></span> <{$start.tags}>
+						</div>
+					</div>
+				<{/if}>
+				<{if $start.categories}>
+					<div class="cms_clear">
+						<div class="itemCmsInfo">
+								<span><{$smarty.const._CO_CMS_START_RELATED_CATEGORIES}></span> <{$start.categories}>
 						</div>
 					</div>
 				<{/if}>

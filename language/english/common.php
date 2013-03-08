@@ -71,12 +71,17 @@ define("_CO_CMS_START_ALL_TAGS", "-- Tag filter --");
 define("_CO_CMS_BEENDET_CMS", "Archived contents");
 define("_CO_CMS_ACTIVE_CMS", "CMS");
 
-// Tag title
-define("_CO_CMS_TAGS_ALL_CONTENTS_ON", "All contents in");
-define("_CO_CMS_TAGS_ALL_SHOW", "see");
+// Tag title (Mouse overview)
+define("_CO_CMS_TAGS_ALL_CONTENTS_ON", "View all contents in");
+define("_CO_CMS_TAGS_ALL_SHOW", ".");
+
+// Category title (Mouse overview)
+define("_CO_CMS_CATEGORIES_ALL_CONTENTS_ON", "View all contents in");
+define("_CO_CMS_CATEGORIES_ALL_SHOW", ".");
 
 // Category title
 define("_CO_CMS_START_CATEGORY", "Categories");
 define("_CO_CMS_START_CATEGORY_DSC", "Select the categories you wish to label this page with.");
 
 define("_CO_CMS_START_RELATED_ITEMS", "Related Items");
+define("_CO_CMS_START_RELATED_CATEGORIES", "Category");

@@ -162,8 +162,8 @@ if($startObj && !$startObj->isNew())
 		foreach ($start_category_array as $key => $value)
 		{
 			$start['categories'][$value] = '<a class="label label-info" href="' . CMS_URL . 'start.php?tag_id=' . $value 
-					. '" title="' . _CO_CMS_TAGS_ALL_CONTENTS_ON . ' '. $sprockets_category_buffer[$value]
-						.' ' . _CO_CMS_TAGS_ALL_SHOW . '">' . $sprockets_category_buffer[$value] . '</a>';
+					. '" title="' . _CO_CMS_CATEGORIES_ALL_CONTENTS_ON . ' '. $sprockets_category_buffer[$value]
+						.' ' . _CO_CMS_CATEGORIES_ALL_SHOW . '">' . $sprockets_category_buffer[$value] . '</a>';
 		}
 		$start['categories'] = implode(' ', $start['categories']);
 	}

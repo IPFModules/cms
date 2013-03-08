@@ -71,12 +71,17 @@ define("_CO_CMS_START_ALL_TAGS", "-- Tag Filter --");
 define("_CO_CMS_BEENDET_CMS", "Archiviert");
 define("_CO_CMS_ACTIVE_CMS", "CMS");
 
-// Tag title
-define("_CO_CMS_TAGS_ALL_CONTENTS_ON", "Alle Inhalte in");
-define("_CO_CMS_TAGS_ALL_SHOW", "ansehen");
+// Tag title (Mouse overview)
+define("_CO_CMS_TAGS_ALL_CONTENTS_ON", "Zeige die Inhalte von");
+define("_CO_CMS_TAGS_ALL_SHOW", ".");
+
+// Category title (Mouse overview)
+define("_CO_CMS_CATEGORIES_ALL_CONTENTS_ON", "Zeige die Inhalte von");
+define("_CO_CMS_CATEGORIES_ALL_SHOW", ".");
 
 // Category title
 define("_CO_CMS_START_CATEGORY", "Kategorien");
 define("_CO_CMS_START_CATEGORY_DSC", "Wählen Sie eine oder mehrere Kategorien aus, mit der dieser Inhalt verknüpft werden soll.");
 
 define("_CO_CMS_START_RELATED_ITEMS", "Weitere Inhalte");
+define("_CO_CMS_START_RELATED_CATEGORIES", "Kategorie");
