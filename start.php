@@ -349,6 +349,16 @@ else
 			$criteria->add(new icms_db_criteria_Item('tid', $sprockets_tag_ids, 'IN'));
 			$taglink_buffer = $sprockets_taglink_handler->getObjects($criteria, TRUE, TRUE);
 			unset($criteria);
+			
+			// Prepare multidimensional array of category_ids with start_id (iid) as key
+			$categorylink_buffer = $start_category_id_buffer = array();
+			$criteria = new  icms_db_criteria_Compo();
+			$criteria->add(new icms_db_criteria_Item('mid', icms::$module->getVar('mid')));
+			$criteria->add(new icms_db_criteria_Item('item', 'start'));
+			$criteria->add(new icms_db_criteria_Item('iid', $linked_start_ids, 'IN'));
+			$criteria->add(new icms_db_criteria_Item('tid', $sprockets_category_ids, 'IN'));
+			$categorylink_buffer = $sprockets_taglink_handler->getObjects($criteria, TRUE, TRUE);
+			unset($criteria);
 
 			// Build tags, with URLs for navigation
 			foreach ($taglink_buffer as $key => $taglink) {
@@ -364,9 +374,28 @@ else
 						. $sprockets_tag_buffer[$taglink->getVar('tid')]
 						. '</a>';
 			}
+			// Build categories, with URLs for navigation
+			foreach ($categorylink_buffer as $key => $categorylink) {
+
+				if (!array_key_exists($categorylink->getVar('iid'), $start_category_id_buffer)) {
+					$start_category_id_buffer[$categorylink->getVar('iid')] = array();
+				}				
+				$start_category_id_buffer[$categorylink->getVar('iid')][] = '<a class="label label-info" href="' . CMS_URL . 
+						'start.php?tag_id=' . $categorylink->getVar('tid') . '" title="' 
+						. _CO_CMS_TAGS_ALL_CONTENTS_ON . ' '
+						. $sprockets_category_buffer[$categorylink->getVar('tid')]
+						.' ' . _CO_CMS_TAGS_ALL_SHOW . '">' 
+						. $sprockets_category_buffer[$categorylink->getVar('tid')]
+						. '</a>';
+			}
 
 			// Convert the tag arrays into strings for easy handling in the template
 			foreach ($start_tag_id_buffer as $key => &$value) 
+			{
+				$value = implode(' ', $value);
+			}
+			// Convert the category arrays into strings for easy handling in the template
+			foreach ($start_category_id_buffer as $key => &$value) 
 			{
 				$value = implode(' ', $value);
 			}
@@ -376,6 +405,13 @@ else
 				if (!empty($start_tag_id_buffer[$value['start_id']]))
 				{
 					$value['tags'] = $start_tag_id_buffer[$value['start_id']];
+				}
+			}
+			// Assign each subarray of categories to the matching cms, using the item id as marker
+			foreach ($start_summaries as $key => &$value) {
+				if (!empty($start_category_id_buffer[$value['start_id']]))
+				{
+					$value['categories'] = $start_category_id_buffer[$value['start_id']];
 				}
 			}
 		}
