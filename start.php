@@ -48,13 +48,21 @@ $sprocketsModule = icms::handler("icms_module")->getByDirname("sprockets");
 
 if (icms_get_module_status("sprockets"))
 {
+	$sprockets_tag_buffer = $sprockets_category_buffer = array();
 	icms_loadLanguageFile("sprockets", "common");
 	$sprockets_tag_handler = icms_getModuleHandler('tag', $sprocketsModule->getVar('dirname'), 'sprockets');
 	$sprockets_taglink_handler = icms_getModuleHandler('taglink', $sprocketsModule->getVar('dirname'), 'sprockets');
+	// Create tag buffer
 	$criteria = icms_buildCriteria(array('label_type' => '0'));
 	$sprockets_tag_buffer = $sprockets_tag_handler->getList($criteria, TRUE, TRUE);
 	if ($sprockets_tag_buffer) {
 		$sprockets_tag_ids = "(" . implode(',', array_keys($sprockets_tag_buffer)) . ")";
+	}
+	// Create category buffer
+	$criteria = icms_buildCriteria(array('label_type' => '1'));
+	$sprockets_category_buffer = $sprockets_tag_handler->getList($criteria, TRUE, TRUE);
+	if ($sprockets_category_buffer) {
+		$sprockets_category_ids = "(" . implode(',', array_keys($sprockets_category_buffer)) . ")";
 	}
 }
 
@@ -134,9 +142,10 @@ if($startObj && !$startObj->isNew())
 		}
 	}
 
-	// Prepare tags for display
+	// Prepare tags and categories for display
 	if (icms_get_module_status("sprockets"))
 	{
+		// Tags
 		$start['tags'] = array();
 		$start_tag_array = $sprockets_taglink_handler->getTagsForObject($startObj->getVar('start_id'), $cms_start_handler,0);
 		foreach ($start_tag_array as $key => $value)
@@ -146,6 +155,17 @@ if($startObj && !$startObj->isNew())
 						.' ' . _CO_CMS_TAGS_ALL_SHOW . '">' . $sprockets_tag_buffer[$value] . '</a>';
 		}
 		$start['tags'] = implode(' ', $start['tags']);
+		
+		// Categories
+		$start['categories'] = array();
+		$start_category_array = $sprockets_taglink_handler->getTagsForObject($startObj->getVar('start_id'), $cms_start_handler,1);
+		foreach ($start_category_array as $key => $value)
+		{
+			$start['categories'][$value] = '<a class="label label-info" href="' . CMS_URL . 'start.php?tag_id=' . $value 
+					. '" title="' . _CO_CMS_TAGS_ALL_CONTENTS_ON . ' '. $sprockets_category_buffer[$value]
+						.' ' . _CO_CMS_TAGS_ALL_SHOW . '">' . $sprockets_category_buffer[$value] . '</a>';
+		}
+		$start['categories'] = implode(' ', $start['categories']);
 	}
 
 	// If the start is archiviert, add the archiviert flag to the breadcrumb title
@@ -217,7 +237,7 @@ else
 			}
 		}
 				
-		// Retrieve cms for a given tag
+		// Retrieve cms for a given tag or category
 		if ($clean_tag_id && icms_get_module_status("sprockets"))
 		{
 			/**
