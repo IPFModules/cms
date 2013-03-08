@@ -30,6 +30,7 @@ FIXED:
 - The updated date was not set in the edit form
 - HTML bugfix in the teaser text (many thanks to @debianus)
 - Bugfix for categories if the sprockets module used (many thanks to @madfish)
+- Bugfix for searchresults. It's much more faster now. (many thanks to @madfish)
 
 
 
