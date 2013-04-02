@@ -277,6 +277,10 @@ class mod_cms_StartHandler extends icms_ipf_Handler
 	*/
 	public function updateComments($start_id, $total_num) {
 		$startObj = $this->get($start_id);
+		
+		// delete global notifications
+		$notification_handler->unsubscribeByItem($module_id, $start_id);
+		
 		if ($startObj && !$startObj->isNew()) {
 			$startObj->setVar('start_comments', $total_num);
 			$this->insert($startObj, true);

@@ -9,10 +9,11 @@ ADDED:
 - New option to display a PDF icon in the detailpage
 - New option to display a eMail icon in the detailpage
 - New option to display a Share icon in the detailpage
-- Subtitle as an option field added
+- Subtitle for the content as an option added
 - Module support URL added
 - First sample page after a fresh module installation
-- Two notification function added, but the default value is OFF 
+- Two notification functions added, but the default value is OFF
+- afterDelete function will delete all notification also, if an object was deleted
 
 UPDATED:
 - jquery sliderkit updated to version 1.9.2
@@ -22,7 +23,7 @@ UPDATED:
 - the comment function is as default NOT ON after the first module installation
 
 FIXED:
-- Set the logged in User as default within the form
+- Set the logged in User as default within the content form
 - slider-demos.css is much more smaller now
 - Bugfix for global search within StartHandler.php (submitter -> creator)
 - Link to the comments improved
@@ -171,10 +172,6 @@ Todo:
 	http://community.impresscms.org/modules/newbb/viewtopic.php?post_id=45434#forumpost45434
 
 - Option for every content > comment YES/NO
-
-- afterDelete Funktion ansehen bei QM-B. 
-	Die eingetragenen Notifications werden irgendwie nicht automatisch wieder rausgenommen.
-	Dann hat man sie nach dem Löschen eines Objektes noch drin.
 
 - Notifi nur bestimmte Gruppen sichtbar machen.
 
