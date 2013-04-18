@@ -96,6 +96,8 @@ class mod_cms_Start extends icms_ipf_seo_Object
 			$this->hideFieldFromSingleView ('tag');
 			$this->hideFieldFromForm('category');
 			$this->hideFieldFromSingleView ('category');
+			$this->hideFieldFromForm('notification_sent');
+			$this->hideFieldFromSingleView ('notification_sent');
 		}
 
 		// Intialise SEO functionality
