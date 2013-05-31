@@ -1,4 +1,4 @@
-3.0 Final from Mar. 7th 2013
+3.0 Final from May. 31th 2013
 
 Changelog:
 
@@ -23,6 +23,7 @@ UPDATED:
 - the comment function is as default NOT ON after the first module installation
 
 FIXED:
+- Fix incorrect padding of search results when looking at user profile page.
 - Set the logged in User as default within the content form
 - slider-demos.css is much more smaller now
 - Bugfix for global search within StartHandler.php (submitter -> creator)
