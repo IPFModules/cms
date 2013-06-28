@@ -1,8 +1,9 @@
-3.0 Final from May. 31th 2013
+3.0 Final from June 19th 2013
 
 Changelog:
 
 ADDED:
+- Plugin for the Sitemap module (many thanks to @QM-B)
 - A new block to select one content (many thanks to @QM-B)
 - CSS lable for Tags added
 - New option to display a Print icon in the detailpage
