@@ -10,8 +10,9 @@
     <p><a href="#2">-2- Create a new content</a></p>
     <p><a href="#3">-3- Blocks</a></p>
     <p><a href="#4">-4- Date in templates</a></p>
-    <p><a href="#5">-5- Plugin for the Sitemap module 1.40+</a></p>
-    <p><a href="#6">-6- Conclusion</a></p>
+    <p><a href="#5">-5- Truncat in templates</a></p>
+    <p><a href="#6">-6- Plugin for the Sitemap module 1.40+</a></p>
+    <p><a href="#7">-7- Conclusion</a></p>
         <h1>CMS - a content module - Manual</h1>
         	<p>CMS is a small, light-weight contents handling module.</p>
         <h2>Keyfeatures</h2>
@@ -131,13 +132,50 @@
 			</ul>
 			<p>More informatione here <a href="http://www.smarty.net/docs/en/language.modifier.date.format.tpl">www.smarty.net - date format</a></p>
 		<hr><a name="5">-5-</a>
+ 		<h2>Truncat in templates</h2>
+ 			<p>This truncates a variable to a character length, the default is 80. As an optional second parameter, you can specify a string of text to display at the end if the variable was truncated.</p>
+			<p>The truncat function is a Smarty variable, but in your ImpressCMS for very long URL integrated and this function makes the URL short.</p>
+			<p>In your ImpressCMS you can set the truncan for URLs here: <a href="../../../system/admin.php?fct=preferences&op=show&confcat_id=10">Truncate long URLs?</a></p>
+			<p>But you can take the Smarty function not only for URLs, you can use in the CMS module also, for example in the "title" or "subtitle".</p>
+			<p>Example:</p>
+			<ul>
+				<li>Open the template "cms_start.html"</li>
+				<li>Edit the title: <{$cms_start.title}></li>
+				<li>Or edit the subtitle: <{$cms_start.subtitle}></li>
+				<li>Possible parameter are: <{$cms_start.title|truncate:30}>
+					<ul>
+						<li>Two Sisters Reunite after...</li>
+					</ul>
+				</li>
+				<li>Possible parameter are: <{$cms_start.title|truncate:30:"---"}>
+					<ul>
+						<li>Two Sisters Reunite after---</li>
+					</ul>
+				</li>
+				<li>Possible parameter are: <{$cms_start.title|truncate:30:"":true}>
+					<ul>
+						<li>Two Sisters Reunite after</li>
+					</ul>
+				</li>
+				<li>Possible parameter are: <{$cms_start.title|truncate:30:"...":true}>
+					<ul>
+						<li>Two Sisters Reunite after E...</li>
+					</ul>
+				</li>
+				<li>Possible parameter are: <{$cms_start.title|truncate:30:'..':true:true}>
+					<ul>
+						<li>Two Sisters Re..ckout Counter.</li>
+					</ul>
+				</li>
+			</ul>
+		<hr><a name="6">-6-</a>
  		<h2>Plugin for the Sitemap module 1.40+</h2>
 			<p>Further more you will find a folder "extras" with a plugin for the sitemap module. You can find here:</p>
 			<p>Copy the following file from: <{$icms_url}>/modules/cms/extras/modules/sitemap/plugins/cms.php</p>
 			<p>Into the sitemap module here: <{$icms_url}>/modules/sitemap/plugins/cms.php</p>
 			<p>(At the moment, the URL in the sitemap includes not the SEO part.)</p>
 		<div class="cms_footer">
-		<hr><a name="6">-6-</a>
+		<hr><a name="7">-7-</a>
 		<h2>Conclusion</h2>
 			<p>Thank you for using 'CMS' module. If you have some trouble while using CMS module, please visit <a href="http://community.impresscms.org/modules/newbb/viewforum.php?forum=9" title="ImpressCMS Community Forum" rel="external">ImpressCMS Community Forum</a>. You have some suggestions, what you'd like to change or add to the module? No problem! We can talk about. Please, use also <a href="http://community.impresscms.org/modules/newbb/viewforum.php?forum=9" title="ImpressCMS Community Forum" rel="external">ImpressCMS Community Forum</a> for this!</p>  
 			<p>You might also like to follow the recent changes in CMS module? Please, have a look at <a href="https://impresscmsdev.assembla.com/code/impresscmsaddons/subversion/nodes/modules/cms/trunk/" title="'CMS module' SVN on Assembla" rel="external">'CMS module' SVN on Assembla</a>.</p>

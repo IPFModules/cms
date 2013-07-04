@@ -1,4 +1,4 @@
-3.0 Final from June 19th 2013
+3.0 Final from July 04th 2013
 
 Changelog:
 
@@ -15,6 +15,7 @@ ADDED:
 - First sample page after a fresh module installation
 - Two notification functions added, but the default value is OFF
 - afterDelete function will delete all notification also, if an object was deleted
+- Truncat information in the manual added
 
 UPDATED:
 - jquery sliderkit updated to version 1.9.2
