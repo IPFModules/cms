@@ -115,7 +115,7 @@ function icms_module_install_cms($module)
 	$config_handler->insertConfig($config);
 	
 	// start the function to install the demo content
-		//cms_start();
+	cms_start();
 	
 	return TRUE;
 }
