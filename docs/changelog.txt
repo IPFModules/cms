@@ -1,0 +1,183 @@
+3.0 Final from July 09th 2013
+
+Changelog:
+
+ADDED:
+- Plugin for the Sitemap module (many thanks to @QM-B)
+- A new block to select one content (many thanks to @QM-B)
+- CSS lable for Tags added
+- Toolbar option to display a Print icon in the detailpage
+- Toolbar option to display a PDF icon in the detailpage
+- Toolbar option to display a eMail icon in the detailpage
+- New toolbar option to display a Share icon in the detailpage
+- Subtitle for the content as an option added
+- Module support URL added
+- First sample page after a fresh module installation
+- Two notification functions added, but the default value is OFF
+- afterDelete function will delete all notification also, if an object was deleted
+- Truncat information in the manual added
+
+UPDATED:
+- jquery sliderkit updated to version 1.9.2 (https://code.google.com/p/sliderkit/)
+- Manual updated (recommendation for sprockets > 2.0, Truncan, ...)
+- language files updated
+- the comment function is as default NOT ON after the first module installation
+
+FIXED:
+- Fix incorrect padding of search results when looking at user profile page.
+- Set the logged in User as default within the content form
+- slider-demos.css is much more smaller now
+- Bugfix for global search within StartHandler.php (submitter -> creator)
+- Link to the comments improved
+- The link from "title" and "read more" was brocken from the "block_select_content"
+- The updated date was not set in the edit form
+- HTML bugfix in the teaser text (many thanks to @debianus)
+- Bugfix for categories if the sprockets module used (many thanks to @madfish)
+- Bugfix for searchresults. It's much more faster now. (many thanks to @madfish)
+
+
+
+2.2 Final from 9th August. 2012
+
+Changelog:
+
+ADDED:
+- Frontend: Actionicons within the detailpage to edit and delete a content
+- Minor adjustments to ensure compatibility with Sprockets 2.0 for the future
+- Japanese language files (unfinished)
+- Added the categories into the form from sprockets (thank you to @Madfish)
+
+FIXED:
+- Fix slow page loading index page problem in file "cms/admin/index.php"
+(http://community.impresscms.org/modules/newbb/viewtopic.php?viewmode=flat&type=&topic_id=5218&forum=9)
+- Bugfix in breadcrumb
+- Tag design for the front end page improved
+
+DELETE:
+- Links from the Frontend to the Modul Administration
+
+
+
+2.1 Final from 29th Mar. 2012
+
+Changelog:
+
+CHANGED:
+- Style from button deleted, otherwise you can get a issue with your theme
+
+FIXED:
+- Error in the module administration fixed
+
+
+
+2.0 Final from 19th Mar. 2012
+
+Changelog:
+
+ADDED:
+- Function for SEO-URL added (backend, front end and global search)
+- Link to the comments from the module (module ACP)
+- A note within the manual (How can I add PHP scripts)
+
+DELETE:
+- Regular date from the templates deleted
+	(You can add if you like - see manual)
+
+
+
+1.0 Final from 16th Feb. 2012
+
+Changelog:
+
+- Is more than one comment available, the login and register info will be display on bottom too
+- Comment anker for request URL added
+- Image resize for archived contents solved
+- Module help integrated
+- Problem with the theme changer fixed
+- Function "read more" is visible only, if extended text available
+- Resize function in the archived content fixed
+- the breadcrumb link to the archive works now 
+- Comment function for archived contents added
+- Breadcrumb fixed
+- Link to the content within the archived Page fixed
+- Table overview for archived Page fixed
+- Added counter as column within the table overview
+- German translation added
+- Comment bubbles are visible only, if comment function on
+- Comment template modified. If the visitor a guest, the can find a link for login or register to post a comment.
+- Link to the module blocks added
+- New list block added
+- New ticker block added
+- New slider block added
+- Imagesize for single page fixed
+- Some options from the module preferences are disabled by default
+- .::Module Admin page::. link on top also available 
+- Breadcrumb shows the content title too, not only the tags
+- Function for comments added
+- Link (title) goes direct to the content within the front end page
+- Preview for the module administration added
+- Content are sorted in the module administration by "last_updated" DESC now
+- The global search engine is searching within the field "extended_text" now too
+- QuickSearch is looking within "title", "description" and "extended_text" (Backend and front end)
+- Weight disabeled, the content are sorted by "date DESC" only
+- Sort content by date ASC
+- Summary page: designed "Read more" button added
+- Random block: designed "Read more" button added
+- Detail page: Logo has a lightbox effect now
+- The admin is the selected default user as the "creator"
+- Fields for content deleted
+- Field for address renamed into history
+- Field "beendet" for archive hidden
+- It will take the icons from the imageset for archived and online with new language variables
+- Search result Icon changed to 22x22
+- New module icons
+- Image upload with 2MB and maximal 3500 x 2600 pixel possible (please check the module preferences also)
+- Changed the following objects and fields from to:
+
+
+projects = cms
+PROJECTS = CMS
+Projects = Cms
+
+project = start
+PROJECT = START
+Project = Start
+
+completed = archiviert
+COMPLETED = ARCHIVIERT
+Completed = Archiviert
+
+complete = beendet
+COMPLETE = BEENDET
+Complete = Beendet
+
+completion = fertigstellung
+
+
+latest sync. Rev.23543
+
+
+
+
+Knowing errors:
+- redirect on "register" works not 100% perfect, if profile module installed
+- resize images works not in blocks
+- resize images are not visible in print page
+
+
+
+Todo:
+
+- Unwichtige Felder (wie z.B.: META Tags, dohtml, dobr, doimage, dosmiley) in der Moduladministration mit einem Toggle ausstatten
+
+- Adding group-permissions
+	http://community.impresscms.org/modules/newbb/viewtopic.php?post_id=45434#forumpost45434
+
+- Option for every content > comment YES/NO
+
+- Notifi nur bestimmte Gruppen sichtbar machen.
+
+- content klonen
+
+
+

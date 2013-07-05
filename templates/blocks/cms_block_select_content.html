@@ -1,0 +1,14 @@
+<!-- If you want to know why some style information is hard coded, the answer is that module
+style sheets do not work on cached blocks. I think this is a long-standing core bug -->
+
+<!-- Full mode -->
+<{if $block.show_logos == TRUE}>
+	<h2 style="clear:both; margin-bottom:1em;"><{$block.select_content_cms.title}></h2>
+	<{if $start.subtitle}><h3 style="clear:both; margin-bottom:1em;"><{$start.subtitle}></h3><{/if}>
+	<p class="cms_description"><a href="<{$start.itemUrl}>" title="<{$start.title}>"></a><{$block.select_content_cms.extended_text}></p>
+	
+<!-- Compact list mode -->
+<{else}>
+	<a href="<{$block.itemUrl}>"><h2 style="clear:both; margin-bottom:1em;"><{$block.select_content_cms.title}></h2></a>
+	<p class="cms_description"><a href="<{$block.itemUrl}>" title="<{$start.title}>"></a><{$block.select_content_cms.description}>  <span><a href="<{$block.itemUrl}>">(<{$smarty.const._CO_CMS_READ_MORE}>)</a></span></p>
+<{/if}>
