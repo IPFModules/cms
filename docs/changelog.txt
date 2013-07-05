@@ -1,4 +1,4 @@
-3.0 Final from July 04th 2013
+3.0 Final from July 09th 2013
 
 Changelog:
 
@@ -6,10 +6,10 @@ ADDED:
 - Plugin for the Sitemap module (many thanks to @QM-B)
 - A new block to select one content (many thanks to @QM-B)
 - CSS lable for Tags added
-- New option to display a Print icon in the detailpage
-- New option to display a PDF icon in the detailpage
-- New option to display a eMail icon in the detailpage
-- New option to display a Share icon in the detailpage
+- Toolbar option to display a Print icon in the detailpage
+- Toolbar option to display a PDF icon in the detailpage
+- Toolbar option to display a eMail icon in the detailpage
+- New toolbar option to display a Share icon in the detailpage
 - Subtitle for the content as an option added
 - Module support URL added
 - First sample page after a fresh module installation
@@ -18,9 +18,8 @@ ADDED:
 - Truncat information in the manual added
 
 UPDATED:
-- jquery sliderkit updated to version 1.9.2
-- changed the manual (recommendation for sprockets > 2.0)
-- module manual updated
+- jquery sliderkit updated to version 1.9.2 (https://code.google.com/p/sliderkit/)
+- Manual updated (recommendation for sprockets > 2.0, Truncan, ...)
 - language files updated
 - the comment function is as default NOT ON after the first module installation
 
