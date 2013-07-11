@@ -1,0 +1,18 @@
+<{if $show_breadcrumb == TRUE}>
+	<div class="cms_headertable">
+		<{if $cms_module_home}>
+			<span class="cms_modulename"><{$cms_module_home}><{if $cms_start.title}> &gt; <{$cms_start.title}><{/if}></span>
+		<{/if}>
+		<{if $cms_archiviert_path}>
+			<span class="cms_breadcrumb"><{if $cms_module_home}> &gt; <{/if}><{$cms_archiviert_path}></span>
+		<{/if}>
+		<{if $cms_category_path}>
+			<span class="cms_breadcrumb"><{if $cms_module_home}> &gt; <{/if}><{$cms_category_path}></span>
+		<{/if}>
+		<{if $cms_tag_name}>
+			<span class="cms_breadcrumb"><{if $cms_module_home}> &gt; <{/if}><{$cms_tag_name}></span>
+		<{/if}>
+	</div>
+<{/if}>
+<{if $show_toolbar_share == TRUE}>
+<{/if}>

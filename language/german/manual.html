@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>CMS - a content module - Manual</title>
+    </head>
+    <body>
+    <p><a href="#1">-1- First Start</a></p>
+    <p><a href="#2">-2- Create a new content</a></p>
+    <p><a href="#3">-3- Blocks</a></p>
+    <p><a href="#4">-4- Date in templates</a></p>
+    <p><a href="#5">-5- Truncat in templates</a></p>
+    <p><a href="#6">-6- Plugin for the Sitemap module 1.40+</a></p>
+    <p><a href="#7">-7- Conclusion</a></p>
+        <h1>CMS - a content module - Manual</h1>
+        	<p>CMS is a small, light-weight contents handling module.</p>
+        <h2>Keyfeatures</h2>
+			<ul>
+				<li>You can create contents.</li>
+				<li>You can upload images or photos in any sizes.</li>
+				<li>Set a image resize for the INDEX page, DETAIL page and RANDOM BLOCK.</li>
+				<li>Add the Sprockets Module to use the Tag and Category function.</li>
+				<li>Present your content with 4 integrated blocks.</li>
+				<li>A new art of comments with informations bubbles.</li>
+				<li>Guest find new comment link for login and register incl content redirect.</li>
+				<li>Set contents as archived, online and offline.</li>
+				<li>Use a free TextArea for your content history or for a new preview of content. ()It's visible for the admin only.)</li>
+			</ul>
+		<hr><a name="1">-1-</a>
+        <h2>First Start</h2>
+			<p>There are one thing you should do <b>before</b> you try the new module. Please, follow the instructions.</p>
+			
+			<h3>Install the module "Sprockets"</h3>
+			
+				<p>At first we need to install the Sprockets Module. Important is to use version 2.0 or higher.</p>
+				<p>Create some tags with the Sprockets Module.</p>
+				<p>If you installed the Sprockets version >2.0, you can use into the cms module a category system too.</p>
+		
+			<h3>Check out the module preferences</h3>
+				<p>There might be some preferences, you'd like to change before using the module first time. Go to Modules > CMS > Preferences</p>
+				<p>Choose the preferences like preferred. Think, most preferences should be explained enough. So I'll list just a few here, which can be important to explain:</p>
+				<ul>
+					<li>You can display the contents with teaser text within the index page or as a table.</li>
+					<li>How many contents do you like to display in the index page? A good value is 3 or 5.</li>
+					<li>Breadcrumb: This is a small navigation on top of the page</li>
+					<li>Breadcrumb: This is a small navigation on top of the page</li>
+					<li>TOOLBAR: The Toolbar is visible within the content page only, not in the blocks. If you like you can enable a icon to print a page, create a PDF file, send a link via email, share the content.</li>
+					<li>Select box: If Sprockets are instelled, it's possible to display a select box of tags.</li>
+					<li>Freestyle: If you don't like to use the resize function, switch to the freestyle. After them, you can upload your images with your size.</li>
+					<li>Image file size: Please remember, the server has a limit too. In the most time you can not upload images higher 2MB.</li>
+					<li>Updated content: The updated content will be present on top. You can mark besides a content and display the notice "updated". In addition, you can select between 6 times to show this notice.</li>
+					<li>Comments: This module has some special effects to comment a content. First is, the bubble within the content incl comment counter. If you click as guest, you can not comment a content, but you can find two links. One is for login and one for thr registration. Both links using a redirect, back to the content. This is a new way in ImpressCMS.</li>
+					<li>Notification: This module can send notifications to the user if enabled. The user can select between two types if the administrator allows.</li>
+				</ul>
+				<p>Done! Next step.</p>
+			<hr><a name="2">-2-</a>
+			<h3>System settings</h3>
+				<h5>General Setting > Default Editors</h5>
+				<p>Set the "TinyMCE" to the default editor.</p>
+				<h5>General Setting > HTMLPurifier</h5>
+				<p>If you like to add some special CSS and/or JS within your content, maybe the cms module would not show the right content. The reason is the HTMLPurifier, since he filtered some HTML tags. If you create a business website, maybe you should dissable it. But in the most case your should'nt dissable, because your security could be going down.</p>
+				<h5>Groups > Webmaster</h5>
+				<p>Edit the webmaster group and allow the WYSIWYG editor for the cms module. This means, the webmaster can use the TinyMCE.</p>
+			<h3>Create a new content</h3>
+				<p>Go to the Tab "Content" and click it. Enter a short but descriptive title on top for your new content. (Important is the following: If you create a content with the DHTMLeditor, dissable the option "Enable HTML tags". Otherwise the line break works not correct.)</p>
+			<h3>Upload images or photos</h3>
+				<p>Finally you can start uploading a image or photo for your content. Clicke the upload-button and select your file from your Computer or Digicam. Alternative you can choose a URL.</p>
+			<h3>Content</h3>
+				<p>The content is seperated in two parts. One is the teaser text, this will be display in the overview only with your uploaded image. The seconde is the main text and will be display within the detailpage from your content.</p>
+				<p>There is one more field for your History, ideas or reviews. You can put any content and this will not publish in the user page.</p>
+			<h3>Others</h3>
+				<p>The following fields, you don't need to fill out or to change: Enable HTML tags, Enable linebreak, Enable images, Enable smiley icons, Meta Keywords, Meta Description, Short URL.</p>
+			<h3>PHP scripts</h3>
+				<p>If you like to add a PHP script within your content, than it is not possible to add directly. It is very risky ans dangerous for your website. But ImpressCMS has a solution: Go to the "Custom Tags", create a new one and add your PHP script there. Now you can add your new custom add into your content.</p>
+		<hr><a name="3">-3-</a>
+		<h2>Blocks</h2>
+			<p>Currently you have 4 blocks for the 'CMS' module:</p>
+			<ul>
+				<li>Random content
+					<ul>
+						<li>The "Random content" block will display (by default values) 5 contents with image an the update info, if available. You can change the numbers of contents if you like.</li>
+					</ul>
+				</li>
+				<li>Ticker content
+					<ul>
+						<li>This block will display in a very small line the titles from your contents. If you don't put a block title, you get a very usefull and small ticker. You can change the nubers of contents if you like.</li>
+					</ul>
+				</li>
+				<li>List content
+					<ul>
+						<li>This block display (by default values) the latest 3 titles in a list. You can change the numbers of contents also.</li>
+					</ul>
+				</li>
+				<li>Slide content
+					<ul>
+						<li>This is a very nice slider. He will show the latest 3 contents (Please don't change the preferences in this block!). This block use by default a blue color. If you like to change, you need to touch the module CSS files or overwrite the class with your Theme.</li>
+					</ul>
+				</li>
+				<li>Select content
+					<ul>
+						<li>A very useful block, since you can clone it. You can show the teaser text only or the full content in your block. Select your prefered content and setup to your position. Play with the "Block-Position" and "Symlinks" from ImpressCMS also.</li>
+					</ul>
+				</li>
+			</ul>
+			<p>And sure, you can clone all blocks, if needed and set your preferences by yourself.</p>
+			
+		<hr><a name="4">-4-</a>
+ 		<h2>Date in templates</h2>
+			<p>Since CMS module version 2, the regular date was deleted, because you don't need within a content. But if you like, you can add the date in your templates with the following SMARTY codes.</p>
+			<ul>
+				<li><{$cms_start.date|date_format}>
+					<ul>
+						<li>Output "Feb 12, 2012"</li>
+					</ul>
+				</li>
+				<li><{$cms_start.date|date_format:"%Y/%m/%d"}>
+					<ul>
+						<li>Output "2012/02/12"</li>
+					</ul>
+				</li>
+				<li><{$cms_start.date}>
+					<ul>
+						<li>Output: "12.02.2012 09:40:00"</li>
+					</ul>
+				</li>
+				<li><{$cms_start.date|date_format:"%d.%m.%Y"}>
+					<ul>
+						<li>Output "12.02.2012"</li>
+					</ul>
+				</li>
+			</ul>
+			<p>More informatione here <a href="http://www.smarty.net/docs/en/language.modifier.date.format.tpl">www.smarty.net - date format</a></p>
+		<hr><a name="5">-5-</a>
+ 		<h2>Truncat in templates</h2>
+ 			<p>This truncates a variable to a character length, the default is 80. As an optional second parameter, you can specify a string of text to display at the end if the variable was truncated.</p>
+			<p>The truncat function is a Smarty variable, but in your ImpressCMS for very long URL integrated and this function makes the URL short.</p>
+			<p>In your ImpressCMS you can set the truncan for URLs here: <a href="../../../system/admin.php?fct=preferences&op=show&confcat_id=10">Truncate long URLs?</a></p>
+			<p>But you can take the Smarty function not only for URLs, you can use in the CMS module also, for example in the "title" or "subtitle".</p>
+			<p>Example:</p>
+			<ul>
+				<li>Open the template "cms_start.html"</li>
+				<li>Edit the title: <{$cms_start.title}></li>
+				<li>Or edit the subtitle: <{$cms_start.subtitle}></li>
+				<li>Possible parameter are: <{$cms_start.title|truncate:30}>
+					<ul>
+						<li>Two Sisters Reunite after...</li>
+					</ul>
+				</li>
+				<li>Possible parameter are: <{$cms_start.title|truncate:30:"---"}>
+					<ul>
+						<li>Two Sisters Reunite after---</li>
+					</ul>
+				</li>
+				<li>Possible parameter are: <{$cms_start.title|truncate:30:"":true}>
+					<ul>
+						<li>Two Sisters Reunite after</li>
+					</ul>
+				</li>
+				<li>Possible parameter are: <{$cms_start.title|truncate:30:"...":true}>
+					<ul>
+						<li>Two Sisters Reunite after E...</li>
+					</ul>
+				</li>
+				<li>Possible parameter are: <{$cms_start.title|truncate:30:'..':true:true}>
+					<ul>
+						<li>Two Sisters Re..ckout Counter.</li>
+					</ul>
+				</li>
+			</ul>
+		<hr><a name="6">-6-</a>
+ 		<h2>Plugin for the Sitemap module 1.40+</h2>
+			<p>Further more you will find a folder "extras" with a plugin for the sitemap module. You can find here:</p>
+			<p>Copy the following file from: <{$icms_url}>/modules/cms/extras/modules/sitemap/plugins/cms.php</p>
+			<p>Into the sitemap module here: <{$icms_url}>/modules/sitemap/plugins/cms.php</p>
+			<p>(At the moment, the URL in the sitemap includes not the SEO part.)</p>
+		<div class="cms_footer">
+		<hr><a name="7">-7-</a>
+		<h2>Conclusion</h2>
+			<p>Thank you for using 'CMS' module. If you have some trouble while using CMS module, please visit <a href="http://community.impresscms.org/modules/newbb/viewforum.php?forum=9" title="ImpressCMS Community Forum" rel="external">ImpressCMS Community Forum</a>. You have some suggestions, what you'd like to change or add to the module? No problem! We can talk about. Please, use also <a href="http://community.impresscms.org/modules/newbb/viewforum.php?forum=9" title="ImpressCMS Community Forum" rel="external">ImpressCMS Community Forum</a> for this!</p>  
+			<p>You might also like to follow the recent changes in CMS module? Please, have a look at <a href="https://impresscmsdev.assembla.com/code/impresscmsaddons/subversion/nodes/modules/cms/trunk/" title="'CMS module' SVN on Assembla" rel="external">'CMS module' SVN on Assembla</a>.</p>
+		</div>
+    </body>
+</html>
