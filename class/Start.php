@@ -74,6 +74,10 @@ class mod_cms_Start extends icms_ipf_seo_Object
 		$url = ICMS_URL . '/uploads/' . basename(dirname(dirname(__FILE__))) . '/';
 		$path = ICMS_ROOT_PATH . '/uploads/' . basename(dirname(dirname(__FILE__))) . '/';
 		$this->setImageDir($url, $path);
+
+		//made sure to set the notification field is not visible in the form
+		$this->hideFieldFromForm('notification_sent');
+		$this->hideFieldFromSingleView ('notification_sent');
 		
 		// Only display the tag field if the sprockets module is installed
 		if (icms_get_module_status("sprockets"))
@@ -96,8 +100,6 @@ class mod_cms_Start extends icms_ipf_seo_Object
 			$this->hideFieldFromSingleView ('tag');
 			$this->hideFieldFromForm('category');
 			$this->hideFieldFromSingleView ('category');
-			$this->hideFieldFromForm('notification_sent');
-			$this->hideFieldFromSingleView ('notification_sent');
 		}
 
 		// Intialise SEO functionality

@@ -1,3 +1,13 @@
+
+3.1 Final from July 11th 2013
+
+Changelog:
+
+FIXED:
+- If the sprockets module are installed was the field for the notification visible (many thanks to @madfish and @debianus)
+
+
+
 3.0 Final from July 09th 2013
 
 Changelog:
