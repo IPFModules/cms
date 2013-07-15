@@ -52,8 +52,9 @@ define("_CO_CMS_ARCHIVED_YES", "Inhalt ist archiviert worden");
 define("_CO_CMS_START_ONLINE", "Online, klicken um auf Offline zu wechseln.");
 define("_CO_CMS_START_OFFLINE", "Offline, klicken um auf Online zu wechseln.");
 define("_CO_CMS_READ_MORE", "weiterlesen...");
-define("_CO_CMS_START_VIEW", "Vorschau des Inhaltes innerhalb der Administration");
+define("_CO_CMS_START_VIEW", "Vorschau: Zeige Formularfelder");
 define("_CO_CMS_PREVIEW", "Zeige den Inhalt in der Webseite an");
+define("_CO_CMS_START_CLONE", "Inhalt klonen");
 
 define("_CO_CMS_COMMENTS_INFO", "%d");
 define("_CO_CMS_COMMENTS_TITLE", "Kommentare zu");

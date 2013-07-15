@@ -267,6 +267,16 @@ class mod_cms_Start extends icms_ipf_seo_Object
 		return $seo_url;
 	}
 
+	
+	//clone function
+	function getCloneItemLink() {
+		$ret = '<a href="' . CMS_ADMIN_URL . 'start.php?op=clone&amp;start_id=' . $this->getVar('start_id', 'e') . '" title="' . _CO_CMS_START_CLONE . '"><img src="' . ICMS_IMAGES_SET_URL . '/actions/editcopy.png" /></a>';
+	
+		return $ret;
+	}
+	
+	
+	
 	/**
 	* Overridding IcmsPersistable::toArray() method to add a few info
 	*

@@ -17,21 +17,38 @@
  *
  * @param int $start_id start to be edited
 */
-function editstart($start_id = 0)
+function editstart($start_id = 0, $clone = false)
 {
 	global $cms_start_handler, $icmsModule, $icmsAdminTpl;
 
 	$startObj = $cms_start_handler->get($start_id);
 	$sprocketsModule = icms::handler("icms_module")->getByDirname("sprockets");
-
-	if (!$startObj->isNew())
+	
+	if (!$clone && !$startObj->isNew()) {
+		$startObj->hideFieldFromForm(array('title', 'subtitle', 'description', 'extended_text', 'history', 'creator'));
+		$startObj->setVar('content_updated_date', date(_DATESTRING));
+		icms::$module->displayAdminMenu(0, _AM_CONTENT_CONTENTS . " > " . _CO_ICMS_EDITING);
+		$sform = $startObj->getForm(_AM_CONTENT_CONTENT_EDIT, 'addcontent');
+		$sform->assign($icmsAdminTpl);
+	}
+	elseif (!$startObj->isNew() && $clone)
 	{
+		
 		$startObj->loadTags();
 		$startObj->loadCategories();
 		
 		//show the new date in the form
 		$startObj->setVar("last_update", time());
-	
+		$startObj->setVar("start_id", 0);
+		$startObj->setVar("counter", 0);
+		$startObj->setVar("notification_sent", 0);
+		$startObj->setVar("start_comments", 0);
+		$startObj->setVar("short_url", '');
+		$startObj->setVar("meta_description", '');
+		$startObj->setVar("meta_keywords", '');
+		$startObj->setVar("date", time ());
+		$startObj->setVar("last_update", 0);
+		$startObj->setNew();
 		$icmsModule->displayAdminMenu(0, _AM_CMS_CMS . " > " . _CO_ICMS_EDITING);
 		$sform = $startObj->getForm(_AM_CMS_START_EDIT, "addstart");
 		$sform->assign($icmsAdminTpl);
@@ -57,7 +74,7 @@ $cms_start_handler = icms_getModuleHandler("start", basename(dirname(dirname(__F
 /** Create a whitelist of valid values, be sure to use appropriate types for each value
  * Be sure to include a value for no parameter, if you have a default condition
  */
-$valid_op = array ("mod", "changedField", "addstart", "del", "view", "changeWeight", "changeBeendet", "visible", "");
+$valid_op = array ("mod", "changedField", "addstart", "del", "view", "clone", "changeWeight", "changeBeendet", "visible", "");
 
 if (isset($_GET["op"])) $clean_op = htmlentities($_GET["op"]);
 if (isset($_POST["op"])) $clean_op = htmlentities($_POST["op"]);
@@ -69,6 +86,11 @@ if (in_array($clean_op, $valid_op, TRUE))
 {
 	switch ($clean_op)
 	{
+		case "clone" :
+			icms_cp_header();
+			editstart($clean_start_id, true); //hier klemmt es wohl
+			break;
+			
 		case "mod":
 		case "changedField":
 			icms_cp_header();
@@ -255,6 +277,8 @@ if (in_array($clean_op, $valid_op, TRUE))
 				
 			//detailpage ACP
 			$objectTable->addCustomAction( 'getViewItemLink' );
+			//clone icon in the ACP
+			$objectTable->addCustomAction('getCloneItemLink');
 			
 			$icmsAdminTpl->assign("cms_start_table", $objectTable->fetch());
 			$icmsAdminTpl->display("db:cms_admin_start.html");

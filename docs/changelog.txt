@@ -1,3 +1,12 @@
+3.2 Trunk from July 15th 2013
+
+Changelog:
+
+ADDED:
+- #430 Function added to clone a content (many thanks to @QM-B)
+
+
+
 
 3.1 Final from July 11th 2013
 
@@ -5,6 +14,7 @@ Changelog:
 
 FIXED:
 - If the sprockets module are installed was the field for the notification visible (many thanks to @madfish and @debianus)
+
 
 
 
@@ -47,6 +57,7 @@ FIXED:
 
 
 
+
 2.2 Final from 9th August. 2012
 
 Changelog:
@@ -80,6 +91,7 @@ FIXED:
 
 
 
+
 2.0 Final from 19th Mar. 2012
 
 Changelog:
@@ -92,6 +104,7 @@ ADDED:
 DELETE:
 - Regular date from the templates deleted
 	(You can add if you like - see manual)
+
 
 
 

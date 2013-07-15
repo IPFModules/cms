@@ -52,8 +52,9 @@ define("_CO_CMS_ARCHIVED_YES", "Content is archived");
 define("_CO_CMS_START_ONLINE", "Online, click to switch Offline");
 define("_CO_CMS_START_OFFLINE", "Offline, click to switch Online");
 define("_CO_CMS_READ_MORE", "詳細はこちら");
-define("_CO_CMS_START_VIEW", "Preview within the module administration");
-define("_CO_CMS_PREVIEW", "Show the content in the front end");
+define("_CO_CMS_START_VIEW", "Preview to show the fields");
+define("_CO_CMS_PREVIEW", "フロントエンドでコンテンツを表示");
+define("_CO_CMS_START_CLONE", "コンテンツを複製する");
 
 define("_CO_CMS_COMMENTS_INFO", "%d");
 define("_CO_CMS_COMMENTS_TITLE", "へのコメント");
