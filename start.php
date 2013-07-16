@@ -285,7 +285,7 @@ else
 					. " AND `tid` = '" . $clean_tag_id . "'"
 					. " AND `mid` = '" . icms::$module->getVar('mid') . "'"
 					. " AND `item` = 'start'"
-					. " ORDER BY `date` DESC" //geändert von weight ASC zu date DESC
+					. " ORDER BY `date` DESC" //changed from weight ASC to date DESC
 					. " LIMIT " . $clean_start . ", " . icms::$module->config['number_of_cms_per_page'];
 
 			$result = icms::$xoopsDB->query($query);
@@ -320,8 +320,8 @@ else
 			// Continue to retrieve cms for this page view
 			$criteria->setStart($clean_start);
 			$criteria->setLimit(icms::$module->config['number_of_cms_per_page']);
-			$criteria->setSort('date'); //geändert von weight zu date
-			$criteria->setOrder('DESC'); //geändert von ASC zu DESC
+			$criteria->setSort('date'); //changed from weight to date
+			$criteria->setOrder('DESC'); //changed from ASC to DESC
 			$start_summaries = $cms_start_handler->getObjects($criteria, TRUE, FALSE);
 		}
 		
@@ -500,8 +500,8 @@ else
 		$objectTable->addColumn(new icms_ipf_view_Column("date", "center", "20"));
 		$objectTable->addColumn(new icms_ipf_view_Column("last_update", "center", "20"));
 		$objectTable->addColumn(new icms_ipf_view_Column("counter", "center", "40"));
-		$objectTable->setDefaultSort('last_update'); //geändert von date zu last_update
-		$objectTable->setDefaultOrder('DESC'); //geändert von ASC zu DESC
+		$objectTable->setDefaultSort('last_update'); //changed from date to last_update
+		$objectTable->setDefaultOrder('DESC'); //changed from ASC to DESC
 		$icmsTpl->assign("cms_start_table", $objectTable->fetch());
 	}
 	

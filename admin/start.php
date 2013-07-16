@@ -86,9 +86,10 @@ if (in_array($clean_op, $valid_op, TRUE))
 {
 	switch ($clean_op)
 	{
+		//clone a content
 		case "clone" :
 			icms_cp_header();
-			editstart($clean_start_id, true); //hier klemmt es wohl
+			editstart($clean_start_id, true);
 			break;
 			
 		case "mod":
@@ -269,15 +270,15 @@ if (in_array($clean_op, $valid_op, TRUE))
 			//$objectTable->addActionButton("changeWeight", FALSE, _SUBMIT);
 			$objectTable->addColumn(new icms_ipf_view_Column("beendet", "center", "100", TRUE));
 			$objectTable->addColumn(new icms_ipf_view_Column("online_status", "center", "100", TRUE));
-			$objectTable->setDefaultSort('last_update'); //geändert von date zu last_update
-			$objectTable->setDefaultOrder('DESC'); //geändert von ASC zu DESC
+			$objectTable->setDefaultSort('last_update'); //changed from date to last_update
+			$objectTable->setDefaultOrder('DESC'); //changed from ASC to DESC
 			$objectTable->addIntroButton("addstart", "start.php?op=mod", _AM_CMS_START_CREATE);
 			$objectTable->addFilter('beendet', 'beendet_filter');
 			$objectTable->addFilter('online_status', 'online_status_filter');
 				
-			//detailpage ACP
+			//make a link for the detailpage within the ACP
 			$objectTable->addCustomAction( 'getViewItemLink' );
-			//clone icon in the ACP
+			//show clone icon in the ACP
 			$objectTable->addCustomAction('getCloneItemLink');
 			
 			$icmsAdminTpl->assign("cms_start_table", $objectTable->fetch());

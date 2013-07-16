@@ -223,7 +223,7 @@ else
 					. " AND `tid` = '" . $clean_tag_id . "'"
 					. " AND `mid` = '" . icms::$module->getVar('mid') . "'"
 					. " AND `item` = 'start'"
-					. " ORDER BY `date` DESC" //geändert von weight ASC zu date DESC
+					. " ORDER BY `date` DESC" //changed from weight ASC to date DESC
 					. " LIMIT " . $clean_start . ", " . icms::$module->config['number_of_cms_per_page'];
 
 			$result = icms::$xoopsDB->query($query);

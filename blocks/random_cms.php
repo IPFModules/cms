@@ -48,7 +48,7 @@ function show_random_cms($options)
 			. " AND `item` = 'start'"
 			. " AND `online_status` = '1'"
 			. " AND `beendet` = '0'"
-			. " ORDER BY `date` DESC"; //geändert von weight ASC zu date DESC
+			. " ORDER BY `date` DESC"; //changed from weight ASC to date DESC
 
 		$result = icms::$xoopsDB->query($query);
 
