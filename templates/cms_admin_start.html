@@ -1,4 +1,43 @@
+<style>
+textarea[name='meta_keywords'] { display: none;}
+tr#meta_keywords_row label {cursor: pointer; padding-left: 20px;background:url(../images/box_expand_16px.png) no-repeat;font-weight: 600;}
+
+textarea[name='meta_description'] { display: none;}
+tr#meta_description_row label {cursor: pointer; padding-left: 20px;background:url(../images/box_expand_16px.png) no-repeat;font-weight: 600;}
+
+tr#history_row td.even{ display: none;}
+tr#history_row label {cursor: pointer; padding-left: 20px;background:url(../images/box_expand_16px.png) no-repeat;font-weight: 600;}
+
+tr#extended_text_row td.odd{ display: none;}
+tr#extended_text_row label {cursor: pointer; padding-left: 20px;background:url(../images/box_expand_16px.png) no-repeat;font-weight: 600;}
+
+</style>
+
 <{if $cms_start_title}><h1><{$cms_start_title}></h1><{/if}>
 <{if $cms_start_info}><p><{$cms_start_info}></p><{/if}>
 <{if $cms_start_table}><{$cms_start_table}><{/if}>
 <{if $addstart}><{includeq file='db:system_common_form.html' form=$addstart}><{/if}>
+
+<script type="text/javascript">
+$("tr#meta_keywords_row").click(function () {
+    $(this).closest("div").find("textarea[name='meta_keywords']").slideToggle();
+});
+</script>
+
+<script type="text/javascript">
+$("tr#meta_description_row").click(function () {
+    $(this).closest("div").find("textarea[name='meta_description']").slideToggle();
+});
+</script>
+
+<script type="text/javascript">
+$("tr#history_row").click(function () {
+    $(this).closest("div").find("tr#history_row td.even").slideToggle();
+});
+</script>
+
+<script type="text/javascript">
+$("tr#extended_text_row").click(function () {
+    $(this).closest("div").find("tr#extended_text_row td.odd").slideToggle();
+});
+</script>
