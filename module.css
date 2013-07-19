@@ -1,0 +1,124 @@
+/* Note: Block styles are hard coded in the block template, as module style sheets don't work in 
+cached blocks (core bug?). So if you want to alter the block CSS, you'll find it in the block template. */
+.itemCmsInfo{
+	padding: 5px 0 10px;
+}
+
+/*.itemCmsInfo span{
+	background: none repeat scroll 0 0 #000000;
+	border: 1px solid #999999;
+    color: #FFFFFF;
+    font-size: 13px;
+    letter-spacing: -0.01em;
+    padding: 4px 6px 3px;
+    text-decoration: none;
+    line-height: 26px;
+    text-shadow: 1px 1px 1px #000000;
+    -moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+} */
+
+/*.cms_clear .itemCmsInfo a{
+	background: none repeat scroll 0 0 #46B1E1;
+	border: 1px solid #999999;
+    color: #FFFFFF;
+    font-size: 13px;
+    letter-spacing: -0.01em;
+    padding: 4px 6px 3px;
+    text-decoration: none;
+    line-height: 26px;
+    text-shadow: 1px 1px 1px #000000;
+    -moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+} */
+
+.itemCmsInfo a:hover{
+	background: none repeat scroll 0 0 #2A2A2A;
+    color: #FFFFFF;
+}
+
+.itemCmsInfoComment a{
+	float:right;
+	background: url("images/icon_comment.png") no-repeat scroll 0 0 transparent;
+	height:32px;
+	line-height:28px;
+	width:32px;
+	overflow: hidden;
+	text-align: center;
+	text-decoration: none;
+}
+.itemCmsInfoComment a:hover{
+	background: url("images/icon_comment_add.png") no-repeat scroll 0 0 transparent;
+	text-decoration: none;
+}
+.cms_headertable
+{
+	padding: 0; margin: 0; border-bottom: 1px solid; margin-bottom: 10px;font-size: 0.8em; text-align: left; padding-right: 0.3em; line-height: 18px;
+}
+
+.cms_modulename, .cms_breadcrumb
+{}
+
+.cms_breadcrumb
+{}
+
+.cms_adminlinks
+{
+	padding-top: 15px; padding-bottom: 5px; font-size: 0.8em; text-align: center; line-height: 18px;
+}
+
+/* Used to display start logos, floated to the right */
+.cms_float_right 
+{
+	float:right;
+	margin: 0em 0em 1em 1em;
+}
+
+/* Used to display start logos, floated to the left */
+.cms_float_left 
+{
+	float:left;
+	margin: 0em 1em 1em 0em;
+}
+
+/* Used to prevent cms overlapping logos of others on the index page */
+.cms_clear
+{
+	clear:both;
+}
+
+/* Used to vertically space elements to neaten up the display */
+.cms_separator 
+{
+	margin-bottom:1em;
+}
+
+/* Tableless layout */
+.cms_table
+{
+	display: table;
+}
+
+.cms_row
+{
+	display: table-row;
+}
+
+.cms_left_cell
+{
+	display: table-cell;
+	padding-right: 1em;
+}
+
+.cms_right_cell
+{
+	display: table-cell;
+}
+
+.cms_updated
+{
+	color:red;
+}
+
+.cms_space
+{
+	padding: 0 0 20px;
+}

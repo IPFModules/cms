@@ -1,0 +1,44 @@
+<style>
+tr#seo_section {cursor: pointer;background-image:url(../images/box_expand_16px.png);}
+tr#seo-container {display: none;}
+tr#do_section {cursor: pointer;}
+tr#do-container {display: none;}
+tr#logo_section {cursor: pointer;}
+tr#logo-container {display: none;}
+tr#ext_section {cursor: pointer;}
+tr#ext-container {display: none;}
+tr#history_section {cursor: pointer;}
+tr#history-container {display: none;}
+</style>
+
+<{if $cms_start_title}><h1><{$cms_start_title}></h1><{/if}>
+<{if $cms_start_info}><p><{$cms_start_info}></p><{/if}>
+<{if $cms_start_table}><{$cms_start_table}><{/if}>
+<{if $addstart}><{includeq file='db:system_common_form.html' form=$addstart}><{/if}>
+
+<script type="text/javascript">
+$("#start_comments").next("tr").attr("id", "seo_section");
+$("tr#short_url_row").next("tr").attr("id", "seo_section_close");
+$("#meta_description_row, #meta_keywords_row, #short_url_row").wrapAll("<tr id='seo-container'><td colspan='2'><table></table></td></tr>");
+$("#addstart").on("click", "#seo_section", function() {$('#seo-container').slideToggle();});
+
+$("#seo_section_close").next("tr").attr("id", "do_section");
+$("tr#_row").next("tr").attr("id", "do_section_close");
+$("#doimage_row, #dohtml_row, #dosmiley_row").wrapAll("<tr id='do-container'><td colspan='2'><table></table></td></tr>");
+$("#addstart").on("click", "#do_section", function() {$('#do-container').slideToggle();});
+
+$("#website_row").next("tr").attr("id", "logo_section");
+$("tr#do_section_close").next("tr").attr("id", "logo_section_close");
+$("#_row").wrapAll("<tr id='logo-container'><td colspan='2'><table></table></td></tr>");
+$("#addstart").on("click", "#logo_section", function() {$('#logo-container').slideToggle();});
+
+$("#description_row").next("tr").attr("id", "ext_section");
+$("tr#extended_text_row").next("tr").attr("id", "ext_section_close");
+$("#extended_text_row").wrapAll("<tr id='ext-container'><td colspan='2'><table></table></td></tr>");
+$("#addstart").on("click", "#ext_section", function() {$('#ext-container').slideToggle();});
+
+$("#ext_section_close").next("tr").attr("id", "history_section");
+$("tr#history_row").next("tr").attr("id", "history_section_close");
+$("#history_row").wrapAll("<tr id='history-container'><td colspan='2'><table></table></td></tr>");
+$("#addstart").on("click", "#history_section", function() {$('#history-container').slideToggle();});
+</script>
