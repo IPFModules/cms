@@ -26,15 +26,12 @@ if (!$startObj || !is_object($startObj) || $startObj->isNew()) {
 	redirect_header(icms_getPreviousPage(), 3, _MD_CMS_NO_CONTENT);
 }
 
-if (!$startObj->accessGranted()) {
-	redirect_header(icms_getPreviousPage(), 3, _NOPERM);
-}
 
 $start = $startObj->toArray();
 $content = '<a href="' . ICMS_URL . '/modules/cms/start.php?start_id=' . $clean_start_id . '" title="' . $start['title'] . '">' . $start['title'] . '</a><br />';
 $content .= $start['subtitle']. '<br />';
 $content .= $start['extended_text'];
-$content .= icms_core_DataFilter::undoHtmlSpecialChars($cmsConfig['cms_print_footer'] . $powered_by . "&nbsp;" . $version);
+//$content .= icms_core_DataFilter::undoHtmlSpecialChars($cmsConfig['cms_print_footer'] . $powered_by . "&nbsp;" . $version);
 
 require_once ICMS_PDF_LIB_PATH.'/tcpdf.php';
 	icms_loadLanguageFile('core', 'pdf');
@@ -50,7 +47,7 @@ require_once ICMS_PDF_LIB_PATH.'/tcpdf.php';
 	$sitename = $icmsConfig['sitename'];
 	$siteslogan = $icmsConfig['slogan'];
 	$pdfheader = icms_core_DataFilter::undoHtmlSpecialChars($sitename.' - '.$siteslogan);
-	$pdf->SetHeaderData($cmsConfig['cms_print_logo'], PDF_HEADER_LOGO_WIDTH, $pdfheader, ICMS_URL);
+	$pdf->SetHeaderData($cmsConfig['cms_print_logo'], $sitename, $pdfheader, ICMS_URL);
 	
 	// set header and footer fonts
 	$pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
@@ -83,4 +80,3 @@ require_once ICMS_PDF_LIB_PATH.'/tcpdf.php';
 	$pdf->AddPage();
 	$pdf->writeHTML($content, TRUE, 0);
 	return $pdf->Output();
-
