@@ -5,6 +5,10 @@ Changelog:
 ADDED:
 - #430 Function added to clone a content (many thanks to @QM-B)
 
+FIXED:
+- Visitor was not able to create a PDF
+
+
 
 
 
