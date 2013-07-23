@@ -60,7 +60,18 @@ function editstart($start_id = 0, $clone = false)
 
 		$icmsModule->displayAdminMenu(0, _AM_CMS_CMS . " > " . _CO_ICMS_CREATINGNEW);
 		$sform = $startObj->getForm(_AM_CMS_START_CREATE, "addstart");
-
+		$member_handler = icms::handler('icms_member');
+		$grantedView = array_keys($member_handler->getGroupList());
+		$criteria = new icms_db_criteria_Compo(new icms_db_criteria_Item("groupid", ICMS_GROUP_ANONYMOUS, "!="));
+		$criteria->add(new icms_db_criteria_Item("groupid", ICMS_GROUP_USERS, "!="));
+		$grantedSubmit = array_keys($member_handler->getGroupList($criteria));
+		unset($member_handler, $criteria);
+		if($grantedView) {
+			$sform->setElementValue("start_perm_read", $grantedView);
+		}
+		if($grantedSubmit) {
+			$sform->setElementValue("start_perm_edit", $grantedSubmit);
+		}
 
 	}
 	$sform->assign($icmsAdminTpl);

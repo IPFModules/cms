@@ -223,6 +223,7 @@ class mod_cms_StartHandler extends icms_ipf_Handler
 	 */
 	protected function afterSave(& $obj)
 	{
+		global $cmsConfig;
 		$sprocketsModule = icms::handler("icms_module")->getByDirname("sprockets");
 
 		// Only update the taglinks if the object is being updated from the add/edit form (POST).

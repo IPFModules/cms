@@ -80,13 +80,6 @@ function icms_module_update_cms($module)
 
 	// Authorise some image mimetypes for convenience
 	cms_authorise_mimetypes();
-
-	/**
-	* Using the IcmsDatabaseUpdater to automaticallly manage the database upgrade dynamically
-	* according to the class defined in the module
-	*/
-	$icmsDatabaseUpdater = XoopsDatabaseFactory::getDatabaseUpdater();
-	$icmsDatabaseUpdater->moduleUpgrade($module);
 	return TRUE;
 }
 
