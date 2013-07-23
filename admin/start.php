@@ -63,15 +63,6 @@ function editstart($start_id = 0, $clone = false)
 
 
 	}
-	/*
-	if($cmsConfig['enable_perm'] == 0) {
-		$editPerm = $sform->getElementByName("start_perm_edit");
-		$editPerm->setHidden();
-		$readPerm = $sform->getElementByName("start_perm_read");
-		$readPerm->setHidden();
-		$startObj->hideFieldFromForm(array("start_perm_read","start_perm_edit"));
-	}
-	 */
 	$sform->assign($icmsAdminTpl);
 	$icmsAdminTpl->display("db:cms_admin_start.html");
 }

@@ -108,7 +108,7 @@ function cms_start() {
 	$startObj->setVar('meta_description', 'describe your content and write here your very short text');
 	$startObj->setVar('short_url', 'my-first-demo-content-is-ready');
 	$cms_start_handler -> insert( $startObj, TRUE );
-	echo '<code> --<b>CMS Start </b> Sample content successfully imported!</code><br />';
+	return '<code> --<b>CMS Start </b> Sample content successfully imported!</code><br />';
 }
 
 
@@ -134,7 +134,7 @@ function icms_module_install_cms($module)
 	$config_handler->insertConfig($config);
 
 	// start the function to install the demo content
-	cms_start();
+	$module->messages = cms_start();
 
 	return TRUE;
 }
