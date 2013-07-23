@@ -41,6 +41,8 @@ define("_AM_CMS_START_YES", "Ja");
 define("_AM_CMS_START_NO", "Nein");
 define("_AM_CMS_START_ALL_CMS", "-- Alle Tags --");
 define("_AM_CMS_START_FILTER_BY_TAG", "Filtern nach Tag");
+define("_AM_CMS_START_CLONE", "Clone this content");
+define("_AM_CMS_START_CLONING", "Cloning");
 
 // Categories
 define("_AM_CMS_START_ALL_CATEGORIES", "-- Alle Kategorien --");
