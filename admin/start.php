@@ -25,10 +25,9 @@ function editstart($start_id = 0, $clone = false)
 	$sprocketsModule = icms::handler("icms_module")->getByDirname("sprockets");
 	
 	if (!$clone && !$startObj->isNew()) {
-		$startObj->hideFieldFromForm(array('title', 'subtitle', 'description', 'extended_text', 'history', 'creator'));
-		$startObj->setVar('content_updated_date', date(_DATESTRING));
-		icms::$module->displayAdminMenu(0, _AM_CONTENT_CONTENTS . " > " . _CO_ICMS_EDITING);
-		$sform = $startObj->getForm(_AM_CONTENT_CONTENT_EDIT, 'addcontent');
+		$startObj->setVar("last_update", time());
+		icms::$module->displayAdminMenu(0, _AM_CMS_CMS . " > " . _CO_ICMS_EDITING);
+		$sform = $startObj->getForm(_AM_CMS_START_EDIT, 'addstart');
 		$sform->assign($icmsAdminTpl);
 	}
 	elseif (!$startObj->isNew() && $clone)
@@ -49,8 +48,8 @@ function editstart($start_id = 0, $clone = false)
 		$startObj->setVar("date", time ());
 		$startObj->setVar("last_update", 0);
 		$startObj->setNew();
-		$icmsModule->displayAdminMenu(0, _AM_CMS_CMS . " > " . _CO_ICMS_EDITING);
-		$sform = $startObj->getForm(_AM_CMS_START_EDIT, "addstart");
+		$icmsModule->displayAdminMenu(0, _AM_CMS_CMS . " > " . _AM_CMS_START_CLONING);
+		$sform = $startObj->getForm(_AM_CMS_START_CLONE, "addstart");
 		$sform->assign($icmsAdminTpl);
 	}
 	else

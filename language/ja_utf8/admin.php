@@ -24,7 +24,7 @@ define("_AM_CMS_CMS_DSC", "All contents in the module");
 define("_AM_CMS_START_CREATE", "コンテンツを足し加える");
 define("_AM_CMS_START", "コンテンツ");
 define("_AM_CMS_START_CREATE_INFO", "Fill-out the following form to create a new content.");
-define("_AM_CMS_START_EDIT", "Edit this content");
+define("_AM_CMS_START_EDIT", "コンテンツを編集する");
 define("_AM_CMS_START_EDIT_INFO", "Fill-out the following form in order to edit this content.");
 define("_AM_CMS_START_MODIFIED", "The content was successfully modified.");
 define("_AM_CMS_START_CREATED", "The content has been successfully created.");
@@ -41,6 +41,8 @@ define("_AM_CMS_START_YES", "はい");
 define("_AM_CMS_START_NO", "いいえ");
 define("_AM_CMS_START_ALL_CMS", "-- すべてのタグ --");
 define("_AM_CMS_START_FILTER_BY_TAG", "タグによるフィルタリング");
+define("_AM_CMS_START_CLONE", "コンテンツをクローンする");
+define("_AM_CMS_START_CLONING", "クローニング");
 
 // Categories
 define("_AM_CMS_START_ALL_CATEGORIES", "-- すべてのカテゴリ --");
