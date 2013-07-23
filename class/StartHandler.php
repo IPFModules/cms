@@ -280,6 +280,7 @@ class mod_cms_StartHandler extends icms_ipf_Handler
 	 */
 	protected function afterDelete(& $obj)
 	{
+		$notification_handler = icms::handler('icms_data_notification');
 		// delete global notifications
 		$notification_handler->unsubscribeByItem($module_id, $start_id);
 
