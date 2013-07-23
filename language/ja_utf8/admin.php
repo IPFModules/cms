@@ -41,14 +41,9 @@ define("_AM_CMS_START_YES", "はい");
 define("_AM_CMS_START_NO", "いいえ");
 define("_AM_CMS_START_ALL_CMS", "-- すべてのタグ --");
 define("_AM_CMS_START_FILTER_BY_TAG", "タグによるフィルタリング");
+define("_AM_CMS_START_CLONE", "Clone this content");
+define("_AM_CMS_START_CLONING", "Cloning");
 
 // Categories
 define("_AM_CMS_START_ALL_CATEGORIES", "-- すべてのカテゴリ --");
 define("_AM_CMS_START_FILTER_BY_CATEGORY", "カテゴリーによるフィルタリング");
-
-// Toggle
-define("_AM_CMS_START_OPEN_LOGO", "Image for the teaser");
-define("_AM_CMS_START_OPEN_EXT", "Extended content");
-define("_AM_CMS_START_OPEN_HISTORY", "History / Draft content");
-define("_AM_CMS_START_OPEN_SEO", "SEO options");
-define("_AM_CMS_START_OPEN_DO", "Content options");

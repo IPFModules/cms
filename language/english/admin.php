@@ -41,14 +41,9 @@ define("_AM_CMS_START_YES", "Yes");
 define("_AM_CMS_START_NO", "No");
 define("_AM_CMS_START_ALL_CMS", "-- All Tags --");
 define("_AM_CMS_START_FILTER_BY_TAG", "Filter by tag");
+define("_AM_CMS_START_CLONE", "Clone this content");
+define("_AM_CMS_START_CLONING", "Cloning");
 
 // Categories
 define("_AM_CMS_START_ALL_CATEGORIES", "-- All Categories --");
 define("_AM_CMS_START_FILTER_BY_CATEGORY", "Filter by category");
-
-// Toggle
-define("_AM_CMS_START_OPEN_LOGO", "Image for the teaser");
-define("_AM_CMS_START_OPEN_EXT", "Extended content");
-define("_AM_CMS_START_OPEN_HISTORY", "History / Draft content");
-define("_AM_CMS_START_OPEN_SEO", "SEO options");
-define("_AM_CMS_START_OPEN_DO", "Content options");
