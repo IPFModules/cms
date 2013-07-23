@@ -251,7 +251,7 @@ else
 			/**
 			 * Retrieve a list of cms JOINED to taglinks by start_id/tag_id/module_id/item/label_type
 			 */
-			if($cmsConfig['enable_perm']) {
+			if($cmsConfig['enable_perm'] == 1) {
 				$perm_handler = new icms_ipf_permission_Handler($cms_start_handler);
 				$grantedItems = $perm_handler->getGrantedItems("start_perm_read");
 			}
@@ -268,8 +268,10 @@ else
 					. " AND `tid` = '" . $clean_tag_id . "'"
 					. " AND `mid` = '" . icms::$module->getVar('mid') . "'"
 					. " AND `item` = 'start'";
-			if($cmsConfig['enable_perm']) {
+			if($cmsConfig['enable_perm'] == 1 && count($grantedItems)) {
 				$group_query .= " AND `start_id` IN(".implode(",", $grantedItems).")";
+			} elseif ($cmsConfig['enable_perm'] == 1 && !count($grantedItems)) {
+				$group_query .= " AND `start_id` IN(0)";
 			}
 
 			$result = icms::$xoopsDB->query($group_query);
@@ -301,8 +303,10 @@ else
 					. " AND `item` = 'start'"
 					. " ORDER BY `date` DESC" //changed from weight ASC to date DESC
 					. " LIMIT " . $clean_start . ", " . icms::$module->config['number_of_cms_per_page'];
-			if($cmsConfig['enable_perm']) {
+			if($cmsConfig['enable_perm'] == 1 && count($grantedItems)) {
 				$query .= " AND `start_id` IN(".implode(",", $grantedItems).")";
+			} elseif ($cmsConfig['enable_perm'] == 1 && !count($grantedItems)) {
+				$query .= " AND `start_id` IN(0)";
 			}
 
 			$result = icms::$xoopsDB->query($query);
