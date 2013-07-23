@@ -23,7 +23,7 @@
 defined("ICMS_ROOT_PATH") or die("ICMS root path not defined");
 
 // this needs to be the latest db version
-define('CMS_DB_VERSION', 1);
+define('CMS_DB_VERSION', 2);
 
 /**
  * it is possible to define custom functions which will be call when the module is updating at the
@@ -36,6 +36,25 @@ function cms_db_upgrade_2() {
 }
 */
 
+function cms_db_upgrade_2() {
+	$cmsModule = icms::handler('icms_module')->getByDirname(basename(dirname(dirname(__FILE__))));
+	$cms_start_handler = icms_getModuleHandler("start", $cmsModule->getVar("dirname"));
+	$sql = "SELECT *  FROM ".$cms_start_handler->table;
+	$result = icms::$xoopsDB->queryF($sql);
+	$perm_handler = icms::handler('icms_member_groupperm');
+	$group_handler = icms::handler('icms_member_group');
+	$groups = $group_handler->getObjects(NULL, TRUE);
+	unset($group_handler);
+	while($myrow = icms::$xoopsDB->fetchArray($result)) {
+		foreach (array_keys($groups) as $group_id) {
+			$perm_handler->addRight("start_perm_read", $myrow['start_id'], $group_id, $cmsModule->getVar("mid"));
+		}
+		$perm_handler->addRight("start_perm_edit", $myrow['start_id'], ICMS_GROUP_ADMIN, $cmsModule->getVar("mid"));
+	}
+	unset($perm_handler, $cmsModule, $groups);
+
+}
+
 function icms_module_update_cms($module)
 {
 
@@ -47,10 +66,10 @@ function icms_module_update_cms($module)
 	if (!is_dir($path)) {
 		$directory_exists = mkdir($path, 0777);
 		$path .= '/index.html';
-		
+
 		// add an index file to prevent index lookups
 		if (!is_file($path)) {
-			$filename = $path;	
+			$filename = $path;
 			$contents = '<script>history.go(-1);</script>';
 			$handle = fopen($filename, 'wb');
 			$result = fwrite($handle, $contents);
@@ -61,7 +80,7 @@ function icms_module_update_cms($module)
 
 	// Authorise some image mimetypes for convenience
 	cms_authorise_mimetypes();
-	
+
 	/**
 	* Using the IcmsDatabaseUpdater to automaticallly manage the database upgrade dynamically
 	* according to the class defined in the module
@@ -104,7 +123,7 @@ function icms_module_install_cms($module)
 	$config = $config_handler->getConfig($configs[0]->getVar('conf_id'));
 	$config->setVar("conf_value", 0);
 	$config_handler->insertConfig($config);
-	
+
 	// set the comment function OFF as default after the module installation
 	$config_handler = icms::handler('icms_config');
 	$criteria = new icms_db_criteria_Compo(new icms_db_criteria_Item("conf_modid", $module->getVar("mid")));
@@ -113,10 +132,10 @@ function icms_module_install_cms($module)
 	$config = $config_handler->getConfig($configs[0]->getVar('conf_id'));
 	$config->setVar("conf_value", 0);
 	$config_handler->insertConfig($config);
-	
+
 	// start the function to install the demo content
 	cms_start();
-	
+
 	return TRUE;
 }
 

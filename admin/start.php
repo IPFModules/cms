@@ -19,11 +19,11 @@
 */
 function editstart($start_id = 0, $clone = false)
 {
-	global $cms_start_handler, $icmsModule, $icmsAdminTpl;
+	global $cms_start_handler, $icmsModule, $icmsAdminTpl, $cmsConfig;
 
 	$startObj = $cms_start_handler->get($start_id);
 	$sprocketsModule = icms::handler("icms_module")->getByDirname("sprockets");
-	
+
 	if (!$clone && !$startObj->isNew()) {
 		$startObj->setVar("last_update", time());
 		icms::$module->displayAdminMenu(0, _AM_CMS_CMS . " > " . _CO_ICMS_EDITING);
@@ -32,10 +32,10 @@ function editstart($start_id = 0, $clone = false)
 	}
 	elseif (!$startObj->isNew() && $clone)
 	{
-		
+
 		$startObj->loadTags();
 		$startObj->loadCategories();
-		
+
 		//show the new date in the form
 		$startObj->setVar("last_update", time());
 		$startObj->setVar("start_id", 0);
@@ -50,19 +50,29 @@ function editstart($start_id = 0, $clone = false)
 		$startObj->setNew();
 		$icmsModule->displayAdminMenu(0, _AM_CMS_CMS . " > " . _AM_CMS_START_CLONING);
 		$sform = $startObj->getForm(_AM_CMS_START_CLONE, "addstart");
-		$sform->assign($icmsAdminTpl);
+
 	}
 	else
 	{
 		//set the username as default within the form
 		$uid = (is_object(icms::$user)) ? icms::$user->getVar("uid") : 0;
 		$startObj->setVar("creator", $uid);
-		
+
 		$icmsModule->displayAdminMenu(0, _AM_CMS_CMS . " > " . _CO_ICMS_CREATINGNEW);
 		$sform = $startObj->getForm(_AM_CMS_START_CREATE, "addstart");
-		$sform->assign($icmsAdminTpl);
+
 
 	}
+	/*
+	if($cmsConfig['enable_perm'] == 0) {
+		$editPerm = $sform->getElementByName("start_perm_edit");
+		$editPerm->setHidden();
+		$readPerm = $sform->getElementByName("start_perm_read");
+		$readPerm->setHidden();
+		$startObj->hideFieldFromForm(array("start_perm_read","start_perm_edit"));
+	}
+	 */
+	$sform->assign($icmsAdminTpl);
 	$icmsAdminTpl->display("db:cms_admin_start.html");
 }
 
@@ -90,7 +100,7 @@ if (in_array($clean_op, $valid_op, TRUE))
 			icms_cp_header();
 			editstart($clean_start_id, true);
 			break;
-			
+
 		case "mod":
 		case "changedField":
 			icms_cp_header();
@@ -112,7 +122,7 @@ if (in_array($clean_op, $valid_op, TRUE))
 			icms_cp_header();
 			$startObj->displaySingleObject();
 			break;
-		
+
 		case "changeWeight":
 			foreach ($_POST['mod_cms_Start_objects'] as $key => $value)
 			{
@@ -132,20 +142,20 @@ if (in_array($clean_op, $valid_op, TRUE))
 			$ret = '/modules/' . basename(dirname(dirname(__FILE__))) . '/admin/start.php';
 			redirect_header(ICMS_URL . $ret, 2, _AM_CMS_START_WEIGHTS_UPDATED);
 			break;
-			
+
 		case "visible":
 			$visibility = $cms_start_handler->toggleOnlineStatus($clean_start_id, 'online_status');
 			$ret = '/modules/' . basename(dirname(dirname(__FILE__))) . '/admin/start.php';
 			if ($visibility == 0)
 			{
 				redirect_header(ICMS_URL . $ret, 2, _AM_CMS_START_INVISIBLE);
-			} 
+			}
 			else
 			{
 				redirect_header(ICMS_URL . $ret, 2, _AM_CMS_START_VISIBLE);
 			}
 			break;
-			
+
 		case "changeBeendet":
 			$fertigstellungStatus = $cms_start_handler->toggleFertigstellung($clean_start_id, 'beendet');
 			$ret = '/modules/' . basename(dirname(dirname(__FILE__))) . '/admin/start.php';
@@ -153,7 +163,7 @@ if (in_array($clean_op, $valid_op, TRUE))
 			{
 				redirect_header(ICMS_URL . $ret, 2, _AM_CMS_START_ACTIVE);
 			}
-			else 
+			else
 			{
 				redirect_header(ICMS_URL . $ret, 2, _AM_CMS_START_ARCHIVIERT);
 			}
@@ -162,17 +172,17 @@ if (in_array($clean_op, $valid_op, TRUE))
 		default:
 			icms_cp_header();
 			$icmsModule->displayAdminMenu(0, _AM_CMS_CMS);
-			
+
 			// Display a single start, if a start_id is set
 			if ($clean_start_id)
 			{
 				$startObj = $cms_start_handler->get($clean_start_id);
 				$startObj->displaySingleObject();
 			}
-			
+
 			// Display a tag + category select filter (if the Sprockets module is installed)
 			if (icms_get_module_status("sprockets")) {
-			
+
 				////////////////////////////////////
 				////////// TAG SELECT BOX //////////
 				////////////////////////////////////
@@ -180,12 +190,12 @@ if (in_array($clean_op, $valid_op, TRUE))
 				$taglink_array = $tagged_start_list = $tagged_article_list = array();
 				$sprockets_tag_handler = icms_getModuleHandler('tag', 'sprockets', 'sprockets');
 				$sprockets_taglink_handler = icms_getModuleHandler('taglink', 'sprockets', 'sprockets');
-				
+
 				$tag_select_box = $sprockets_tag_handler->getTagSelectBox('start.php', $clean_tag_id,
 					_AM_CMS_START_ALL_CMS, FALSE, icms::$module->getVar('mid'));
-				
+
 				if ($clean_tag_id) {
-				
+
 					// get a list of start IDs belonging to this tag
 					$criteria = new icms_db_criteria_Compo();
 					$criteria->add(new icms_db_criteria_Item('tid', $clean_tag_id));
@@ -203,14 +213,14 @@ if (in_array($clean_op, $valid_op, TRUE))
 						$criteria->add(new icms_db_criteria_Item('start_id', $tagged_start_list, 'IN'));
 					}
 				}
-				
+
 				/////////////////////////////////////////
 				////////// CATEGORY SELECT BOX //////////
 				/////////////////////////////////////////
 				$category_select_box = '';
 				$taglink_array = $categorised_start_list = array();
 
-				$category_select_box = $sprockets_tag_handler->getCategorySelectBox('start.php', 
+				$category_select_box = $sprockets_tag_handler->getCategorySelectBox('start.php',
 							$clean_tag_id, _AM_CMS_START_ALL_CATEGORIES, icms::$module->getVar('mid'));
 
 				if ($clean_tag_id)
@@ -231,7 +241,7 @@ if (in_array($clean_op, $valid_op, TRUE))
 					$criteria->add(new icms_db_criteria_Item('start_id', $categorised_start_list, 'IN'));
 				}
 			}
-				
+
 			// Display the tag/category select boxes in a table, side by side to save space
 			if (!empty($tag_select_box) || !empty($category_select_box))
 			{
@@ -255,10 +265,10 @@ if (in_array($clean_op, $valid_op, TRUE))
 			if (empty($criteria)) {
 				$criteria = null;
 			}
-		
+
 			$objectTable = new icms_ipf_view_Table($cms_start_handler, $criteria);
 			$objectTable->addQuickSearch(array('title','subtitle','description','extended_text'));
-			
+
 			//get Preview
 			$objectTable->addColumn(new icms_ipf_view_Column("title", FALSE, FALSE, 'getPreviewItemLink'));
 
@@ -274,15 +284,15 @@ if (in_array($clean_op, $valid_op, TRUE))
 			$objectTable->addIntroButton("addstart", "start.php?op=mod", _AM_CMS_START_CREATE);
 			$objectTable->addFilter('beendet', 'beendet_filter');
 			$objectTable->addFilter('online_status', 'online_status_filter');
-				
+
 			//make a link for the detailpage within the ACP
 			$objectTable->addCustomAction( 'getViewItemLink' );
 			//show clone icon in the ACP
 			$objectTable->addCustomAction('getCloneItemLink');
-			
+
 			$icmsAdminTpl->assign("cms_start_table", $objectTable->fetch());
 			$icmsAdminTpl->display("db:cms_admin_start.html");
-						
+
 			break;
 	}
 	icms_cp_footer();

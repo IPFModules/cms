@@ -83,50 +83,58 @@ else // Align left
 ////////// VIEW SINGLE START //////////
 /////////////////////////////////////////
 
-if($startObj && !$startObj->isNew())
-{	
-	
+if($startObj && !$startObj->isNew() && $startObj->accessGranted("start_perm_read"))
+{
+
 	//comments detailpage
 	if ($cmsConfig['com_rule']) {
 		$icmsTpl->assign('cms_post_comment', TRUE);
 		include_once ICMS_ROOT_PATH . '/include/comment_view.php';
 	}
-	
+
 	// Update hit counter
 	if (!icms_userIsAdmin(icms::$module->getVar('dirname')))
 	{
 		$cms_start_handler->updateCounter($startObj);
 	}
-	
+
 	// Convert object to array for easy insertion to templates
 	$start = $startObj->toArray();
-	
+
 	//icons for the frontend
 	$edit_item_link = $delete_item_link = '';
-	$edit_item_link = $startObj->getEditItemLink(FALSE, TRUE, FALSE);
-	$delete_item_link = $startObj->getDeleteItemLink(FALSE, TRUE, FALSE);
-	$start['editItemLink'] = $edit_item_link;
-	$start['deleteItemLink'] = $delete_item_link;
-	
+	if($cmsConfig['enable_perm'] == 1) {
+		if($startObj->accessGranted("start_perm_edit")) {
+			$edit_item_link = $startObj->getEditItemLink(FALSE, TRUE, FALSE);
+			$delete_item_link = $startObj->getDeleteItemLink(FALSE, TRUE, FALSE);
+			$start['editItemLink'] = $edit_item_link;
+			$start['deleteItemLink'] = $delete_item_link;
+		}
+	} else {
+		$edit_item_link = $startObj->getEditItemLink(FALSE, TRUE, FALSE);
+		$delete_item_link = $startObj->getDeleteItemLink(FALSE, TRUE, FALSE);
+		$start['editItemLink'] = $edit_item_link;
+		$start['deleteItemLink'] = $delete_item_link;
+	}
 	// Add SEO friendly string to URL
 	// seourl
 	if (!empty($start['short_url']))
 	{
 	$start['itemUrl'] .= "&amp;seite=" . $start['short_url'];
 	}
-		
+
 	// Check if hit counter should be displayed or not
 	if (icms::$module->config['show_view_counter'] == FALSE)
 	{
 		unset($start['counter']);
 	}
-	
+
 	// Adjust logo path for template
 	if (!empty($start['logo']))
 	{
 		$start['logo'] = $document_root . 'uploads/' . $directory_name . '/start/' . $start['logo'];
 	}
-	
+
 	// Check if an 'updated' notice should be displayed. This works by comparing the time since the
 	// project was last updated against the length of time that an updated notice should be shown
 	// (as set in the module preferences).
@@ -150,18 +158,18 @@ if($startObj && !$startObj->isNew())
 		$start_tag_array = $sprockets_taglink_handler->getTagsForObject($startObj->getVar('start_id'), $cms_start_handler,0);
 		foreach ($start_tag_array as $key => $value)
 		{
-			$start['tags'][$value] = '<a class="label label-info" href="' . CMS_URL . 'start.php?tag_id=' . $value 
+			$start['tags'][$value] = '<a class="label label-info" href="' . CMS_URL . 'start.php?tag_id=' . $value
 					. '" title="' . _CO_CMS_TAGS_ALL_CONTENTS_ON . ' '. $sprockets_tag_buffer[$value]
 						.' ' . _CO_CMS_TAGS_ALL_SHOW . '">' . $sprockets_tag_buffer[$value] . '</a>';
 		}
 		$start['tags'] = implode(' ', $start['tags']);
-		
+
 		// Categories
 		$start['categories'] = array();
 		$start_category_array = $sprockets_taglink_handler->getTagsForObject($startObj->getVar('start_id'), $cms_start_handler,1);
 		foreach ($start_category_array as $key => $value)
 		{
-			$start['categories'][$value] = '<a class="label label-info" href="' . CMS_URL . 'start.php?tag_id=' . $value 
+			$start['categories'][$value] = '<a class="label label-info" href="' . CMS_URL . 'start.php?tag_id=' . $value
 					. '" title="' . _CO_CMS_CATEGORIES_ALL_CONTENTS_ON . ' '. $sprockets_category_buffer[$value]
 						.' ' . _CO_CMS_CATEGORIES_ALL_SHOW . '">' . $sprockets_category_buffer[$value] . '</a>';
 		}
@@ -178,10 +186,10 @@ if($startObj && !$startObj->isNew())
 	{
 		$icmsTpl->assign("cms_page_title", _CO_CMS_ACTIVE_CMS);
 	}
-	
+
 	$icmsTpl->assign("cms_start", $start);
 
-	$icms_metagen = new icms_ipf_Metagen($startObj->getVar("title"), 
+	$icms_metagen = new icms_ipf_Metagen($startObj->getVar("title"),
 			$startObj->getVar("meta_keywords", "n"), $startObj->getVar("meta_description", "n"));
 	$icms_metagen->createMetaTags();
 	$icmsTpl->assign('logo_display_width', icms::$module->config['logo_single_display_width']);
@@ -191,7 +199,7 @@ if($startObj && !$startObj->isNew())
 ////////// VIEW START INDEX //////////
 ////////////////////////////////////////
 else
-{	
+{
 	// Get a select box (if preferences allow, and only if Sprockets module installed)
 	if (icms_get_module_status("sprockets") && icms::$module->config['show_tag_select_box'] == TRUE)
 	{
@@ -207,18 +215,18 @@ else
 			$cms_tag_name = $sprockets_tag_buffer[$clean_tag_id];
 			$icmsTpl->assign('cms_category_path', $sprockets_tag_buffer[$clean_tag_id]);
 		}
-		
+
 		// Load the tag navigation select box
-		// $action, $selected = null, $zero_option_message = '---', 
+		// $action, $selected = null, $zero_option_message = '---',
 		// $navigation_elements_only = TRUE, $module_id = null, $item = null,
-		$tag_select_box = $sprockets_tag_handler->getTagSelectBox('start.php', $clean_tag_id, 
+		$tag_select_box = $sprockets_tag_handler->getTagSelectBox('start.php', $clean_tag_id,
 				_CO_CMS_START_ALL_TAGS, TRUE, icms::$module->getVar('mid'));
 		$icmsTpl->assign('cms_tag_select_box', $tag_select_box);
 	}
-	
+
 	// Set the page title
 	$icmsTpl->assign("cms_page_title", _CO_CMS_ACTIVE_CMS);
-	
+
 	///////////////////////////////////////////////////////////////////
 	////////// View cms as list of summary descriptions //////////
 	///////////////////////////////////////////////////////////////////
@@ -226,7 +234,7 @@ else
 	{
 
 		$start_summaries = $linked_start_ids = array();
-		
+
 		// Append the tag name to the module title (if preferences allow, and only if Sprockets module installed)
 		if (icms_get_module_status("sprockets") && icms::$module->config['show_breadcrumb'] == FALSE)
 		{
@@ -236,7 +244,7 @@ else
 				$icmsTpl->assign('cms_tag_name', $cms_tag_name);
 			}
 		}
-				
+
 		// Retrieve cms for a given tag or category
 		if ($clean_tag_id && icms_get_module_status("sprockets"))
 		{
@@ -244,9 +252,12 @@ else
 			 * Retrieve a list of cms JOINED to taglinks by start_id/tag_id/module_id/item/label_type
 			 */
 
+			$perm_handler = new icms_ipf_permission_Handler($cms_start_handler);
+			$grantedItems = $perm_handler->getGrantedItems("start_perm_read");
+
 			$query = $rows = $start_count = '';
 			$linked_start_ids = array();
-			
+
 			// First, count the number of cms for the pagination control
 			$start_count = '';
 			$group_query = "SELECT count(*) FROM " . $cms_start_handler->table . ", "
@@ -257,25 +268,28 @@ else
 					. " AND `tid` = '" . $clean_tag_id . "'"
 					. " AND `mid` = '" . icms::$module->getVar('mid') . "'"
 					. " AND `item` = 'start'";
-			
+			if(count($grantedItems)) {
+				$group_query .= " AND `start_id` IN(".implode(",", $grantedItems).")";
+			}
+
 			$result = icms::$xoopsDB->query($group_query);
 
 			if (!$result)
 			{
 				echo 'Error';
-				exit;	
+				exit;
 			}
 			else
 			{
 				while ($row = icms::$xoopsDB->fetchArray($result))
 				{
-					foreach ($row as $key => $count) 
+					foreach ($row as $key => $count)
 					{
 						$start_count = $count;
 					}
 				}
 			}
-			
+
 			// Secondly, get the cms
 			$query = "SELECT * FROM " . $cms_start_handler->table . ", "
 					. $sprockets_taglink_handler->table
@@ -287,6 +301,9 @@ else
 					. " AND `item` = 'start'"
 					. " ORDER BY `date` DESC" //changed from weight ASC to date DESC
 					. " LIMIT " . $clean_start . ", " . icms::$module->config['number_of_cms_per_page'];
+			if(count($grantedItems)) {
+				$query .= " AND `start_id` IN(".implode(",", $grantedItems).")";
+			}
 
 			$result = icms::$xoopsDB->query($query);
 
@@ -298,19 +315,20 @@ else
 			else
 			{
 				$rows = $cms_start_handler->convertResultSet($result, TRUE, FALSE);
-				foreach ($rows as $key => $row) 
+				foreach ($rows as $key => $row)
 				{
 					$start_summaries[$row['start_id']] = $row;
 				}
 			}
 		}
-				
+
 		// Retrieve cms without filtering by tag
 		else
 		{
 			$criteria = new icms_db_criteria_Compo();
 			$criteria->add(new icms_db_criteria_Item('beendet', '0'));
 			$criteria->add(new icms_db_criteria_Item('online_status', '1'));
+			$cms_start_handler->setGrantedObjectsCriteria($criteria, "start_perm_read");
 			$criteria->setSort('date');
 			$criteria->setOrder('DESC');
 
@@ -324,18 +342,18 @@ else
 			$criteria->setOrder('DESC'); //changed from ASC to DESC
 			$start_summaries = $cms_start_handler->getObjects($criteria, TRUE, FALSE);
 		}
-		
+
 		// Prepare tags. A list of start IDs is used to retrieve relevant taglinks. The taglinks
 		// are sorted into a multidimensional array, using the start ID as the key to each subarray.
 		// Then its just a case of assigning each subarray to the matching start.
-		 
+
 		// Prepare a list of start_id, this will be used to create a taglink buffer, which is used
 		// to create tag links for each start
 		$linked_start_ids = '';
 		foreach ($start_summaries as $key => $value) {
 			$linked_start_ids[] = $value['start_id'];
 		}
-		
+
 		if (icms_get_module_status("sprockets") && !empty($linked_start_ids))
 		{
 			$linked_start_ids = '(' . implode(',', $linked_start_ids) . ')';
@@ -349,7 +367,7 @@ else
 			$criteria->add(new icms_db_criteria_Item('tid', $sprockets_tag_ids, 'IN'));
 			$taglink_buffer = $sprockets_taglink_handler->getObjects($criteria, TRUE, TRUE);
 			unset($criteria);
-			
+
 			// Prepare multidimensional array of category_ids with start_id (iid) as key
 			$categorylink_buffer = $start_category_id_buffer = array();
 			$criteria = new  icms_db_criteria_Compo();
@@ -365,12 +383,12 @@ else
 
 				if (!array_key_exists($taglink->getVar('iid'), $start_tag_id_buffer)) {
 					$start_tag_id_buffer[$taglink->getVar('iid')] = array();
-				}				
-				$start_tag_id_buffer[$taglink->getVar('iid')][] = '<a class="label label-info" href="' . CMS_URL . 
-						'start.php?tag_id=' . $taglink->getVar('tid') . '" title="' 
+				}
+				$start_tag_id_buffer[$taglink->getVar('iid')][] = '<a class="label label-info" href="' . CMS_URL .
+						'start.php?tag_id=' . $taglink->getVar('tid') . '" title="'
 						. _CO_CMS_TAGS_ALL_CONTENTS_ON . ' '
 						. $sprockets_tag_buffer[$taglink->getVar('tid')]
-						.' ' . _CO_CMS_TAGS_ALL_SHOW . '">' 
+						.' ' . _CO_CMS_TAGS_ALL_SHOW . '">'
 						. $sprockets_tag_buffer[$taglink->getVar('tid')]
 						. '</a>';
 			}
@@ -379,23 +397,23 @@ else
 
 				if (!array_key_exists($categorylink->getVar('iid'), $start_category_id_buffer)) {
 					$start_category_id_buffer[$categorylink->getVar('iid')] = array();
-				}				
-				$start_category_id_buffer[$categorylink->getVar('iid')][] = '<a class="label label-info" href="' . CMS_URL . 
-						'start.php?tag_id=' . $categorylink->getVar('tid') . '" title="' 
+				}
+				$start_category_id_buffer[$categorylink->getVar('iid')][] = '<a class="label label-info" href="' . CMS_URL .
+						'start.php?tag_id=' . $categorylink->getVar('tid') . '" title="'
 						. _CO_CMS_TAGS_ALL_CONTENTS_ON . ' '
 						. $sprockets_category_buffer[$categorylink->getVar('tid')]
-						.' ' . _CO_CMS_TAGS_ALL_SHOW . '">' 
+						.' ' . _CO_CMS_TAGS_ALL_SHOW . '">'
 						. $sprockets_category_buffer[$categorylink->getVar('tid')]
 						. '</a>';
 			}
 
 			// Convert the tag arrays into strings for easy handling in the template
-			foreach ($start_tag_id_buffer as $key => &$value) 
+			foreach ($start_tag_id_buffer as $key => &$value)
 			{
 				$value = implode(' ', $value);
 			}
 			// Convert the category arrays into strings for easy handling in the template
-			foreach ($start_category_id_buffer as $key => &$value) 
+			foreach ($start_category_id_buffer as $key => &$value)
 			{
 				$value = implode(' ', $value);
 			}
@@ -415,7 +433,7 @@ else
 				}
 			}
 		}
-		
+
 		// Add 'updated' notices and adjust the logo paths to allow dynamic resizing, prepare tags for display
 		foreach ($start_summaries as &$start)
 		{
@@ -423,28 +441,28 @@ else
 			{
 				$updated = strtotime($start['last_update']);
 				$updated_notice_period = $update_periods[icms::$module->config['updated_notice_period']];
-				
+
 				if ((time() - $updated) < $updated_notice_period)
 				{
 					$start['last_update'] = date(icms::$module->config['date_format'], $updated);
 					$start['updated'] = TRUE;
 				}
 			}
-			
+
 			if (!empty($start['logo']))
 			$start['logo'] = $document_root . 'uploads/' . $directory_name . '/start/'
 				. $start['logo'];
-			
+
 			// Add SEO friendly string to URL
 			// seourl
 			if (!empty($start['short_url']))
 			{
 				$start['itemUrl'] .= "&amp;seite=" . $start['short_url'];
 			}
-			
+
 		}
 		$icmsTpl->assign('start_summaries', $start_summaries);
-		
+
 		// Adjust pagination for tag, if present
 		if (!empty($clean_tag_id))
 		{
@@ -454,21 +472,21 @@ else
 		{
 			$extra_arg = TRUE;
 		}
-		
+
 		// Pagination control
 		$pagenav = new icms_view_PageNav($start_count, icms::$module->config['number_of_cms_per_page'],
 				$clean_start, 'start', $extra_arg);
 		$icmsTpl->assign('cms_navbar', $pagenav->renderNav());
 	}
-	else 
+	else
 	{
 		//////////////////////////////////////////////////////////////////////////////
 		////////// View cms in compact table, optionally filter by tag //////////
 		//////////////////////////////////////////////////////////////////////////////
-		
+
 		$tagged_start_list = '';
-		
-		if ($clean_tag_id && icms_get_module_status("sprockets")) 
+
+		if ($clean_tag_id && icms_get_module_status("sprockets"))
 		{
 			// Get a list of start IDs belonging to this tag
 			$criteria = new icms_db_criteria_Compo();
@@ -480,7 +498,7 @@ else
 				$tagged_start_list[] = $taglink->getVar('iid');
 			}
 			$tagged_start_list = "('" . implode("','", $tagged_start_list) . "')";
-			unset($criteria);			
+			unset($criteria);
 		}
 		$criteria = new icms_db_criteria_Compo();
 		if (!empty($tagged_start_list))
@@ -489,9 +507,10 @@ else
 		}
 		$criteria->add(new icms_db_criteria_Item('beendet', '0'));
 		$criteria->add(new icms_db_criteria_Item('online_status', '1'));
+		$cms_start_handler->setGrantedObjectsCriteria($criteria, "start_perm_read");
 		$criteria->setSort('date');
 		$criteria->setOrder('DESC');
-		
+
 		// Retrieve the table
 		$objectTable = new icms_ipf_view_Table($cms_start_handler, $criteria, array());
 		$objectTable->isForUserSide();
@@ -504,13 +523,13 @@ else
 		$objectTable->setDefaultOrder('DESC'); //changed from ASC to DESC
 		$icmsTpl->assign("cms_start_table", $objectTable->fetch());
 	}
-	
+
 	//comments index page
 	if ($cmsConfig['com_rule']) {
 		$icmsTpl->assign('cms_post_comment', TRUE);
 		include_once ICMS_ROOT_PATH . '/include/comment_view.php';
 	}
-	
+
 }
 
 $icmsTpl->assign("show_breadcrumb", icms::$module->config['show_breadcrumb']);
