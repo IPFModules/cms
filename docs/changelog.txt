@@ -4,11 +4,12 @@ Changelog:
 
 ADDED:
 - #430 Function added to clone a content (many thanks to @QM-B)
-- Permissions to view a content end edit a content (many thanks to @QM-B)
+- Content permissions for "view a content" and "edit a content" (many thanks to @QM-B)
 
 FIXED:
 - Visitor was not able to create a PDF
 - Admin could not delete a content
+- Breadcrumb bugfix in the module ACP
 
 
 
