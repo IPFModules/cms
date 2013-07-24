@@ -32,7 +32,7 @@ function show_select_content_cms($options)
 	$cms = $cms_start_handler->get($options[0]);
 	$accessGranted = ($cmsConfig['enable_perm'] == 1) ? $cms->accessGranted("start_perm_read") : TRUE;
 	// Assign to template
-	$block['select_content_cms'] = ($accessGranted && $cms->getVar("online", "e") == 1) ? $cms->toArray() : FALSE;
+	$block['select_content_cms'] = ($accessGranted && $cms->getVar("online_status", "e") == 1) ? $cms->toArray() : FALSE;
 	
 	// Create a Smarty-Link for the block <{$block.itemUrl}>
 	$block['itemUrl'] = ($accessGranted && $cms->getVar("online_status", "e") == 1) ? $cms->getItemLink(TRUE).'&seite='.$cms->short_url() : FALSE;
