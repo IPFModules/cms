@@ -83,7 +83,7 @@ else // Align left
 ////////// VIEW SINGLE START //////////
 /////////////////////////////////////////
 
-if($startObj && !$startObj->isNew() && $startObj->accessGranted("start_perm_read"))
+if($startObj && !$startObj->isNew() && $startObj->accessGranted("start_perm_read") && $startObj->getVar("online_status", "e") == 1 )
 {
 
 	//comments detailpage

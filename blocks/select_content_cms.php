@@ -35,7 +35,7 @@ function show_select_content_cms($options)
 	$block['select_content_cms'] = ($accessGranted && $cms->getVar("online", "e") == 1) ? $cms->toArray() : FALSE;
 	
 	// Create a Smarty-Link for the block <{$block.itemUrl}>
-	$block['itemUrl'] = ($accessGranted && $cms->getVar("online", "e") == 1) ? $cms->getItemLink(TRUE).'&seite='.$cms->short_url() : FALSE;
+	$block['itemUrl'] = ($accessGranted && $cms->getVar("online_status", "e") == 1) ? $cms->getItemLink(TRUE).'&seite='.$cms->short_url() : FALSE;
 	
 	$block['show_logos'] = $options[1];
 	$block['logo_block_display_width'] = icms_getConfig('logo_block_display_width', $cmsModule->getVar('dirname'));
