@@ -86,3 +86,9 @@ define("_CO_CMS_START_CATEGORY_DSC", "Wählen Sie eine oder mehrere Kategorien a
 
 define("_CO_CMS_START_RELATED_ITEMS", "Weitere Inhalte");
 define("_CO_CMS_START_RELATED_CATEGORIES", "Kategorie");
+
+// Content Permission
+define("_CO_CMS_START_START_PERM_READ", "Berechtigungen - Inhalt sehen");
+define("_CO_CMS_START_START_PERM_READ_DSC", "Wählen Sie welche Gruppe(n) aus, die berechtigt ist diesen Inhalt anzusehen. Nur Benutzer der ausgewählten Gruppe(n) werden den Inhalt sehen.");
+define("_CO_CMS_START_START_PERM_EDIT", "Berechtigungen - Inhalt bearbeiten");
+define("_CO_CMS_START_START_PERM_EDIT_DSC", "Wählen Sie welche Gruppe(n) aus, die berechtigt ist diesen Inhalt zu bearbeiten. Nur Benutzer der ausgewählten Gruppe(n) werden den Inhalt bearbeiten können.");

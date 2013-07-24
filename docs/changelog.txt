@@ -1,12 +1,14 @@
-3.2 Trunk from July 15th 2013
+4.0 Trunk from July 15th 2013
 
 Changelog:
 
 ADDED:
 - #430 Function added to clone a content (many thanks to @QM-B)
+- Permissions to view a content end edit a content (many thanks to @QM-B)
 
 FIXED:
 - Visitor was not able to create a PDF
+- Admin could not delete a content
 
 
 

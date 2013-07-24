@@ -86,3 +86,9 @@ define("_CO_CMS_START_CATEGORY_DSC", "Select the categories you wish to label th
 
 define("_CO_CMS_START_RELATED_ITEMS", "Related Items");
 define("_CO_CMS_START_RELATED_CATEGORIES", "Category");
+
+// Content Permission
+define("_CO_CMS_START_START_PERM_READ", "Permissions - View Content");
+define("_CO_CMS_START_START_PERM_READ_DSC", "Select which groups will have view permission for this content page. This means that a user belonging to one of these groups will be able to view the content page when it is activated in the site.");
+define("_CO_CMS_START_START_PERM_EDIT", "Permissions - Edit Content");
+define("_CO_CMS_START_START_PERM_EDIT_DSC", "Select which groups will have edit permission for this content page. This means that a user belonging to one of these groups will be able to edit the content page when it is activated in the site.");

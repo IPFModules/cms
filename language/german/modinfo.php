@@ -108,3 +108,7 @@ define("_MI_CMS_GLOBAL_FILLING_NOTIFY", "Content modifications");
 define("_MI_CMS_GLOBAL_FILLING_NOTIFY_CAP", "Notify me of any content modifications.");
 define("_MI_CMS_GLOBAL_FILLING_NOTIFY_DSC", "Receive notification when any modification was submitted.");
 define("_MI_CMS_GLOBAL_FILLING_NOTIFY_SBJ", "[{X_SITENAME}] {X_MODULE} auto-notify : A content was modified");
+
+// Content Permission
+define("_MI_CMS_ENABLE_PERM", "Berechtigungen für Inhalte");
+define("_MI_CMS_ENABLE_PERM_DSC", "Wenn diese Option eingeschaltet ist, kann yu jedem Inhalt eine Berechtigung zum ansehen eines INhalts vergeben werden und auch eine zum Bearbeiten eines Inhalts.");
