@@ -223,6 +223,11 @@ else
 				_CO_CMS_START_ALL_TAGS, TRUE, icms::$module->getVar('mid'));
 		$icmsTpl->assign('cms_tag_select_box', $tag_select_box);
 	}
+	
+	if($cmsConfig['enable_perm'] == 1) {
+		$perm_handler = new icms_ipf_permission_Handler($cms_start_handler);
+		$grantedItems = $perm_handler->getGrantedItems("start_perm_read");
+	}
 
 	// Set the page title
 	$icmsTpl->assign("cms_page_title", _CO_CMS_ACTIVE_CMS);
@@ -251,10 +256,6 @@ else
 			/**
 			 * Retrieve a list of cms JOINED to taglinks by start_id/tag_id/module_id/item/label_type
 			 */
-			if($cmsConfig['enable_perm'] == 1) {
-				$perm_handler = new icms_ipf_permission_Handler($cms_start_handler);
-				$grantedItems = $perm_handler->getGrantedItems("start_perm_read");
-			}
 			$query = $rows = $start_count = '';
 			$linked_start_ids = array();
 
@@ -300,14 +301,14 @@ else
 					. " AND `beendet` = '0'"
 					. " AND `tid` = '" . $clean_tag_id . "'"
 					. " AND `mid` = '" . icms::$module->getVar('mid') . "'"
-					. " AND `item` = 'start'"
-					. " ORDER BY `date` DESC" //changed from weight ASC to date DESC
-					. " LIMIT " . $clean_start . ", " . icms::$module->config['number_of_cms_per_page'];
+					. " AND `item` = 'start'";
 			if($cmsConfig['enable_perm'] == 1 && count($grantedItems)) {
 				$query .= " AND `start_id` IN(".implode(",", $grantedItems).")";
 			} elseif ($cmsConfig['enable_perm'] == 1 && !count($grantedItems)) {
 				$query .= " AND `start_id` IN(0)";
 			}
+			$query .= " ORDER BY `date` DESC" //changed from weight ASC to date DESC
+					. " LIMIT " . $clean_start . ", " . icms::$module->config['number_of_cms_per_page'];
 
 			$result = icms::$xoopsDB->query($query);
 
@@ -332,7 +333,11 @@ else
 			$criteria = new icms_db_criteria_Compo();
 			$criteria->add(new icms_db_criteria_Item('beendet', '0'));
 			$criteria->add(new icms_db_criteria_Item('online_status', '1'));
-			$cms_start_handler->setGrantedObjectsCriteria($criteria, "start_perm_read");
+			if($cmsConfig['enable_perm'] && count($grantedItems)) {
+				$criteria->add(new icms_db_criteria_Item('start_id', '('.implode(',', $grantedItems).')', 'IN'));
+			} elseif($cmsConfig['enable_perm'] && !count($grantedItems)) {
+				$criteria->add(new icms_db_criteria_Item('start_id', '(0)', 'IN'));
+			}
 			$criteria->setSort('date');
 			$criteria->setOrder('DESC');
 
@@ -379,6 +384,11 @@ else
 			$criteria->add(new icms_db_criteria_Item('item', 'start'));
 			$criteria->add(new icms_db_criteria_Item('iid', $linked_start_ids, 'IN'));
 			$criteria->add(new icms_db_criteria_Item('tid', $sprockets_category_ids, 'IN'));
+			if($cmsConfig['enable_perm'] && count($grantedItems)) {
+				$criteria->add(new icms_db_criteria_Item('start_id', '('.implode(',', $grantedItems).')', 'IN'));
+			} elseif($cmsConfig['enable_perm'] && !count($grantedItems)) {
+				$criteria->add(new icms_db_criteria_Item('start_id', '(0)', 'IN'));
+			}
 			$categorylink_buffer = $sprockets_taglink_handler->getObjects($criteria, TRUE, TRUE);
 			unset($criteria);
 
@@ -511,7 +521,11 @@ else
 		}
 		$criteria->add(new icms_db_criteria_Item('beendet', '0'));
 		$criteria->add(new icms_db_criteria_Item('online_status', '1'));
-		$cms_start_handler->setGrantedObjectsCriteria($criteria, "start_perm_read");
+		if($cmsConfig['enable_perm'] && count($grantedItems)) {
+			$criteria->add(new icms_db_criteria_Item('start_id', '('.implode(',', $grantedItems).')', 'IN'));
+		} elseif($cmsConfig['enable_perm'] && !count($grantedItems)) {
+			$criteria->add(new icms_db_criteria_Item('start_id', '(0)', 'IN'));
+		}
 		$criteria->setSort('date');
 		$criteria->setOrder('DESC');
 

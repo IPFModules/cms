@@ -22,6 +22,7 @@ if (!defined("ICMS_ROOT_PATH")) die("ICMS root path not defined");
  */
 function show_select_content_cms($options)
 {
+	global $cmsConfig;
 	$cmsModule = icms::handler("icms_module")->getByDirname('cms');
 	//$sprocketsModule = icms::handler("icms_module")->getByDirname("sprockets");
 		
@@ -29,12 +30,12 @@ function show_select_content_cms($options)
 	$cms_start_handler = icms_getModuleHandler('start', $cmsModule->getVar('dirname'), 'cms');
 	
 	$cms = $cms_start_handler->get($options[0]);
-	
+	$accessGranted = ($cmsConfig['enable_perm'] == 1) ? $cms->accessGranted("start_perm_read") : TRUE;
 	// Assign to template
-	$block['select_content_cms'] = $cms->toArray();
+	$block['select_content_cms'] = ($accessGranted && $cms->getVar("online", "e") == 1) ? $cms->toArray() : FALSE;
 	
 	// Create a Smarty-Link for the block <{$block.itemUrl}>
-	$block['itemUrl'] = $cms->getItemLink(TRUE).'&seite='.$cms->short_url();
+	$block['itemUrl'] = ($accessGranted && $cms->getVar("online", "e") == 1) ? $cms->getItemLink(TRUE).'&seite='.$cms->short_url() : FALSE;
 	
 	$block['show_logos'] = $options[1];
 	$block['logo_block_display_width'] = icms_getConfig('logo_block_display_width', $cmsModule->getVar('dirname'));

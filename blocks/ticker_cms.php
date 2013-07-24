@@ -22,6 +22,7 @@ if (!defined("ICMS_ROOT_PATH")) die("ICMS root path not defined");
  */
 function show_ticker_cms($options)
 {
+	global $cmsConfig;
 	$cmsModule = icms::handler("icms_module")->getByDirname('cms');
 	$sprocketsModule = icms::handler("icms_module")->getByDirname("sprockets");
 		
@@ -32,6 +33,11 @@ function show_ticker_cms($options)
 	{
 		icms_loadLanguageFile("sprockets", "common");
 		$sprockets_taglink_handler = icms_getModuleHandler('taglink', $sprocketsModule->getVar('dirname'), 'sprockets');
+	}
+	
+	if($cmsConfig['enable_perm'] == 1) {
+		$perm_handler = new icms_ipf_permission_Handler($cms_start_handler);
+		$grantedItems = $perm_handler->getGrantedItems("start_perm_read");
 	}
 	
 	$criteria = new icms_db_criteria_Compo();
@@ -46,9 +52,13 @@ function show_ticker_cms($options)
 			. " AND `tid` = '" . $options[3] . "'"
 			. " AND `mid` = '" . $cmsModule->getVar('mid') . "'"
 			. " AND `item` = 'start'"
-			. " AND `online_status` = '1'"
-			. " AND `beendet` = '0'"
-			. " ORDER BY `date` DESC"; //changed from weight ASC to date DESC
+			. " AND `online_status` = '1'";
+		if($cmsConfig['enable_perm'] == 1 && count($grantedItems)) {
+			$query .= " AND `start_id` IN(".implode(",", $grantedItems).")";
+		} elseif ($cmsConfig['enable_perm'] == 1 && !count($grantedItems)) {
+			$query .= " AND `start_id` IN(0)";
+		}
+		$query .= " ORDER BY `date` DESC";
 
 		$result = icms::$xoopsDB->query($query);
 
@@ -72,6 +82,11 @@ function show_ticker_cms($options)
 	{
 		$criteria->add(new icms_db_criteria_Item('online_status', '1'));
 		$criteria->add(new icms_db_criteria_Item('beendet', '0'));
+		if($cmsConfig['enable_perm'] && count($grantedItems)) {
+			$criteria->add(new icms_db_criteria_Item('start_id', '('.implode(',', $grantedItems).')', 'IN'));
+		} elseif($cmsConfig['enable_perm'] && !count($grantedItems)) {
+			$criteria->add(new icms_db_criteria_Item('start_id', '(0)', 'IN'));
+		}
 		$criteria->setSort('date');
 		$criteria->setOrder('DESC');
 		$start_list = $cms_start_handler->getList($criteria);
@@ -188,6 +203,11 @@ function show_ticker_cms($options)
 		$criteria->add(new icms_db_criteria_Item('item', 'start'));
 		$criteria->add(new icms_db_criteria_Item('iid', $linked_start_ids, 'IN'));
 		$criteria->add(new icms_db_criteria_Item('tid', $sprockets_tag_ids, 'IN'));
+		if($cmsConfig['enable_perm'] && count($grantedItems)) {
+			$criteria->add(new icms_db_criteria_Item('start_id', '('.implode(',', $grantedItems).')', 'IN'));
+		} elseif($cmsConfig['enable_perm'] && !count($grantedItems)) {
+			$criteria->add(new icms_db_criteria_Item('start_id', '(0)', 'IN'));
+		}
 		$taglink_buffer = $sprockets_taglink_handler->getObjects($criteria, TRUE, TRUE);
 		unset($criteria);
 
