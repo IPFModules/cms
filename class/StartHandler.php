@@ -29,8 +29,8 @@ class mod_cms_StartHandler extends icms_ipf_Handler
 		 * hier füge ich die PERM-Namen zu, so dass das system weiß, welche man aufsetzen muss
 		 */
 		if($cmsConfig['enable_perm'] == 1) {
-			$this->addPermission("start_perm_read", _CO_CMS_START_START_PERM_READ);
-			$this->addPermission("start_perm_edit", _CO_CMS_START_START_PERM_EDIT);
+			$this->addPermission("start_perm_read", _CO_CMS_START_START_PERM_READ, _CO_CMS_START_START_PERM_READ_DSC);
+			$this->addPermission("start_perm_edit", _CO_CMS_START_START_PERM_EDIT, _CO_CMS_START_START_PERM_EDIT_DSC);
 		}
 	}
 
@@ -152,6 +152,7 @@ class mod_cms_StartHandler extends icms_ipf_Handler
 				unset ($criteriaKeyword);
 			}
 			$criteria->add($criteriaKeywords);
+			$this->setGrantedObjectsCriteria($criteria, "start_perm_read");
 		}
 
 		$criteria->add(new icms_db_criteria_Item('online_status', TRUE));
