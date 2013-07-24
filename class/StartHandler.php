@@ -131,6 +131,7 @@ class mod_cms_StartHandler extends icms_ipf_Handler
 	 */
 	public function getCmsForSearch($queryarray, $andor, $limit, $offset, $userid)
 	{
+		global $cmsConfig;
 		$count = $results = '';
 		$criteria = new icms_db_criteria_Compo();
 
@@ -152,7 +153,16 @@ class mod_cms_StartHandler extends icms_ipf_Handler
 				unset ($criteriaKeyword);
 			}
 			$criteria->add($criteriaKeywords);
-			$this->setGrantedObjectsCriteria($criteria, "start_perm_read");
+		}
+		
+		if($cmsConfig['enable_perm'] == 1) {
+			$perm_handler = new icms_ipf_permission_Handler($cms_start_handler);
+			$grantedItems = $perm_handler->getGrantedItems("start_perm_read");
+			if(count($grantedItems)) {
+				$criteria->add(new icms_db_criteria_Item('start_id', '('.implode(',', $grantedItems).')', 'IN'));
+			} else {
+				$criteria->add(new icms_db_criteria_Item('start_id', '(0)', 'IN'));
+			}
 		}
 
 		$criteria->add(new icms_db_criteria_Item('online_status', TRUE));
