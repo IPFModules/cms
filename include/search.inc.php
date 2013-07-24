@@ -22,6 +22,7 @@ function cms_search($queryarray, $andor, $limit, $offset, $userid)
 	$count = $number_to_process = $starts_left = '';
 	
 	$cms_start_handler = icms_getModuleHandler("start", basename(dirname(dirname(__FILE__))), "cms");
+	$cmsConfig = icms_getModuleConfig(basename(dirname(dirname(__FILE__))));
 	$startArray = $cms_start_handler->getCmsForSearch($queryarray, $andor, $limit, $offset, $userid);
 	
 	// Count the number of records
