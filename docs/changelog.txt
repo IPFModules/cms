@@ -10,6 +10,7 @@ FIXED:
 - Visitor was not able to create a PDF
 - Admin could not delete a content
 - Breadcrumb bugfix in the module ACP
+- Fixed a notice, if no category are created
 
 
 
