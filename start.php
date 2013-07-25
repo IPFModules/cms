@@ -64,6 +64,9 @@ if (icms_get_module_status("sprockets"))
 	if ($sprockets_category_buffer) {
 		$sprockets_category_ids = "(" . implode(',', array_keys($sprockets_category_buffer)) . ")";
 	}
+		else {
+			$sprockets_category_ids = array();
+		}
 }
 
 // Assign common logo preferences to template
