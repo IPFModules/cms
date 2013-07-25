@@ -65,7 +65,7 @@ if (icms_get_module_status("sprockets"))
 		$sprockets_category_ids = "(" . implode(',', array_keys($sprockets_category_buffer)) . ")";
 	}
 		else {
-			$sprockets_category_ids = array();
+			$sprockets_category_ids = '';
 		}
 }
 
