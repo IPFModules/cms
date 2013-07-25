@@ -25,6 +25,10 @@ function editstart($start_id = 0, $clone = false)
 	$sprocketsModule = icms::handler("icms_module")->getByDirname("sprockets");
 
 	if (!$clone && !$startObj->isNew()) {
+		
+		$startObj->loadTags();
+		$startObj->loadCategories();
+		
 		$startObj->setVar("last_update", time());
 		icms::$module->displayAdminMenu(0, _AM_CMS_CMS . " > " . _CO_ICMS_EDITING);
 		$sform = $startObj->getForm(_AM_CMS_START_EDIT, 'addstart');
