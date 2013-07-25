@@ -135,6 +135,10 @@ class mod_cms_StartHandler extends icms_ipf_Handler
 		$count = $results = '';
 		$criteria = new icms_db_criteria_Compo();
 
+		if(!isset($cmsConfig))
+			$cmsConfig = icms_getModuleConfig(basename(dirname(dirname(__FILE__))));
+		//icms_core_Debug::vardump($cmsConfig);
+		
 		if ($userid != 0)
 		{
 			$criteria->add(new icms_db_criteria_Item('creator', $userid));
@@ -156,7 +160,7 @@ class mod_cms_StartHandler extends icms_ipf_Handler
 		}
 		
 		if($cmsConfig['enable_perm'] == 1) {
-			$perm_handler = new icms_ipf_permission_Handler($cms_start_handler);
+			$perm_handler = new icms_ipf_permission_Handler($this);
 			$grantedItems = $perm_handler->getGrantedItems("start_perm_read");
 			if(count($grantedItems)) {
 				$criteria->add(new icms_db_criteria_Item('start_id', '('.implode(',', $grantedItems).')', 'IN'));
