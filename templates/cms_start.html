@@ -55,7 +55,7 @@
 			<{if $cms_post_comment}><div class="itemCmsInfoComment"><{$cms_start.start_comment_info}></div><{/if}>
 		</div>
 		<{if $cms_start.counter || $cms_start.updated}>
-			<div class="itemCmsInfo">
+			<div class="itemCmsInfoCounter">
 				<{if $cms_start.counter}>
 					<{$cms_start.counter}> <{$smarty.const._CO_CMS_START_VIEWS}>
 				<{/if}>
@@ -141,7 +141,7 @@
 			<{if $start.subtitle}><h3><{$start.subtitle}></h3><{/if}>
 			<{if $cms_post_comment}><div class="itemCmsInfoComment"><{$start.start_comment_info}></div><{/if}>
 			</div>
-			<div class="itemCmsInfo">
+			<div class="itemCmsInfoUpdated">
 				<{if $start.updated}>
 					<span class="cms_updated"><{$smarty.const._CO_CMS_START_UPDATED}>: <{$start.last_update}></span>
 				<{/if}>

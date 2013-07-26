@@ -4,6 +4,9 @@ cached blocks (core bug?). So if you want to alter the block CSS, you'll find it
 	padding: 5px 0 10px;
 }
 
+.itemCmsInfoCounter{padding: 0 0 10px 0;font-size:80%;}
+.itemCmsInfoUpdated{padding: 0 0 10px 0;font-size:80%;}
+
 /*.itemCmsInfo span{
 	background: none repeat scroll 0 0 #000000;
 	border: 1px solid #999999;

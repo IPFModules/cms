@@ -12,6 +12,9 @@ FIXED:
 - Breadcrumb bugfix in the module ACP
 - Fixed a notice, if no category are created
 
+UPDATED:
+- Module templates updated
+
 
 
 
