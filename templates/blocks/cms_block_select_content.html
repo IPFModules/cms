@@ -4,11 +4,37 @@ style sheets do not work on cached blocks. I think this is a long-standing core 
 <!-- Full mode -->
 <{if $block.show_logos == TRUE}>
 	<h2 style="clear:both; margin-bottom:1em;"><{$block.select_content_cms.title}></h2>
-	<{if $start.subtitle}><h3 style="clear:both; margin-bottom:1em;"><{$start.subtitle}></h3><{/if}>
+	<{if $block.select_content_cms.subtitle}><h3 style="clear:both; margin-bottom:1em;"><{$block.select_content_cms.subtitle}></h3><{/if}>
+		<{if $start.updated}>
+			<div class="itemCmsInfoUpdated">
+					<span class="cms_updated"><{$smarty.const._CO_CMS_START_UPDATED}>: <{$start.date}></span>
+			</div>
+		<{/if}>
 	<p class="cms_description"><a href="<{$start.itemUrl}>" title="<{$start.title}>"></a><{$block.select_content_cms.extended_text}></p>
 	
 <!-- Compact list mode -->
 <{else}>
 	<a href="<{$block.itemUrl}>"><h2 style="clear:both; margin-bottom:1em;"><{$block.select_content_cms.title}></h2></a>
+	<{if $block.select_content_cms.subtitle}><h3 style="clear:both; margin-bottom:1em;"><{$block.select_content_cms.subtitle}></h3><{/if}>
+		<{if $start.updated}>
+			<div class="itemCmsInfoUpdated">
+					<span class="cms_updated"><{$smarty.const._CO_CMS_START_UPDATED}>: <{$start.date}></span>
+			</div>
+		<{/if}>
 	<p class="cms_description"><a href="<{$block.itemUrl}>" title="<{$start.title}>"></a><{$block.select_content_cms.description}>  <span><a href="<{$block.itemUrl}>">(<{$smarty.const._CO_CMS_READ_MORE}>)</a></span></p>
+	<{if $start.tags}>
+		<div class="cms_clear">
+			<div class="itemCmsInfo">
+					<span><{$smarty.const._CO_CMS_START_RELATED_ITEMS}></span> <{$start.tags}>
+			</div>
+		</div>
+	<{/if}>
+	
+	<{if $start.categories}>
+		<div class="cms_clear">
+			<div class="itemCmsInfo">
+					<span><{$smarty.const._CO_CMS_START_RELATED_CATEGORIES}></span> <{$start.categories}>
+			</div>
+		</div>
+	<{/if}>
 <{/if}>

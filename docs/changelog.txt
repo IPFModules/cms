@@ -11,12 +11,15 @@ FIXED:
 - Admin could not delete a content
 - Breadcrumb bugfix in the module ACP
 - Fixed a notice, if no category are created
+- Subtitle was shown in the "select content" block
+- Style sheet added in the "list content" block
 
 UPDATED:
-- Module templates updated
+- Module templates - CSS updated
 
 
-
+knowing issues:
+- "select content" block: categories are not displayed 
 
 
 3.1 Final from July 11th 2013

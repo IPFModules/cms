@@ -22,12 +22,15 @@ if (!defined("ICMS_ROOT_PATH")) die("ICMS root path not defined");
  */
 function show_list_cms($options)
 {
-	global $cmsConfig;
+    global $cmsConfig,$xoTheme;
+    
 	$cmsModule = icms::handler("icms_module")->getByDirname('cms');
 	$sprocketsModule = icms::handler("icms_module")->getByDirname("sprockets");
 		
 	include_once(ICMS_ROOT_PATH . '/modules/' . $cmsModule->getVar('dirname') . '/include/common.php');
 	$cms_start_handler = icms_getModuleHandler('start', $cmsModule->getVar('dirname'), 'cms');
+
+	$xoTheme->addStylesheet('/modules/' . CMS_DIRNAME . '/module.css');
 	
 	if (icms_get_module_status("sprockets"))
 	{

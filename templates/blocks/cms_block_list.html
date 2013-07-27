@@ -42,9 +42,9 @@ style sheets do not work on cached blocks. I think this is a long-standing core 
 	
 <!-- Compact list mode -->
 <{else}>
-	<ul>
+	<ul class="cms_block_list_ul">
 		<{foreach item = start from = $block.list_cms}>
-			<li><a href="<{$start.itemUrl}>" title="<{$start.title}>"><{$start.title}></a></li>
+			<li class="cms_block_list_li"><a href="<{$start.itemUrl}>" title="<{$start.title}>"><{$start.title}></a></li>
 		<{/foreach}>
 	</ul>
 <{/if}>

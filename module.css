@@ -60,6 +60,9 @@ cached blocks (core bug?). So if you want to alter the block CSS, you'll find it
 .cms_modulename, .cms_breadcrumb
 {}
 
+.cms_description
+{}
+
 .cms_breadcrumb
 {}
 
@@ -118,10 +121,16 @@ cached blocks (core bug?). So if you want to alter the block CSS, you'll find it
 
 .cms_updated
 {
-	color:red;
+	color:red;font-size:80%;
 }
 
 .cms_space
 {
 	padding: 0 0 20px;
 }
+
+.itemCmsInfoUpdated{padding: 0 0 10px;}
+
+/* Blocks */
+.cms_block_list_ul{}
+.cms_block_list_li{}
