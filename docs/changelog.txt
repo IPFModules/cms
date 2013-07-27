@@ -13,6 +13,7 @@ FIXED:
 - Fixed a notice, if no category are created
 - Subtitle was shown in the "select content" block
 - Style sheet added in the "list content" block
+- Module CSS was load in all blocks
 
 UPDATED:
 - Module templates - CSS updated
