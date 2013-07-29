@@ -51,19 +51,11 @@
 				});
 			</script>
 			<{/if}>
+			
+			<div class="cms_clear"></div>
+			
 			<{if $cms_post_comment}><div class="itemCmsInfoComment"><{$cms_start.start_comment_info}></div><{/if}>
 		</div>
-		<{if $cms_start.counter || $cms_start.updated}>
-			<div class="itemCmsInfoCounter">
-				<{if $cms_start.counter}>
-					<{$cms_start.counter}> <{$smarty.const._CO_CMS_START_VIEWS}>
-				<{/if}>
-				<{if $cms_start.counter && $cms_start.updated}> | <{/if}>
-				<{if $cms_start.updated}>
-					<span class="cms_updated"><{$smarty.const._CO_CMS_START_UPDATED}>: <{$cms_start.last_update}></span>
-				<{/if}>
-			</div>
-		<{/if}>
 		<{if $cms_start.logo && $display_start_logos}>
 			<{if $freestyle_logo_dimensions}>
 				<div class="<{$start_logo_position}>">
@@ -96,19 +88,16 @@
 				</div>
 			<{/if}>
 		</div>
-		<{if $cms_start.tags}>
-			<div class="cms_clear">
-				<div class="itemCmsInfo">
-						<span><{$smarty.const._CO_CMS_START_RELATED_ITEMS}></span> <{$cms_start.tags}>
-				</div>
-			</div>
-		<{/if}>
-		
-		<{if $cms_start.categories}>
-			<div class="cms_clear">
-				<div class="itemCmsInfo">
-						<span><{$smarty.const._CO_CMS_START_RELATED_CATEGORIES}></span> <{$cms_start.categories}>
-				</div>
+		<div class="cms_clear cms_tagcategory"><{$smarty.const._CO_CMS_START_THIS_CONTENT_WAS_POSTED_IN}> <{if $cms_start.categories}><span class="cms_content_footer_categories"><{$cms_start.categories}></span><{/if}><{if $cms_start.tags}> <{$smarty.const._CO_CMS_START_AND_TAGGED}> <span class="cms_content_footer_tagss"><{$cms_start.tags}></span><{/if}> <{$smarty.const._CO_CMS_START_ON}> <{$cms_start.date|date_format}>.
+		<{if $cms_start.counter || $cms_start.updated}>
+			<div class="itemCmsInfoCounter">
+				<{if $cms_start.counter}>
+					<span class="cms_counter"><{$cms_start.counter}> <{$smarty.const._CO_CMS_START_VIEWS}></span>
+				<{/if}>
+				<{if $cms_start.counter && $cms_start.updated}><span class="cms_counter"> | </span><{/if}>
+				<{if $cms_start.updated}>
+					<span class="cms_updated"><{$smarty.const._CO_CMS_START_UPDATED}>: <{$cms_start.last_update}></span>
+				<{/if}>
 			</div>
 		<{/if}>
 	</div>
@@ -134,16 +123,11 @@
 		
 		<{foreach item = start from = $start_summaries}>
 			<div class="itemCmsInfo_title">
-			<h2 class="cms_separator cms_clear">
+			<h2 class="cms_separator">
 				<a href="<{$start.itemUrl}>"><{$start.title}></a> <{if $cms_is_admin}><{$cms_start.editItemLink}> <{$cms_start.deleteItemLink}><{/if}>
 			</h2>
 			<{if $start.subtitle}><h3><{$start.subtitle}></h3><{/if}>
 			<{if $cms_post_comment}><div class="itemCmsInfoComment"><{$start.start_comment_info}></div><{/if}>
-			</div>
-			<div class="itemCmsInfoUpdated">
-				<{if $start.updated}>
-					<span class="cms_updated"><{$smarty.const._CO_CMS_START_UPDATED}>: <{$start.last_update}></span>
-				<{/if}>
 			</div>
 			<div>
 				<{if $start.logo && $display_start_logos}>
@@ -164,20 +148,18 @@
 				<div>
 					<p class="cms_description"><a href="<{$start.itemUrl}>" title="<{$start.title}>"></a><{$start.description}><{if $start.extended_text}> <span><a href="<{$start.itemUrl}>">(<{$smarty.const._CO_CMS_READ_MORE}>)</a></span><{/if}></p>
 				</div>
-				<{if $start.tags}>
-					<div class="cms_clear">
-						<div class="itemCmsInfo">
-								<span><{$smarty.const._CO_CMS_START_RELATED_ITEMS}></span> <{$start.tags}>
+				<div class="cms_clear cms_tagcategory"><{$smarty.const._CO_CMS_START_THIS_CONTENT_WAS_POSTED_IN}> <{if $start.categories}><span class="cms_content_footer_categories"><{$start.categories}></span><{/if}><{if $start.tags}> <{$smarty.const._CO_CMS_START_AND_TAGGED}> <span class="cms_content_footer_tagss"><{$start.tags}></span><{/if}> <{$smarty.const._CO_CMS_START_ON}> <{$start.date|date_format}>.
+					<{if $start.counter || $start.updated}>
+						<div class="itemCmsInfoCounter">
+							<{if $start.counter}>
+								<span class="cms_counter"><{$start.counter}> <{$smarty.const._CO_CMS_START_VIEWS}></span>
+							<{/if}>
+							<{if $start.counter && $start.updated}><span class="cms_counter"> | </span><{/if}>
+							<{if $start.updated}>
+								<span class="cms_updated"><{$smarty.const._CO_CMS_START_UPDATED}>: <{$start.last_update}></span>
+							<{/if}>
 						</div>
-					</div>
-				<{/if}>
-				<{if $start.categories}>
-					<div class="cms_clear">
-						<div class="itemCmsInfo">
-								<span><{$smarty.const._CO_CMS_START_RELATED_CATEGORIES}></span> <{$start.categories}>
-						</div>
-					</div>
-				<{/if}>
+					<{/if}>
 				<div class="cms_space"></div>
 			</div>
 		

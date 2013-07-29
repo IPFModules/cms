@@ -92,3 +92,8 @@ define("_CO_CMS_START_START_PERM_READ", "資格 - コンテンツを見る");
 define("_CO_CMS_START_START_PERM_READ_DSC", "Select which groups will have view permission for this content page. This means that a user belonging to one of these groups will be able to view the content page when it is activated in the site.");
 define("_CO_CMS_START_START_PERM_EDIT", "資格 - コンテンツを編集する");
 define("_CO_CMS_START_START_PERM_EDIT_DSC", "Select which groups will have edit permission for this content page. This means that a user belonging to one of these groups will be able to edit the content page when it is activated in the site.");
+
+// Tag and Category
+define("_CO_CMS_START_THIS_CONTENT_WAS_POSTED_IN", "カテゴリー:");
+define("_CO_CMS_START_AND_TAGGED", "タグ:");
+define("_CO_CMS_START_ON", "投稿日:");

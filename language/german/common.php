@@ -92,3 +92,8 @@ define("_CO_CMS_START_START_PERM_READ", "Berechtigungen - Inhalt sehen");
 define("_CO_CMS_START_START_PERM_READ_DSC", "Wählen Sie welche Gruppe(n) aus, die berechtigt ist diesen Inhalt anzusehen. Nur Benutzer der ausgewählten Gruppe(n) werden den Inhalt sehen.");
 define("_CO_CMS_START_START_PERM_EDIT", "Berechtigungen - Inhalt bearbeiten");
 define("_CO_CMS_START_START_PERM_EDIT_DSC", "Wählen Sie welche Gruppe(n) aus, die berechtigt ist diesen Inhalt zu bearbeiten. Nur Benutzer der ausgewählten Gruppe(n) werden den Inhalt bearbeiten können.");
+
+// Tag and Category
+define("_CO_CMS_START_THIS_CONTENT_WAS_POSTED_IN", "Dieser Beitrag wurde unter");
+define("_CO_CMS_START_AND_TAGGED", "abgelegt und mit");
+define("_CO_CMS_START_ON", "verschlagwortet am");
