@@ -53,3 +53,5 @@ define("_MB_CMS_LIST_CONTENT", "Ein Inhalt auswählen");
 define("_MB_CMS_LIST_CONTENT_LOGOS_OR_LIST", "Den ganzen Inhalt zeigen?");
 define("_MB_CMS_LIST_CONTENT_YES", "Ja, den erweiterten Inhalt");
 define("_MB_CMS_LIST_CONTENT_NO", "Nein, nur den Anreißer");
+
+define("_MB_CMS_SHOW_CATEGORIES", "Zeige den Counter zu jeder Kategorie");

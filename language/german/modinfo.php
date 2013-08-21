@@ -31,6 +31,8 @@ define("_MI_CMS_TICKER", "(Ticker) content");
 define("_MI_CMS_TICKERDSC", "In einem schmalen Band wird ein Ticker eingeblendet, der den Titel von neuen Inhalten anzeigt.");
 define("_MI_CMS_SELECT_CONTENT", "(Select) content");
 define("_MI_CMS_SELECT_CONTENTDSC", "Zeigt einen ausgewählten Inhalt in der Kurzfassung oder in voller Länge.");
+define("_MI_CMS_SHOW_CATEGORIES", "(Kategorien) Liste");
+define("_MI_CMS_SHOW_CATEGORIESDSC", "Zeige die Kategorien als Liste");
 
 // Preferences
 define("_MI_CMS_INDEX_DISPLAY_MODE", "Anreißer in der Hauptseite anzeigen?");

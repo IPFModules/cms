@@ -53,3 +53,5 @@ define("_MB_CMS_LIST_CONTENT", "Select a content");
 define("_MB_CMS_LIST_CONTENT_LOGOS_OR_LIST", "Show the full content");
 define("_MB_CMS_LIST_CONTENT_YES", "Yes, show the extended content");
 define("_MB_CMS_LIST_CONTENT_NO", "No, only the teaser content");
+
+define("_MB_CMS_SHOW_CATEGORIES", "Display the counter for each category");

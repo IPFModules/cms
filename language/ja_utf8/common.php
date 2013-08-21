@@ -97,3 +97,4 @@ define("_CO_CMS_START_START_PERM_EDIT_DSC", "Select which groups will have edit 
 define("_CO_CMS_START_THIS_CONTENT_WAS_POSTED_IN", "カテゴリー:");
 define("_CO_CMS_START_AND_TAGGED", "タグ:");
 define("_CO_CMS_START_ON", "投稿日:");
+define("_CO_CMS_SHOW_CATEGORIES_SECTECT_CAT", "カテゴリー");

@@ -97,3 +97,4 @@ define("_CO_CMS_START_START_PERM_EDIT_DSC", "Select which groups will have edit 
 define("_CO_CMS_START_THIS_CONTENT_WAS_POSTED_IN", "This entry was posted in");
 define("_CO_CMS_START_AND_TAGGED", "and tagged with");
 define("_CO_CMS_START_ON", "on");
+define("_CO_CMS_SHOW_CATEGORIES_SECTECT_CAT", "Categories");

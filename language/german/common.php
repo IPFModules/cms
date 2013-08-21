@@ -97,3 +97,4 @@ define("_CO_CMS_START_START_PERM_EDIT_DSC", "Wählen Sie welche Gruppe(n) aus, d
 define("_CO_CMS_START_THIS_CONTENT_WAS_POSTED_IN", "Dieser Beitrag wurde unter");
 define("_CO_CMS_START_AND_TAGGED", "abgelegt und mit");
 define("_CO_CMS_START_ON", "verschlagwortet am");
+define("_CO_CMS_SHOW_CATEGORIES_SECTECT_CAT", "Kategorien");

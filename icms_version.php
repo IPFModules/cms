@@ -179,6 +179,16 @@ $modversion['blocks'][5] = array(
 	'template' => 'cms_block_select_content.html'
 );
 
+$modversion['blocks'][6] = array(
+	'file' => 'select_show_categories.php',
+	'name' => _MI_CMS_SHOW_CATEGORIES,
+	'description' => _MI_CMS_SHOW_CATEGORIESDSC,
+	'show_func' => 'show_show_categories_cms',
+	'edit_func' => 'edit_show_categories_cms',
+	'options' => '1',
+	'template' => 'cms_block_show_categories.html'
+);
+
 /** Preferences */
 $modversion['config'][1] = array(
 	'name' => 'index_display_mode',

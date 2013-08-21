@@ -31,6 +31,8 @@ define("_MI_CMS_TICKER", "(Ticker) content");
 define("_MI_CMS_TICKERDSC", "Display (ticked) content");
 define("_MI_CMS_SELECT_CONTENT", "(Select) content");
 define("_MI_CMS_SELECT_CONTENTDSC", "Display (selected) content");
+define("_MI_CMS_SHOW_CATEGORIES", "(Categories) List");
+define("_MI_CMS_SHOW_CATEGORIESDSC", "Display the categories in a list");
 
 // Preferences
 define("_MI_CMS_INDEX_DISPLAY_MODE", "Display teaser text within the index page?");

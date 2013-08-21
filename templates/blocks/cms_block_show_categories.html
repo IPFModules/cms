@@ -1,0 +1,26 @@
+﻿Test UL LI
+<ul class="show_cat_ul_main">
+	<{foreach item=category from=$block.categories}>
+		<li class="show_cat_li_main"><a href="modules/cms/start.php?tag_id=<{$category.tag_id}>"><{$category.title}></a> <{if $block.categories_count}>(<{$block.categories_count[$category.tag_id]}>)<{/if}></li>
+		<{if $category.subs}>
+			<ul class="show_cat_ul_sub">
+				<{foreach item=subcat from=$category.subs}>
+					<li class="show_cat_li_sub"><{$subcat.itemLink}> <{if $block.categories_count}>(<{$block.categories_count[$subcat.tag_id]}>)<{/if}></li>
+				<{/foreach}>
+			</ul>
+		<{/if}>
+	<{/foreach}>
+</ul>
+
+Test SELECT
+<select onchange="document.location.href=this.options[this.selectedIndex].value;" name="show-categories"> 
+<option value=""><{$smarty.const._CO_CMS_SHOW_CATEGORIES_SECTECT_CAT}></option>
+<{foreach item=category from=$block.categories}>
+<option value="modules/cms/start.php?tag_id=<{$category.tag_id}>"> <{$category.title}> <{if $block.categories_count}>(<{$block.categories_count[$category.tag_id]}>)<{/if}></option>
+<{if $category.subs}>
+	<{foreach item=subcat from=$category.subs}>
+	<option value="modules/cms/start.php?tag_id=<{$category.tag_id}>"> --- <{$subcat.title}> <{if $block.categories_count}>(<{$block.categories_count[$subcat.tag_id]}>)<{/if}></option>
+	<{/foreach}>
+<{/if}>
+<{/foreach}>
+</select>
