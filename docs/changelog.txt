@@ -1,4 +1,4 @@
-4.0 Trunk from July 15th 2013
+4.0 Trunk from September 26th 2013
 
 Changelog:
 
@@ -14,6 +14,7 @@ FIXED:
 - Subtitle was shown in the "select content" block
 - Style sheet added in the "list content" block
 - Module CSS was load in all blocks
+- Fix incorrect padding of search results when looking at user profile page
 
 UPDATED:
 - Module templates - CSS updated

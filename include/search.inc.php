@@ -39,13 +39,15 @@ function cms_search($queryarray, $andor, $limit, $offset, $userid)
 	// Process the actual starts (not the padding)
 	for ($i = 0; $i < $number_to_process; $i++)
 	{
-		$item['image'] = "images/start.png";
-		$item['link'] = $startArray[$i]->getItemLink(TRUE) . '&amp;title=' . $startArray[$i]->short_url();
-		$item['title'] = $startArray[$i]->getVar("title");
-		$item['time'] = $startArray[$i]->getVar("date", "e");
-		$item['uid'] = $startArray[$i]->getVar("creator");
-		$ret[] = $item;
-		unset($item);
+	    if (is_object($startArray[$i])) { // Required to prevent crashing on profile view
+			$item['image'] = "images/start.png";
+			$item['link'] = $startArray[$i]->getItemLink(TRUE) . '&amp;title=' . $startArray[$i]->short_url();
+			$item['title'] = $startArray[$i]->getVar("title");
+			$item['time'] = $startArray[$i]->getVar("date", "e");
+			$item['uid'] = $startArray[$i]->getVar("creator");
+			$ret[] = $item;
+			unset($item);
+	    }
 	}
 
 	if ($limit == 0) {
