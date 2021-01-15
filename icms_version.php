@@ -17,14 +17,14 @@ defined("ICMS_ROOT_PATH") or die("ICMS root path not defined");
 /**  General Information  */
 $modversion = array(
 	"name"						=> _MI_CMS_MD_NAME,
-	"version"					=> 3.2,
+	"version"					=> 3.3,
 	"description"				=> _MI_CMS_MD_DESC,
-	"author"					=> "@Madfish (Simon Wilkinson) and @sato-san (Rene Sato)",
-	"credits"					=> "Thanks to QM-B and Lotus for your help.",
+	"author"					=> "@fiammybe (David Janssens)",
+	"credits"					=> "Thanks to QM-B, Lotus, Madfish and sato-san for your help.",
 	"help"						=> "",
 	"license"					=> "GNU General Public License (GPL)",
 	"official"					=> 0,
-	"dirname"					=> basename(dirname(__FILE__)),
+	"dirname"					=> basename(__DIR__),
 	"modname"					=> "cms",
 
 /**  Images information  */
@@ -33,11 +33,11 @@ $modversion = array(
 	"image"						=> "images/icon_big.png", /* for backward compatibility */
 
 /**  Development information */
-	"status_version"			=> "3.2",
-	"status"					=> "Trunk",
-	"date"						=> "July 15th 2013",
-	"author_word"				=> "For ICMS 1.3+ only.",
-	"warning"					=> "Trunk",
+	"status_version"			=> "3.3",
+	"status"					=> "alpha",
+	"date"						=> "15 January 2021",
+	"author_word"				=> "For ICMS 1.4 only.",
+	"warning"					=> "alpha",
 
 /** Contributors */
 	"developer_website_url"		=> "",
