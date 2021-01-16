@@ -15,12 +15,14 @@
 include 'admin_header.php';
 
 global $path, $dirname;
-$path = dirname(dirname(__FILE__));
+$path = dirname(__DIR__);
 $dirname = icms::$module -> getVar( 'dirname' );
 
 icms_cp_header();
 $icmsModule->displayAdminMenu(0, _AM_CMS_CMS . " > " . _CO_ICMS_EDITING);
 $file = isset($_GET['file']) ? icms_core_DataFilter::checkVar($_GET['file'], "html", "output") : "manual.html";
+//remove double points, to avoid path traversal, replace with underscore
+$file = mb_ereg_replace("([\.]{2,})", '_', $file);
 display_lang_file($file);
 icms_cp_footer();
 exit;
@@ -34,6 +36,8 @@ function display_lang_file($file, $link='') {
 		$link .= 'file=';
     }
     $file = preg_replace('/^\/+/','',preg_replace('/\/?\\.\\.?\/|\/+/', '/', $file));
+    //remove double points, to avoid path traversal, replace with underscore
+    $file = mb_ereg_replace("([\.]{2,})", '_', $file);
     $lang = "language/".$icmsConfig['language'];
     $manual = "../$lang/$file";
     if (!file_exists($manual)) {
